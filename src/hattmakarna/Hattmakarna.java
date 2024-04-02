@@ -15,7 +15,7 @@ public class Hattmakarna {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("funkar detta?");
+        System.out.println("funkar detta? Test 2");
     }
     
 }
