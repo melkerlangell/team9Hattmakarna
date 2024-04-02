@@ -17,6 +17,8 @@ public class Hattmakarna {
         // TODO code application logic here
  
         System.out.println("adgadr");
+        System.out.println("gjgjg?");
+        System.out.println("testar");
     }
     
 }
