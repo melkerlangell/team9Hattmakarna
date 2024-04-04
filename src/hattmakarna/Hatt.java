@@ -21,5 +21,11 @@ public class Hatt {
         this.material = material;
         
     }
-   
+    
+    public String getInformation() {
+        return storlek + ", " + farg + ", " + accessoar + ", " + material;
+    }
+    
+
+    
 }

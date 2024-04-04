@@ -31,7 +31,7 @@ public class hanteraProdukt {
     public void visaHattar(){
         
         for (Hatt enHatt : produktLista){
-            System.out.println(enHatt);
+            System.out.println(enHatt.getInformation());
         }
 }
     
