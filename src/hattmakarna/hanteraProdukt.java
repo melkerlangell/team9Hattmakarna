@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class hanteraProdukt {
     
-    // ArrayList to store car names
+    // ArrayList to store hatt names
     private ArrayList<String> produktLista;
 
     // Constructor to initialize the ArrayList
@@ -27,9 +27,13 @@ public class hanteraProdukt {
         produktLista = new ArrayList<>();
     }
 
-    // Method to add a car to the list
+    // Method to add a hatt to the list
     public void addHatt(String hattnamn) {
         produktLista.add(hattnamn);
+        produktLista.add("Hatt1");
+        produktLista.add("Hatt2");
+        
+        
     }
     
 }
