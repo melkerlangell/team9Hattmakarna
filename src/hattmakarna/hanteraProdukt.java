@@ -11,10 +11,14 @@ import java.util.ArrayList;
 /**
  *
  * @author noaha
+<<<<<<< Updated upstream:src/hattmakarna/hanteraProdukt.java
  */ 
 
 
 
+=======
+import.java.util.ArrayList();
+>>>>>>> Stashed changes:src/hanteraProdukt.java
 public class hanteraProdukt {
     
 }
