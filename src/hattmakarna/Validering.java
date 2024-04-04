@@ -67,18 +67,16 @@ public class Validering {
     
     public static boolean maxTvaDecimal(JTextField textToCheck) {
         boolean isMaxTva = false;
-        try{
+        try {
             String nummer = textToCheck.getText().replace(",", ".");
-            if(nummer.indexOf(".") != -2 && nummer.indexOf(".") == nummer.lastIndexOf(".")
-                    && nummer.indexOf(".") < nummer.length() - 2){
-                double tal = Double.parseDouble(nummer);
+            double tal = Double.parseDouble(nummer);
+            String[] decimaler = nummer.split("\\.");
+            if (tal >= 0 && tal <= 100 && decimaler.length == 2 && decimaler[1].length() <= 2) {
                 isMaxTva = true;
-            }}
-            catch(NumberFormatException e){
-                    }
-           
-        
-        
+            }
+        } catch (NumberFormatException e) {
+        }
+
         return isMaxTva;
     }
     
