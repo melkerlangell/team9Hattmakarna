@@ -4,18 +4,21 @@
  */
 package hattmakarna;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Melker
  */
-public class Hattmakarna {
+public class Hattmakarna extends JFrame {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("test");
+        
+        JFrame startSida = new Inloggningssida();
+        startSida.setVisible(true);
     }
     //KoalaKevin
     //Koala
