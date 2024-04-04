@@ -4,6 +4,7 @@
  */
 package hattmakarna;
 
+import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
@@ -17,9 +18,10 @@ public class Hattmakarna extends JFrame {
      */
     public static void main(String[] args) {
         
-        JFrame startSida = new Inloggningssida();
-        startSida.setVisible(true);
+       JFrame startSida = new Inloggningssida();
+       startSida.setVisible(true);
     }
     //KoalaKevin
     //Koala
+
 }
