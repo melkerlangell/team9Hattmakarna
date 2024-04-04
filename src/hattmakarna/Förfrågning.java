@@ -4,15 +4,24 @@
  */
 package hattmakarna;
 
+import java.util.Date;
+
 /**
  *
  * @author adams
  */
 public class Förfrågning {
-    private int id;
-   private String tyg;
-    public Förfrågning(int id, String tyg){
-        this.id = id;
-        this.tyg = tyg;
-    }
+   private int id;
+   private Date datum;
+   //private Hatt enHatt
+   //private Kund enKund
+    
+   public Förfrågning(int id, String tyg){
+       this.id = id;
+       this.tyg = tyg;
+   }
+   public int getId(){
+       return id;
+        
+   }
 }
