@@ -15,6 +15,21 @@ import java.util.ArrayList;
 
 
 
+
+
 public class hanteraProdukt {
+    
+    // ArrayList to store car names
+    private ArrayList<String> produktLista;
+
+    // Constructor to initialize the ArrayList
+    public hanteraProdukt() {
+        produktLista = new ArrayList<>();
+    }
+
+    // Method to add a car to the list
+    public void addHatt(String hattnamn) {
+        produktLista.add(hattnamn);
+    }
     
 }
