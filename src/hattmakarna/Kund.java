@@ -1,13 +1,34 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package hattmakarna;
 
-/**
- *
- * @author adams
- */
 public class Kund {
+
+    private String namn;
+    private String adress;
+    private String telefon;
+    private String epost;
+
+    public Kund(String namn, String adress,String telefon,String epost) {
+     this.namn = namn;
+     this.namn = adress;
+     this.namn = telefon;
+     this.namn = epost;
+    }
+    public String getNamn(){
+        return namn;
+    }
+    public String getAdress(){
+        return adress;
+    }
+    public String getTelefon(){
+        return telefon;
+    }
+    public String getEpost(){
+        return epost;
+    }
+    
+    
+    
+    
+    
     
 }
