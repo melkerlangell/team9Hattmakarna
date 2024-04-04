@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author Melker
+ * @author Melker & Rebecka
  */
 public class Inloggningssida extends javax.swing.JFrame {
 
