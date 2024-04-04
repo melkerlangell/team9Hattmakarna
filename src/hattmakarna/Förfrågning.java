@@ -16,9 +16,9 @@ public class Förfrågning {
    //private Hatt enHatt
    //private Kund enKund
     
-   public Förfrågning(int id, String tyg){
+   public Förfrågning(int id){
        this.id = id;
-       this.tyg = tyg;
+      
    }
    public int getId(){
        return id;
