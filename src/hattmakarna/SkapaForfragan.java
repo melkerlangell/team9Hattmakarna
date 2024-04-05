@@ -4,6 +4,8 @@
  */
 package hattmakarna;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Melker & Rebecka
@@ -18,6 +20,7 @@ public class SkapaForfragan extends javax.swing.JFrame {
     }
     
     private void UppdateraGUI(){
+        ArrayList<HattMall> fardigaHattar = ProduktHanterare.getProduktLista();
     }
 
     /**
