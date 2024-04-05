@@ -20,6 +20,8 @@ public class Hattmakarna extends JFrame {
         
         JFrame startSida = new Inloggningssida();
         startSida.setVisible(true);
+        
+        ProduktHanterare PH = new ProduktHanterare();
     }
     //KoalaKevin
     //Koala
