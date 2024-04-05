@@ -5,17 +5,17 @@
 package hattmakarna;
 import java.util.ArrayList;
 
+
+
 public class FörfrågningsRegister {
     ArrayList<Förfrågning> förfrågningar = new ArrayList();
     
     public void läggTill(){
-        //Ett sätt att automatisera idet kanske skulle vara bra
         Förfrågning F1 = new Förfrågning(1);
         förfrågningar.add(F1);
         Förfrågning F2 = new Förfrågning(2);
         förfrågningar.add(F2);
     }
-    
     public void taBort(int id){
         for (Förfrågning enFörfrågning : förfrågningar){
             if(enFörfrågning.getId() == id){
@@ -23,7 +23,8 @@ public class FörfrågningsRegister {
                 break;
             }
         }
-    }   
+    }
+    
 }
 
   
