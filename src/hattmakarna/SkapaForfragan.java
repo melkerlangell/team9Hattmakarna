@@ -17,10 +17,11 @@ public class SkapaForfragan extends javax.swing.JFrame {
      */
     public SkapaForfragan() {
         initComponents();
+        FyllComboBoxes();
         UppdateraGUI();
     }
     
-    private void UppdateraGUI(){
+    private void FyllComboBoxes(){
         hattCBX.removeAllItems();
         
         ArrayList<HattMall> fardigaHattar = ProduktHanterare.getProduktLista();
@@ -32,13 +33,23 @@ public class SkapaForfragan extends javax.swing.JFrame {
             accessoarCBX.addItem(enHatt.getAccessoar());
         }
         hattCBX.addItem("Annat");
+    }
+    
+    private void UppdateraGUI(){
+        if(hattCBX.getSelectedItem() == null){
+            return;
+        }
+        
+        ArrayList<HattMall> fardigaHattar = ProduktHanterare.getProduktLista();
 
         if(hattCBX.getSelectedItem() == "Annat"){
             //Skriv kod här
         }
         else{
-            String hattBenamning = (String) hattCBX.getSelectedItem();
+            String hattBenamning = String.valueOf(hattCBX.getSelectedItem());
             HattMall enHattMall = null;
+            System.out.println(hattBenamning);
+            
             for(HattMall enHatt : fardigaHattar){
                 if(hattBenamning.equals(enHatt.getBenamning())){
                     enHattMall = enHatt;
@@ -88,6 +99,11 @@ public class SkapaForfragan extends javax.swing.JFrame {
         jLabel1.setText("Skapa förfrågan");
 
         hattCBX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        hattCBX.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                hattCBXItemStateChanged(evt);
+            }
+        });
 
         hattLBL.setText("Välj färdig hatt");
 
@@ -211,6 +227,10 @@ public class SkapaForfragan extends javax.swing.JFrame {
         this.dispose();
         new KundFormular().setVisible(true);
     }//GEN-LAST:event_nextBtnActionPerformed
+
+    private void hattCBXItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_hattCBXItemStateChanged
+        UppdateraGUI();
+    }//GEN-LAST:event_hattCBXItemStateChanged
 
 
 
