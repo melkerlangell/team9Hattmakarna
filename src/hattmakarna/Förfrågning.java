@@ -4,24 +4,38 @@
  */
 package hattmakarna;
 
-import java.util.Date;
-
 /**
  *
  * @author adams
  */
 public class Förfrågning {
-   private int id;
-   private Date datum;
-   //private Hatt enHatt
-   //private Kund enKund
-    
-   public Förfrågning(int id){
-       this.id = id;
-      
-   }
-   public int getId(){
-       return id;
+
+
+    private int id;
+    private String datum;
+    //private Hatt enHatt
+    private Kund enKund;
+
+    public Förfrågning(int id, String datum) {
+        this.id = id;
+        this.datum = datum;
         
-   }
+    }
+
+    public void laggInKund(){
+        enKund = new Kund("Lasse", "Storgatan 1", "073-1112233", "lasse@mail.com", 1);
+    }
+    public int getId() {
+        return id;
+    }
+
+    public String getDate() {
+        return datum;
+    }
+
+    public int getKundId() {
+        return enKund.getId();
+
+    }
+
 }
