@@ -1,4 +1,5 @@
 package hattmakarna;
+import java.util.UUID;
 
 public class Kund {
 
@@ -6,14 +7,14 @@ public class Kund {
     private String adress;
     private String telefon;
     private String epost;
-    private int id;
+    private String id;
 
-    public Kund(String namn, String adress,String telefon,String epost, int id) {
+    public Kund(String namn, String adress,String telefon,String epost) {
      this.namn = namn;
      this.namn = adress;
      this.namn = telefon;
      this.namn = epost;
-     this.id = id;
+     this.id = UUID.randomUUID().toString();
     }
     public String getNamn(){
         return namn;
@@ -27,7 +28,7 @@ public class Kund {
     public String getEpost(){
         return epost;
     }
-    public int getId(){
+    public String getId(){
         return id;
     }
     
