@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class ProduktHanterare {
     
     // ArrayList to store hatt names
-    private ArrayList<HattMall> produktLista;
+    private static ArrayList<HattMall> produktLista;
 
     // Constructor to initialize the ArrayList
     public ProduktHanterare() {
@@ -48,9 +48,7 @@ public class ProduktHanterare {
 }
     
     
-    public ArrayList<HattMall> getProduktLista(){
+    public static ArrayList<HattMall> getProduktLista(){
         return produktLista;
     }
-    
-    
 }
