@@ -61,6 +61,26 @@ public class SkapaForfragan extends javax.swing.JFrame {
             accessoarCBX.setSelectedItem(enHattMall.getAccessoar());
         } 
     }
+    
+    private Hatt SkapaNyHatt(){
+        String benamning = hattCBX.getSelectedItem().toString();
+        String storlek = storlekCBX.getSelectedItem().toString();
+        
+        String farg = "";
+        
+        String accessoar = accessoarCBX.getSelectedItem().toString();
+        
+        String material = "";
+        if(storlekCBX.getSelectedItem().toString().equals("SKRIV HÄR")){
+            
+        }
+        else{
+            material = materialCBX.getSelectedItem().toString();
+        } 
+        
+        Hatt nyHatt = new Hatt(benamning,storlek, farg, accessoar, material, 4, "");
+        return nyHatt;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
