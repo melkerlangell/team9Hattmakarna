@@ -4,6 +4,7 @@
  */
 package hattmakarna;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -165,10 +166,21 @@ public class KundFormular extends javax.swing.JFrame {
         if (telefon.isEmpty()){
         felMeddelande += "Telefonfältet är tomt. ";
         }
+        if (Validering.isSvensktMobilNummer(jTextTelefon)==false){
+        felMeddelande += "Ange ett giltigt mobilnummer. ";
+        }
         if (epost.isEmpty()){
         felMeddelande += "Epostfältet är tomt. ";
         }
+        if (Validering.isEpost(jTextEpost)==false){
+        felMeddelande += "Ange en giltig epostadress. ";
+        }
+        
+        
         if (felMeddelande.equals("")){
+            Kund nyKund = new Kund(namn, adress, telefon, epost);
+        } else {
+        JOptionPane.showMessageDialog(null, "Dessa fel inträffade: " + felMeddelande);
         }
     }
     
