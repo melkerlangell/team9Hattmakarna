@@ -71,7 +71,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="goBack" min="-2" pref="140" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="nextBtn" min="-2" pref="105" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -108,7 +108,7 @@
               <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jButton1" pref="42" max="32767" attributes="0"/>
+                  <Component id="nextBtn" pref="42" max="32767" attributes="0"/>
                   <Component id="goBack" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -235,10 +235,13 @@
         <Property name="text" type="java.lang.String" value="Kommentar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="nextBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="N&#xe4;sta"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextBtnActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
