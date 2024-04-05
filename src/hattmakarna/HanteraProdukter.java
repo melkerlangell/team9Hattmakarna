@@ -4,11 +4,17 @@
  */
 package hattmakarna;
 
+import static hattmakarna.ProduktHanterare.getProduktLista;
+import javax.swing.JComboBox;
+import java.util.ArrayList;
+
 /**
  *
  * @author Melker
  */
 public class HanteraProdukter extends javax.swing.JFrame {
+
+    private ArrayList<HattMall> produktLista;
 
     /**
      * Creates new form HanteraProdukter
@@ -16,6 +22,7 @@ public class HanteraProdukter extends javax.swing.JFrame {
     public HanteraProdukter() {
         initComponents();
         setEnabled(true);
+        produktLista = ProduktHanterare.getProduktLista();
     }
 
     /**
@@ -41,7 +48,7 @@ public class HanteraProdukter extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        hattCBX = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         goBack = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
@@ -79,7 +86,12 @@ public class HanteraProdukter extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Visa");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        hattCBX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        hattCBX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hattCBXActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -150,7 +162,7 @@ public class HanteraProdukter extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(hattCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(22, 22, 22)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,7 +184,7 @@ public class HanteraProdukter extends javax.swing.JFrame {
                 .addGap(58, 58, 58)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hattCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -214,13 +226,23 @@ public class HanteraProdukter extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void hattCBXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hattCBXActionPerformed
+       // Antag att produktLista är din ArrayList och hattCBX är din combobox
+// bara benämning, ej id!
+for (int i = 0; i < produktLista.size(); i++) {
+    hattCBX.addItem(produktLista.get(i).getBenamning());
+}
+
+
+    }//GEN-LAST:event_hattCBXActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton goBack;
+    private javax.swing.JComboBox<String> hattCBX;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -236,4 +258,10 @@ public class HanteraProdukter extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
+
+    private static class arrayListComboBox {
+
+        public arrayListComboBox() {
+        }
+    }
 }
