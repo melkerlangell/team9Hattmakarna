@@ -2,20 +2,19 @@ package hattmakarna;
 
 import java.util.ArrayList;
 
-public class hanteraProdukt {
+public class ProduktHanterare {
     
     // ArrayList to store hatt names
     private ArrayList<Hatt> produktLista;
 
     // Constructor to initialize the ArrayList
-    public hanteraProdukt() {
+    public ProduktHanterare() {
         produktLista = new ArrayList<>();
         
         Hatt hatt1 = new Hatt("M", "Blå", "Ingen", "Läder");
         Hatt hatt2 = new Hatt("S","Grå","Fjäder","bomull");
         addHatt(hatt1);
         addHatt(hatt2);
-        
     }
 
     // Method to add a hatt to the list
@@ -23,13 +22,12 @@ public class hanteraProdukt {
         produktLista.add(hattObjekt);
     }
     
-    public void TaBortHatt(Hatt hattIndex){
+    //Denna funkar inte! Lättare att förklara live
+    public void taBortHatt(Hatt hattIndex){
         produktLista.remove(hattIndex);
-
     }
     
     public void visaHattar(){
-        
         for (Hatt enHatt : produktLista){
             System.out.println(enHatt.getInformation());
         }
