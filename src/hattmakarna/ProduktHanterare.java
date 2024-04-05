@@ -39,13 +39,18 @@ public class ProduktHanterare {
         }
 
     }
-    
+   
     public void visaHattar(){
         
         for (HattMall enHatt : produktLista){
             System.out.println(enHatt.getInformation());
         }
 }
+    
+    
+    public ArrayList<HattMall> getProduktLista(){
+        return produktLista;
+    }
     
     
 }
