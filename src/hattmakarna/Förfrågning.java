@@ -23,7 +23,7 @@ public class Förfrågning {
     }
 
     public void laggInKund(){
-        enKund = new Kund("Lasse", "Storgatan 1", "073-1112233", "lasse@mail.com", 1);
+        enKund = new Kund("Lasse", "Storgatan 1", "073-1112233", "lasse@mail.com");
     }
     public int getId() {
         return id;
@@ -33,7 +33,7 @@ public class Förfrågning {
         return datum;
     }
 
-    public int getKundId() {
+    public String getKundId() {
         return enKund.getId();
 
     }

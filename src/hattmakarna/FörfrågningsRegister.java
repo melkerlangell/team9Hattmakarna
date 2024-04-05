@@ -20,7 +20,7 @@ public class FörfrågningsRegister {
                 for (Förfrågning enFörfrågning : förfrågningar) {
                     bufferedWriter.write("Id: " + Integer.toString(enFörfrågning.getId()) + " ");
                     bufferedWriter.write("Datum: " + enFörfrågning.getDate() + " ");
-                    bufferedWriter.write("KundID: " + Integer.toString(enFörfrågning.getKundId()) + " ");
+                    bufferedWriter.write("KundID: " + enFörfrågning.getKundId() + " ");
                     bufferedWriter.newLine();
 
                 }
