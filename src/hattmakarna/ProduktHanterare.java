@@ -11,16 +11,17 @@ public class ProduktHanterare {
     public ProduktHanterare() {
         produktLista = new ArrayList<>();
         
-        HattMall hatt1 = new HattMall("M", "Blå", "Ingen", "Läder");
-        HattMall hatt2 = new HattMall("S","Grå","Fjäder","bomull");
+        HattMall hatt1 = new HattMall("Keps", "M", "Blå", "Ingen", "Läder");
+        HattMall hatt2 = new HattMall("Höghatt", "S","Grå","Fjäder","bomull");
         addHatt(hatt1);
         addHatt(hatt2);
         
-        HattMall updatedHatt = new HattMall("L", "Röd", "Band", "Silke");
+        /*
+        HattMall updatedHatt = new HattMall("Keps", "L", "Röd", "Band", "Silke");
 
         // Update the element at index 1 in the ArrayList
         produktLista.set(1, updatedHatt);
-        System.out.println("Uppdaterad produktlista:"+updatedHatt.getInformation());
+        System.out.println("Uppdaterad produktlista:"+updatedHatt.getInformation());*/
         
     }
 
