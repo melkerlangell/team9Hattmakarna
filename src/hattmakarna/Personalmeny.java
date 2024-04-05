@@ -39,6 +39,8 @@ public class Personalmeny extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
 
+        hanteraProdukter.setBackground(new java.awt.Color(0, 102, 102));
+        hanteraProdukter.setForeground(new java.awt.Color(255, 255, 255));
         hanteraProdukter.setText("Hantera produkter");
         hanteraProdukter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -46,6 +48,8 @@ public class Personalmeny extends javax.swing.JFrame {
             }
         });
 
+        hanteraForfragan.setBackground(new java.awt.Color(0, 102, 102));
+        hanteraForfragan.setForeground(new java.awt.Color(255, 255, 255));
         hanteraForfragan.setText("Hantera förfrågningar");
         hanteraForfragan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,6 +57,8 @@ public class Personalmeny extends javax.swing.JFrame {
             }
         });
 
+        skapaForfragan.setBackground(new java.awt.Color(0, 102, 102));
+        skapaForfragan.setForeground(new java.awt.Color(255, 255, 255));
         skapaForfragan.setText("Skapa förfrågan");
         skapaForfragan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,6 +66,8 @@ public class Personalmeny extends javax.swing.JFrame {
             }
         });
 
+        hanteraKunder.setBackground(new java.awt.Color(0, 102, 102));
+        hanteraKunder.setForeground(new java.awt.Color(255, 255, 255));
         hanteraKunder.setText("Hantera kunder");
         hanteraKunder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,7 +77,10 @@ public class Personalmeny extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
+        goBack.setBackground(new java.awt.Color(102, 102, 102));
+        goBack.setForeground(new java.awt.Color(255, 255, 255));
         goBack.setText("Gå tillbaka");
+        goBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         goBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 goBackActionPerformed(evt);
@@ -88,16 +99,16 @@ public class Personalmeny extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(goBack, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
+                        .addGap(93, 93, 93)
                         .addComponent(jLabel2)))
                 .addContainerGap(102, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(122, Short.MAX_VALUE)
+                .addContainerGap(124, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(93, 93, 93)
+                .addGap(76, 76, 76)
                 .addComponent(goBack, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -111,8 +122,9 @@ public class Personalmeny extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(skapaForfragan, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -120,10 +132,8 @@ public class Personalmeny extends javax.swing.JFrame {
                                 .addComponent(hanteraKunder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(hanteraForfragan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(hanteraProdukter, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(111, 111, 111))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(84, 84, 84))))
+                        .addGap(29, 29, 29)))
+                .addGap(57, 57, 57))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,7 +141,7 @@ public class Personalmeny extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(133, 133, 133)
+                .addGap(138, 138, 138)
                 .addComponent(skapaForfragan, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
                 .addComponent(hanteraForfragan, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
