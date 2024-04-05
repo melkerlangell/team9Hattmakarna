@@ -9,21 +9,7 @@ package hattmakarna;
  * @author adams
  */
 public class Förfrågning {
-<<<<<<< Updated upstream
-   private int id;
-   private Date datum;
-   //private Hatt enHatt
-   //private Kund enKund
-    
-   public Förfrågning(int id){
-       this.id = id;
-      
-   }
-   public int getId(){
-       return id;
-        
-   }
-=======
+
 
     private int id;
     private String datum;
@@ -51,5 +37,5 @@ public class Förfrågning {
         return enKund.getId();
 
     }
->>>>>>> Stashed changes
+
 }
