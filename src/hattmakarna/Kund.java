@@ -6,12 +6,14 @@ public class Kund {
     private String adress;
     private String telefon;
     private String epost;
+    private int id;
 
-    public Kund(String namn, String adress,String telefon,String epost) {
+    public Kund(String namn, String adress,String telefon,String epost, int id) {
      this.namn = namn;
      this.namn = adress;
      this.namn = telefon;
      this.namn = epost;
+     this.id = id;
     }
     public String getNamn(){
         return namn;
@@ -24,6 +26,9 @@ public class Kund {
     }
     public String getEpost(){
         return epost;
+    }
+    public int getId(){
+        return id;
     }
     
     
