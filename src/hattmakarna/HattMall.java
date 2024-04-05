@@ -45,7 +45,7 @@ public class HattMall {
     }
     
     public String getInformation() {
-        return storlek + ", " + farg + ", " + accessoar + ", " + material;
+        return benamning + ", " + storlek + ", " + farg + ", " + accessoar + ", " + material;
     }
     
 
