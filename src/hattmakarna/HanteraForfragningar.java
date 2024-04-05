@@ -6,7 +6,7 @@ package hattmakarna;
 
 /**
  *
- * @author Melker
+ * @author Melker & Rebecka
  */
 public class HanteraForfragningar extends javax.swing.JFrame {
 

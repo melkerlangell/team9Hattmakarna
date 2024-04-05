@@ -11,17 +11,16 @@ import java.util.Date;
  * @author adams
  */
 public class Förfrågning {
-   private int id;
-   private Date datum;
-   //private Hatt enHatt
-   //private Kund enKund
+    private int id;
+    private Date datum;
+    //private Hatt enHatt
+    //private Kund enKund
     
-   public Förfrågning(int id){
-       this.id = id;
-      
-   }
-   public int getId(){
-       return id;
-        
-   }
+    public Förfrågning(int id){
+        this.id = id;  
+    }
+   
+    public int getId(){
+       return id;    
+    }
 }
