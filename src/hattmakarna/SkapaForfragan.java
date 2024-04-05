@@ -23,6 +23,9 @@ public class SkapaForfragan extends javax.swing.JFrame {
     
     private void FyllComboBoxes(){
         hattCBX.removeAllItems();
+        storlekCBX.removeAllItems();
+        materialCBX.removeAllItems();
+        accessoarCBX.removeAllItems();
         
         ArrayList<HattMall> fardigaHattar = ProduktHanterare.getProduktLista();
         
@@ -72,7 +75,7 @@ public class SkapaForfragan extends javax.swing.JFrame {
         
         String material = "";
         if(storlekCBX.getSelectedItem().toString().equals("SKRIV HÄR")){
-            
+            //Skriv kod här
         }
         else{
             material = materialCBX.getSelectedItem().toString();
@@ -245,7 +248,8 @@ public class SkapaForfragan extends javax.swing.JFrame {
     private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new KundFormular().setVisible(true);
+        Hatt hattAttBestalla = SkapaNyHatt();
+        new KundFormular(hattAttBestalla).setVisible(true);
     }//GEN-LAST:event_nextBtnActionPerformed
 
     private void hattCBXItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_hattCBXItemStateChanged

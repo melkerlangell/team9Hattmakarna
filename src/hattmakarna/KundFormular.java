@@ -4,6 +4,8 @@
  */
 package hattmakarna;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -13,10 +15,14 @@ import javax.swing.JTextField;
  */
 public class KundFormular extends javax.swing.JFrame {
 
+    private Hatt hattAttBestalla;
+    
     /**
      * Creates new form KundFormular
      */
-    public KundFormular() {
+    public KundFormular(Hatt enHatt) {
+        hattAttBestalla = enHatt;
+        
         initComponents();
     }
 
@@ -165,7 +171,7 @@ public class KundFormular extends javax.swing.JFrame {
         return info;
     }
     
-    public void laggTillKund() {
+    public Kund SkapaNyKund() {
 
         String namn = textToString(jTextNamn);
         String adress = textToString(jTextAdress);
@@ -192,15 +198,18 @@ public class KundFormular extends javax.swing.JFrame {
         if (Validering.isEpost(jTextEpost) == false) {
             felMeddelande += "Ange en giltig epostadress. ";
         }
-
+        
+        Kund nyKund = null;
+        
         if (felMeddelande.equals("")) {
-            Kund nyKund = new Kund(namn, adress, telefon, epost);
+            nyKund = new Kund(namn, adress, telefon, epost);
             JOptionPane.showMessageDialog(null, namn+" har registrerats i kundregistret.");
         } else {
             JOptionPane.showMessageDialog(null, "Dessa fel inträffade: " + felMeddelande);
         }
+        
+        return nyKund;
     }
-    
     
     private void goBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackActionPerformed
         // TODO add your handling code here:
@@ -209,7 +218,10 @@ public class KundFormular extends javax.swing.JFrame {
     }//GEN-LAST:event_goBackActionPerformed
 
     private void btnLaggTillKundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillKundActionPerformed
-        laggTillKund();
+        DateFormat datumFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String datum = datumFormat.format(jDateChooser1.getDate());
+        Kund nyKund = SkapaNyKund();        
+        //FörfrågningsRegister.LaggTillForfragan(datum, nyKund, hattAttBestalla);
     }//GEN-LAST:event_btnLaggTillKundActionPerformed
 
     
