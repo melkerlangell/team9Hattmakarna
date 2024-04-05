@@ -8,13 +8,13 @@ package hattmakarna;
  *
  * @author noaha
  */
-public class Hatt {
+public class HattMall {
     private String storlek;
     private String farg;
     private String accessoar;
     private String material;
 
-    public Hatt(String storlek,String farg, String accessoar, String material ){
+    public HattMall(String storlek,String farg, String accessoar, String material ){
         this.storlek = storlek;
         this.farg = farg;
         this.accessoar = accessoar;
