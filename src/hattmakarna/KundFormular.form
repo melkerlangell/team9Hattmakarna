@@ -33,10 +33,10 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jTextField3" min="-2" pref="98" max="-2" attributes="0"/>
+                          <Component id="jTextAdress" min="-2" pref="98" max="-2" attributes="0"/>
                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                              <Component id="jTextField1" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
-                              <Component id="jTextField2" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
+                              <Component id="jTextNamn" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
+                              <Component id="jTextTelefon" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="goBack" min="-2" pref="137" max="-2" attributes="0"/>
@@ -52,7 +52,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <Component id="jTextField4" alignment="1" min="-2" pref="98" max="-2" attributes="0"/>
+                          <Component id="jTextEpost" alignment="1" min="-2" pref="98" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -83,19 +83,19 @@
               <EmptySpace pref="22" max="32767" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTextField1" min="-2" pref="36" max="-2" attributes="0"/>
+              <Component id="jTextNamn" min="-2" pref="36" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-              <Component id="jTextField2" min="-2" pref="37" max="-2" attributes="0"/>
+              <Component id="jTextTelefon" min="-2" pref="37" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTextField3" min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="jTextAdress" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-              <Component id="jTextField4" min="-2" pref="40" max="-2" attributes="0"/>
+              <Component id="jTextEpost" min="-2" pref="40" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="goBack" alignment="1" min="-2" pref="41" max="-2" attributes="0"/>
@@ -124,19 +124,13 @@
         <Property name="text" type="java.lang.String" value="Ange din personliga information"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
-      </Events>
+    <Component class="javax.swing.JTextField" name="jTextNamn">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="jTextTelefon">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="jTextAdress">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
-      </Events>
+    <Component class="javax.swing.JTextField" name="jTextEpost">
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
     </Component>
