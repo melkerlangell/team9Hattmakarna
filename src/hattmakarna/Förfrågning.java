@@ -3,12 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package hattmakarna;
+import java.io.Serializable;
 
 /**
  *
  * @author adams
  */
-public class Förfrågning {
+public class Förfrågning implements Serializable {
 
 
     private int id;
