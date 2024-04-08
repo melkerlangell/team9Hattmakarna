@@ -79,6 +79,11 @@ public class HanteraProdukter extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 102, 102));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Uppdatera");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Välj hatt");
 
@@ -91,7 +96,7 @@ public class HanteraProdukter extends javax.swing.JFrame {
             }
         });
 
-        hattCBX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        hattCBX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "hatt 1", "hatt 2", "hatt 3", "hatt 4", "hatt 5" }));
         hattCBX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hattCBXActionPerformed(evt);
@@ -257,6 +262,26 @@ for (int i = 0; i < produktLista.size(); i++) {
         jTextField5.setText(selectedHatt.getMaterial());
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    int selectedIndex = hattCBX.getSelectedIndex();
+
+    // Ensure a valid selection
+    if (selectedIndex != -1) {
+        // Retrieve the selected HattMall object from the produktLista
+        HattMall selectedHatt = produktLista.get(selectedIndex);
+        
+        // Update the attributes of the selected HattMall object with the values from the JTextFields
+        selectedHatt.setBenamning(jTextField1.getText());
+        selectedHatt.setStorlek(jTextField2.getText());
+        selectedHatt.setFarg(jTextField3.getText());
+        selectedHatt.setAccessoar(jTextField4.getText());
+        selectedHatt.setMaterial(jTextField5.getText());
+        
+    }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
 

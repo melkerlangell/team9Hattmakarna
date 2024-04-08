@@ -13,8 +13,15 @@ public class ProduktHanterare {
         
         HattMall hatt1 = new HattMall("Keps", "M", "Blå", "Ingen", "Läder");
         HattMall hatt2 = new HattMall("Höghatt", "S","Grå","Fjäder","bomull");
+        HattMall hatt3 = new HattMall("låghatt","L","Lila","Snöre","Sammet");
+        HattMall hatt4 = new HattMall("Slokhatt","XS","Rosa","Rosett","Polyester");
+        HattMall hatt5 = new HattMall("Cowboyhatt","XL","Brun","Metall","Läder");
         addHatt(hatt1);
         addHatt(hatt2);
+        addHatt(hatt3);
+        addHatt(hatt4);
+        addHatt(hatt5);
+        
         
         /*
         HattMall updatedHatt = new HattMall("Keps", "L", "Röd", "Band", "Silke");
