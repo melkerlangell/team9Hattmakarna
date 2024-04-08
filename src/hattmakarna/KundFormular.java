@@ -77,6 +77,11 @@ public class KundFormular extends javax.swing.JFrame {
         });
 
         jButton1.setText("Hämta");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -255,6 +260,19 @@ public class KundFormular extends javax.swing.JFrame {
         Kund nyKund = SkapaNyKund();        
         //FörfrågningsRegister.LaggTillForfragan(datum, nyKund, hattAttBestalla);
     }//GEN-LAST:event_btnLaggTillKundActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Kund enKund = new Kund("", "", "", "");
+        if(Validering.isEpost(jTextEpost)){
+        if(KundRegister.hittaEpost(jTextEpost, enKund)){
+            jTextNamn.setText(enKund.getNamn());
+            jTextTelefon.setText(enKund.getTelefon());
+            jTextAdress.setText(enKund.getAdress());
+            }}
+        else{
+            JOptionPane.showMessageDialog(null, "Kunden finns inte i systemet, var god skriv in uppgifter manuellt.");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     
 

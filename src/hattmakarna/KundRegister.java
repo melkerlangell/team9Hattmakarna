@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import javax.swing.JTextField;
 
 /**
  *
@@ -19,13 +20,14 @@ import java.util.ArrayList;
  */
 public class KundRegister {
 
-    ArrayList<Kund> kunder = new ArrayList();
+    static ArrayList<Kund> kunder = new ArrayList();
 
     public void fil() {
         try {
             FileWriter fileWriter = new FileWriter("kunder.txt", true);
             try (BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
                 for (Kund enKund : kunder) {
+                    bufferedWriter.write("Id: " + enKund.getId() + " ");
                     bufferedWriter.write("Namn: " + enKund.getNamn() + " ");
                     bufferedWriter.write("Adress: " + enKund.getAdress() + " ");
                     bufferedWriter.write("Telefonnummer: " + enKund.getTelefon() + " ");
@@ -64,6 +66,25 @@ public class KundRegister {
             System.out.println(e);
         }
     }
+    
+    public static boolean hittaEpost (JTextField textToCheck, Kund kund) {
+        boolean epostHittad = false;
+        String epost = textToCheck.getText();
+        
+        for(Kund enKund : kunder) {
+            if(enKund.getEpost().equals(epost)) {
+                epostHittad = true;
+                kund = enKund;
+                break;   
+            }
+            
+        }
+        return epostHittad;
+    }
+    
+    
+    
+    
 
 
 //    public void läggTill() {
