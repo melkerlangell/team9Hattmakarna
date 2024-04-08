@@ -4,7 +4,14 @@ Id: 1 Datum: 2000-01-01 Id: 1 Datum: 2000-01-01 Id: 1 Datum: 2000-01-01 KundID: 
 Id: 2 Datum: 1999-01-01 KundID: 1 
 Id: 1 Datum: 2000-01-01 KundID: d87411f1-7b49-48d9-bec4-b9205cbce224 
 Id: 2 Datum: 1999-01-01 KundID: d423cc28-b0ad-49a2-b8b6-08357c51e7cb 
+<<<<<<< HEAD
 Id: 1 Datum: 2000-01-01 KundID: f9d5992b-37b4-441f-aeae-3796d1e83403 
 Id: 2 Datum: 1999-01-01 KundID: c71dc569-3624-414a-a02f-6278e82417db 
 Id: 1 Datum: 2000-01-01 KundID: 9f6cd2a0-250d-4d41-9fb0-a8b3ed7bffac 
 Id: 2 Datum: 1999-01-01 KundID: 63752eab-719c-4202-95fa-238eb4621995 
+=======
+Id: 1 Datum: 2000-01-01 KundID: c1c0da11-aded-4a81-8de1-69210c72fd40 
+Id: 2 Datum: 1999-01-01 KundID: 89594db2-331f-4a24-8ebf-981d86f7aab0 
+Id: 1 Datum: 2000-01-01 KundID: 9318995f-0cca-40ea-b86d-2afc5ccdfeaa 
+Id: 2 Datum: 1999-01-01 KundID: 628a551c-a0e9-4d10-b97b-eb6539dec5d0 
+>>>>>>> 327c7debdd4946ee12cfd9e549c81929144db0bc

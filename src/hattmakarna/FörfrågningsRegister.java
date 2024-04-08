@@ -5,36 +5,18 @@
 package hattmakarna;
 
 import java.util.ArrayList;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 
 public class FörfrågningsRegister {
 
     ArrayList<Förfrågning> förfrågningar = new ArrayList();
 
-    public void fil() {
-        try {
-            FileWriter fileWriter = new FileWriter("förfrågningar.txt", true);
-            try (BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
-                for (Förfrågning enFörfrågning : förfrågningar) {
-                    bufferedWriter.write("Id: " + Integer.toString(enFörfrågning.getId()) + " ");
-                    bufferedWriter.write("Datum: " + enFörfrågning.getDate() + " ");
-                    bufferedWriter.write("KundID: " + enFörfrågning.getKundId() + " ");
-                    bufferedWriter.newLine();
-
-                }
-                bufferedWriter.close();
-//                bufferedWriter.write("Hej");
-//                bufferedWriter.close();
-                }
-            
-        }
-        catch (IOException e){
-            
-        }
+    public void sparaFil() {
+        
         try (FileOutputStream fos = new FileOutputStream("ForfrogningsRegister.dat");
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 
@@ -44,6 +26,31 @@ public class FörfrågningsRegister {
 
         } catch (IOException e) {
             System.out.println(e);
+        }
+    }
+    
+    public void laddaInFil(){
+        förfrågningar = null;
+        try (FileInputStream fis = new FileInputStream("ForfrogningsRegister.dat");
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
+
+            // Läs ArrayList från filen
+            förfrågningar = (ArrayList<Förfrågning>) ois.readObject();
+            System.out.println("Objekt inlästa från filen.");
+
+            
+
+        }catch (IOException | ClassNotFoundException e) {
+            System.out.println(e);
+        }
+    }
+    public void test(){
+        System.out.println("hej!");
+        for (Förfrågning enFörfrågning: förfrågningar){
+            System.out.println(enFörfrågning.getDate());
+            System.out.println(enFörfrågning.getId());
+            System.out.println("hej?");
+            System.out.println(enFörfrågning.getKundId());
         }
     }
 
