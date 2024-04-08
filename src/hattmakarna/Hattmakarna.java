@@ -17,14 +17,11 @@ public class Hattmakarna extends JFrame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+            JFrame startSida = new Inloggningssida();
+            startSida.setVisible(true);
         
-//        JFrame startSida = new Inloggningssida();
-//        startSida.setVisible(true);
-//        
-//        ProduktHanterare PH = new ProduktHanterare();
-           FörfrågningsRegister register = new FörfrågningsRegister();
-           register.läggTill();
-           register.fil();
+            ProduktHanterare PH = new ProduktHanterare();
+            FörfrågningsRegister register = new FörfrågningsRegister();
     }
     //KoalaKevin
     //Koala
