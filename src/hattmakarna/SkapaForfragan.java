@@ -22,7 +22,7 @@ public class SkapaForfragan extends javax.swing.JFrame {
     }
     
     private void FyllComboBoxes(){
-        hattCBX.removeAllItems();
+ hattCBX.removeAllItems();
         storlekCBX.removeAllItems();
         fargCBX.removeAllItems();
         materialCBX.removeAllItems();
@@ -32,15 +32,23 @@ public class SkapaForfragan extends javax.swing.JFrame {
         
         for(HattMall enHatt : fardigaHattar){
             hattCBX.addItem(enHatt.getBenamning());
-            storlekCBX.addItem(enHatt.getStorlek());
-            materialCBX.addItem(enHatt.getMaterial());
             accessoarCBX.addItem(enHatt.getAccessoar());
         }
         hattCBX.addItem("Annat");
         
+        ArrayList<String> storlekar = Storlek.getStorlekStrings();
+        for(String enStorlek : storlekar){
+            storlekCBX.addItem(enStorlek);
+        }
+        
         ArrayList<String> farger = Farg.getFarger();
         for(String farg : farger){
             fargCBX.addItem(farg);
+        }
+        
+        ArrayList<Material> material = Material.getAllaMaterial();
+        for(Material ettMaterial : material){
+            materialCBX.addItem(ettMaterial.getBenamning());
         }
     }
     
