@@ -4,6 +4,9 @@
  */
 package hattmakarna;
 
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Melker
@@ -33,13 +36,13 @@ public class LaggTillKund extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextNamn = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextTelefon = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTextAdress = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        jTextEpost = new javax.swing.JTextField();
         laggTillKnapp = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -125,12 +128,12 @@ public class LaggTillKund extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jTextAdress, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextEpost, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(117, 117, 117))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,19 +163,19 @@ public class LaggTillKund extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(laggTillKnapp, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(36, Short.MAX_VALUE))
@@ -190,9 +193,55 @@ public class LaggTillKund extends javax.swing.JFrame {
 
     private void laggTillKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laggTillKnappActionPerformed
         // TODO add your handling code here:
+        Kund nyKund = SkapaNyKund();
     }//GEN-LAST:event_laggTillKnappActionPerformed
 
+   private String textToString (JTextField textToCheck)
+    {
+        String info = textToCheck.getText();
+        
+        return info;
+    } 
+    
+public Kund SkapaNyKund() {
 
+        String namn = textToString(jTextNamn);
+        String adress = textToString(jTextAdress);
+        String telefon = textToString(jTextTelefon);
+        String epost = textToString(jTextEpost);
+
+        String felMeddelande = "";
+
+        if (namn.isEmpty()) {
+            felMeddelande += "Namnfältet är tomt. ";
+        }
+        if (adress.isEmpty()) {
+            felMeddelande += "Adressfältetfältet är tomt. ";
+        }
+        if (telefon.isEmpty()) {
+            felMeddelande += "Telefonfältet är tomt. ";
+        }
+        if (Validering.isSvensktMobilNummer(jTextTelefon) == false) {
+            felMeddelande += "Ange ett giltigt mobilnummer. ";
+        }
+        if (epost.isEmpty()) {
+            felMeddelande += "Epostfältet är tomt. ";
+        }
+        if (Validering.isEpost(jTextEpost) == false) {
+            felMeddelande += "Ange en giltig epostadress. ";
+        }
+        
+        Kund nyKund = null;
+        
+        if (felMeddelande.equals("")) {
+            nyKund = new Kund(namn, adress, telefon, epost);
+            JOptionPane.showMessageDialog(null, namn+" har registrerats i kundregistret.");
+        } else {
+            JOptionPane.showMessageDialog(null, "Dessa fel inträffade: " + felMeddelande);
+        }
+        
+        return nyKund;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton goBack;
@@ -205,10 +254,10 @@ public class LaggTillKund extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextAdress;
+    private javax.swing.JTextField jTextEpost;
+    private javax.swing.JTextField jTextNamn;
+    private javax.swing.JTextField jTextTelefon;
     private javax.swing.JButton laggTillKnapp;
     // End of variables declaration//GEN-END:variables
 }
