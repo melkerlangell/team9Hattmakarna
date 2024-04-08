@@ -5,9 +5,11 @@
 package hattmakarna;
 
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
@@ -50,6 +52,20 @@ public class KundRegister {
         }
     }
 
+    public void laddaInFil() {
+        kunder = null;
+        try (FileInputStream fis = new FileInputStream("KundRegister.dat"); ObjectInputStream ois = new ObjectInputStream(fis)) {
+
+            // Läs ArrayList från filen
+            kunder = (ArrayList<Kund>) ois.readObject();
+            System.out.println("Objekt inlästa från filen.");
+
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println(e);
+        }
+    }
+
+
 //    public void läggTill() {
 //        //Ett sätt att automatisera idet kanske skulle vara bra
 //        Kund F1 = new Kund(1, "2000-01-01");
@@ -60,7 +76,6 @@ public class KundRegister {
 //        F2.laggInKund();
 //        kunder.add(F2);
 //    }
-
 //    public void taBort(int id) {
 //        for (Kund enKund : kunder) {
 //            if (enKund.getId() == id) {
@@ -68,6 +83,5 @@ public class KundRegister {
 //                kunder.remove(enKund);
 //                break;
 //            }
-        }
-    
 
+}
