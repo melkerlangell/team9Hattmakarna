@@ -28,20 +28,40 @@ public class HattMall {
         return benamning;
     }
     
+    public void setBenamning(String benamning) {
+        this.benamning = benamning;
+    }
+    
     public String getStorlek(){
         return storlek;
+    }
+    
+     public void setStorlek(String storlek) {
+        this.storlek = storlek;
     }
     
     public String getFarg(){
         return farg;
     }
     
+     public void setFarg(String farg) {
+        this.farg = farg;
+    }
+    
     public String getAccessoar(){
         return accessoar;
     }
     
+    public void setAccessoar(String accessoar) {
+        this.accessoar = accessoar;
+    }
+    
     public String getMaterial(){
         return material;
+    }
+    
+     public void setMaterial(String material) {
+        this.material = material;
     }
     
     public String getInformation() {
