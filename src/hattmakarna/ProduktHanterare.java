@@ -12,7 +12,7 @@ public class ProduktHanterare {
         produktLista = new ArrayList<>();
         
         HattMall hatt1 = new HattMall("Keps", "M", "Blå", "Ingen", "Läder");
-        HattMall hatt2 = new HattMall("Höghatt", "S","Grå","Fjäder","bomull");
+        HattMall hatt2 = new HattMall("Höghatt", "S","Grå","Fjäder","Bomull");
         HattMall hatt3 = new HattMall("låghatt","L","Lila","Snöre","Sammet");
         HattMall hatt4 = new HattMall("Slokhatt","XS","Rosa","Rosett","Polyester");
         HattMall hatt5 = new HattMall("Cowboyhatt","XL","Brun","Metall","Läder");
