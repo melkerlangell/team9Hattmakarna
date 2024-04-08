@@ -251,9 +251,9 @@ public class HanteraProdukter extends javax.swing.JFrame {
     private void hattCBXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hattCBXActionPerformed
        // Antag att produktLista är din ArrayList och hattCBX är din combobox
 // bara benämning, ej id!
-for (int i = 0; i < produktLista.size(); i++) {
-    hattCBX.addItem(produktLista.get(i).getBenamning());
-}
+//for (int i = 0; i < produktLista.size(); i++) {
+ //   hattCBX.addItem(produktLista.get(i).getBenamning());
+//}
 
     }//GEN-LAST:event_hattCBXActionPerformed
 
