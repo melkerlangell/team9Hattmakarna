@@ -143,7 +143,7 @@ public class HanteraKunder extends javax.swing.JFrame {
     private void andraKundInfoKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_andraKundInfoKnappActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        
+        new AndraKundInfo().setVisible(true);
     }//GEN-LAST:event_andraKundInfoKnappActionPerformed
 
 

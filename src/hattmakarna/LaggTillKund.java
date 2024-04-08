@@ -185,7 +185,7 @@ public class LaggTillKund extends javax.swing.JFrame {
     private void goBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new Personalmeny().setVisible(true);
+        new HanteraKunder().setVisible(true);
     }//GEN-LAST:event_goBackActionPerformed
 
     private void laggTillKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laggTillKnappActionPerformed
