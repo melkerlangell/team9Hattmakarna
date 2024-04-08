@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 
 public class FörfrågningsRegister {
 
@@ -27,7 +29,19 @@ public class FörfrågningsRegister {
                 bufferedWriter.close();
 //                bufferedWriter.write("Hej");
 //                bufferedWriter.close();
-            }
+                }
+            
+        }
+        catch (IOException e){
+            
+        }
+        try (FileOutputStream fos = new FileOutputStream("ForfrogningsRegister.dat");
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+
+            // Skriv ArrayList till filen
+            oos.writeObject(förfrågningar);
+            System.out.println("Objekt sparade till filen.");
+
         } catch (IOException e) {
             System.out.println(e);
         }

@@ -1,7 +1,8 @@
 package hattmakarna;
 import java.util.UUID;
+import java.io.Serializable;
 
-public class Kund {
+public class Kund implements Serializable {
 
     private String namn;
     private String adress;

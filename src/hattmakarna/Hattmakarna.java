@@ -18,10 +18,13 @@ public class Hattmakarna extends JFrame {
      */
     public static void main(String[] args) {
         
-        JFrame startSida = new Inloggningssida();
-        startSida.setVisible(true);
-        
-        ProduktHanterare PH = new ProduktHanterare();
+//        JFrame startSida = new Inloggningssida();
+//        startSida.setVisible(true);
+//        
+//        ProduktHanterare PH = new ProduktHanterare();
+           FörfrågningsRegister register = new FörfrågningsRegister();
+           register.läggTill();
+           register.fil();
     }
     //KoalaKevin
     //Koala
