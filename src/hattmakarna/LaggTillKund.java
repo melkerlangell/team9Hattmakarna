@@ -6,14 +6,14 @@ package hattmakarna;
 
 /**
  *
- * @author Melker & Rebecka
+ * @author Melker
  */
-public class HanteraKunder extends javax.swing.JFrame {
+public class LaggTillKund extends javax.swing.JFrame {
 
     /**
-     * Creates new form HanteraKunder
+     * Creates new form LaggTillKund
      */
-    public HanteraKunder() {
+    public LaggTillKund() {
         initComponents();
     }
 
@@ -29,12 +29,9 @@ public class HanteraKunder extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         goBack = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        laggTillKundKnapp = new javax.swing.JButton();
-        andraKundInfoKnapp = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 500));
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -48,7 +45,7 @@ public class HanteraKunder extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hattmakarna/pinpng.com-dark-souls-icon-png-6838435 (1).png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hattmakarna/992651 (1).png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -58,37 +55,24 @@ public class HanteraKunder extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(goBack, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(goBack, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
+                        .addGap(87, 87, 87)
                         .addComponent(jLabel2)))
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
+                .addGap(103, 103, 103)
                 .addComponent(jLabel2)
-                .addGap(67, 67, 67)
-                .addComponent(goBack, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addComponent(goBack, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        laggTillKundKnapp.setBackground(new java.awt.Color(0, 102, 102));
-        laggTillKundKnapp.setForeground(new java.awt.Color(255, 255, 255));
-        laggTillKundKnapp.setText("Lägg till kund");
-        laggTillKundKnapp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                laggTillKundKnappActionPerformed(evt);
-            }
-        });
-
-        andraKundInfoKnapp.setBackground(new java.awt.Color(0, 102, 102));
-        andraKundInfoKnapp.setForeground(new java.awt.Color(255, 255, 255));
-        andraKundInfoKnapp.setText("Ändra kundinformation");
-
         jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        jLabel1.setText("Hantera kunder");
+        jLabel1.setText("Lägg till kund");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,53 +80,34 @@ public class HanteraKunder extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(laggTillKundKnapp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(andraKundInfoKnapp)))
-                .addGap(113, 113, 113))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(117, 117, 117))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(134, 134, 134)
-                .addComponent(laggTillKundKnapp, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(andraKundInfoKnapp, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void goBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackActionPerformed
-        // TODO add your handling code here
+        // TODO add your handling code here:
         this.dispose();
         new Personalmeny().setVisible(true);
     }//GEN-LAST:event_goBackActionPerformed
 
-    private void laggTillKundKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laggTillKundKnappActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-        new LaggTillKund().setVisible(true);
-    }//GEN-LAST:event_laggTillKundKnappActionPerformed
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton andraKundInfoKnapp;
     private javax.swing.JButton goBack;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton laggTillKundKnapp;
     // End of variables declaration//GEN-END:variables
 }
