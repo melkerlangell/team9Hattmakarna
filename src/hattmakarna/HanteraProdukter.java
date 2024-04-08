@@ -45,14 +45,14 @@ public class HanteraProdukter extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        UppdateraKnapp = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        VisaKnapp = new javax.swing.JButton();
         hattCBX = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         goBack = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        RaderaKnapp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setEnabled(false);
@@ -77,23 +77,23 @@ public class HanteraProdukter extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 102));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Uppdatera");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        UppdateraKnapp.setBackground(new java.awt.Color(0, 102, 102));
+        UppdateraKnapp.setForeground(new java.awt.Color(255, 255, 255));
+        UppdateraKnapp.setText("Uppdatera");
+        UppdateraKnapp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                UppdateraKnappActionPerformed(evt);
             }
         });
 
         jLabel7.setText("Välj hatt");
 
-        jButton2.setBackground(new java.awt.Color(0, 102, 102));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Visa");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        VisaKnapp.setBackground(new java.awt.Color(0, 102, 102));
+        VisaKnapp.setForeground(new java.awt.Color(255, 255, 255));
+        VisaKnapp.setText("Visa");
+        VisaKnapp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                VisaKnappActionPerformed(evt);
             }
         });
 
@@ -141,10 +141,10 @@ public class HanteraProdukter extends javax.swing.JFrame {
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
-        jButton3.setText("Radera");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        RaderaKnapp.setText("Radera");
+        RaderaKnapp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                RaderaKnappActionPerformed(evt);
             }
         });
 
@@ -184,13 +184,13 @@ public class HanteraProdukter extends javax.swing.JFrame {
                                     .addComponent(hattCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(22, 22, 22)))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(VisaKnapp, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(UppdateraKnapp, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(37, 37, 37)))
-                    .addComponent(jButton3))
+                    .addComponent(RaderaKnapp))
                 .addGap(62, 62, 62))
         );
         layout.setVerticalGroup(
@@ -224,10 +224,10 @@ public class HanteraProdukter extends javax.swing.JFrame {
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(VisaKnapp)
+                    .addComponent(UppdateraKnapp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(RaderaKnapp)
                 .addGap(279, 279, 279))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -251,13 +251,13 @@ public class HanteraProdukter extends javax.swing.JFrame {
     private void hattCBXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hattCBXActionPerformed
        // Antag att produktLista är din ArrayList och hattCBX är din combobox
 // bara benämning, ej id!
-for (int i = 0; i < produktLista.size(); i++) {
-    hattCBX.addItem(produktLista.get(i).getBenamning());
-}
+//for (int i = 0; i < produktLista.size(); i++) {
+ //   hattCBX.addItem(produktLista.get(i).getBenamning());
+//}
 
     }//GEN-LAST:event_hattCBXActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void VisaKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisaKnappActionPerformed
         // TODO add your handling code here:
          int selectedIndex = hattCBX.getSelectedIndex();
     
@@ -273,9 +273,9 @@ for (int i = 0; i < produktLista.size(); i++) {
         jTextField4.setText(selectedHatt.getAccessoar());
         jTextField5.setText(selectedHatt.getMaterial());
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_VisaKnappActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void UppdateraKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UppdateraKnappActionPerformed
         // TODO add your handling code here:
     int selectedIndex = hattCBX.getSelectedIndex();
 
@@ -293,9 +293,9 @@ for (int i = 0; i < produktLista.size(); i++) {
         
     }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_UppdateraKnappActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void RaderaKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaderaKnappActionPerformed
         // TODO add your handling code here:
         
         int selectedIndex = hattCBX.getSelectedIndex();
@@ -309,16 +309,16 @@ for (int i = 0; i < produktLista.size(); i++) {
         
         }
         
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_RaderaKnappActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton RaderaKnapp;
+    private javax.swing.JButton UppdateraKnapp;
+    private javax.swing.JButton VisaKnapp;
     private javax.swing.JButton goBack;
     private javax.swing.JComboBox<String> hattCBX;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
