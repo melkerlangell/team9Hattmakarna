@@ -22,8 +22,6 @@ public class Hattmakarna extends JFrame {
         
             ProduktHanterare PH = new ProduktHanterare();
             FörfrågningsRegister register = new FörfrågningsRegister();
-            register.läggTill();
-            register.fil();
     }
     //KoalaKevin
     //Koala

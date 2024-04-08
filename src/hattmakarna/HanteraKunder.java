@@ -86,6 +86,11 @@ public class HanteraKunder extends javax.swing.JFrame {
         andraKundInfoKnapp.setBackground(new java.awt.Color(0, 102, 102));
         andraKundInfoKnapp.setForeground(new java.awt.Color(255, 255, 255));
         andraKundInfoKnapp.setText("Ändra kundinformation");
+        andraKundInfoKnapp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                andraKundInfoKnappActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel1.setText("Hantera kunder");
@@ -134,6 +139,12 @@ public class HanteraKunder extends javax.swing.JFrame {
         this.dispose();
         new LaggTillKund().setVisible(true);
     }//GEN-LAST:event_laggTillKundKnappActionPerformed
+
+    private void andraKundInfoKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_andraKundInfoKnappActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        
+    }//GEN-LAST:event_andraKundInfoKnappActionPerformed
 
 
 
