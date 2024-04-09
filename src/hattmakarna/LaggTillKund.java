@@ -194,6 +194,7 @@ public class LaggTillKund extends javax.swing.JFrame {
     private void laggTillKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laggTillKnappActionPerformed
         // TODO add your handling code here:
         Kund nyKund = SkapaNyKund();
+        KundRegister.addNyKundIRegister(nyKund);
     }//GEN-LAST:event_laggTillKnappActionPerformed
 
    private String textToString (JTextField textToCheck)

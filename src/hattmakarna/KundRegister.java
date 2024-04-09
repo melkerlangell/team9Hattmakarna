@@ -1,51 +1,34 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package hattmakarna;
 
-import java.io.BufferedWriter;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.JTextField;
 
-/**
- *
- * @author emil-
- */
 public class KundRegister {
 
     static ArrayList<Kund> kunder = new ArrayList();
 
-    public void fil() {
-        try {
-            FileWriter fileWriter = new FileWriter("kunder.txt", true);
-            try (BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
-                for (Kund enKund : kunder) {
-                    bufferedWriter.write("Id: " + enKund.getId() + " ");
-                    bufferedWriter.write("Namn: " + enKund.getNamn() + " ");
-                    bufferedWriter.write("Adress: " + enKund.getAdress() + " ");
-                    bufferedWriter.write("Telefonnummer: " + enKund.getTelefon() + " ");
-                    bufferedWriter.write("Epost: " + enKund.getEpost() + " ");
-                    bufferedWriter.newLine();
+    public void laddaInFil() {
+        kunder = null;
+        try (FileInputStream fis = new FileInputStream("KundRegister.dat"); ObjectInputStream ois = new ObjectInputStream(fis)) {
 
-                }
-                bufferedWriter.close();
-//                bufferedWriter.write("Hej");
-//                bufferedWriter.close();
-            }
+            kunder = (ArrayList<Kund>) ois.readObject();
+            System.out.println("Objekt inlästa från filen.");
 
-        } catch (IOException e) {
-
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println(e);
         }
+    }
+
+    public static void sparaFil() {
+
         try (FileOutputStream fos = new FileOutputStream("KundRegister.dat"); ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 
-            // Skriv ArrayList till filen
             oos.writeObject(kunder);
             System.out.println("Objekt sparade till filen.");
 
@@ -54,55 +37,33 @@ public class KundRegister {
         }
     }
 
-    public void laddaInFil() {
-        kunder = null;
-        try (FileInputStream fis = new FileInputStream("KundRegister.dat"); ObjectInputStream ois = new ObjectInputStream(fis)) {
+    public static void addNyKundIRegister(Kund enKund) {
+        kunder.add(enKund);
+        sparaFil();
+    }
 
-            // Läs ArrayList från filen
-            kunder = (ArrayList<Kund>) ois.readObject();
-            System.out.println("Objekt inlästa från filen.");
+    public static void taBort(String epost) {
+        for (Kund enKund : kunder) {
+            if (enKund.getEpost().equalsIgnoreCase(epost)) {
 
-        } catch (IOException | ClassNotFoundException e) {
-            System.out.println(e);
+                kunder.remove(enKund);
+                break;
+            }
         }
     }
-    
-    public static boolean hittaEpost (JTextField textToCheck, Kund kund) {
+
+    public static boolean hittaEpost(JTextField textToCheck, Kund kund) {
         boolean epostHittad = false;
         String epost = textToCheck.getText();
-        
-        for(Kund enKund : kunder) {
-            if(enKund.getEpost().equals(epost)) {
+
+        for (Kund enKund : kunder) {
+            if (enKund.getEpost().equals(epost)) {
                 epostHittad = true;
                 kund = enKund;
-                break;   
+                break;
             }
-            
         }
         return epostHittad;
     }
-    
-    
-    
-    
-
-
-//    public void läggTill() {
-//        //Ett sätt att automatisera idet kanske skulle vara bra
-//        Kund F1 = new Kund(1, "2000-01-01");
-//        F1.laggInKund();
-//
-//        kunder.add(F1);
-//         F2 = new (2, "1999-01-01");
-//        F2.laggInKund();
-//        kunder.add(F2);
-//    }
-//    public void taBort(int id) {
-//        for (Kund enKund : kunder) {
-//            if (enKund.getId() == id) {
-//
-//                kunder.remove(enKund);
-//                break;
-//            }
 
 }
