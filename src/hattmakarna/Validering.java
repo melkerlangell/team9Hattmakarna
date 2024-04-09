@@ -125,16 +125,16 @@ public class Validering {
     }
     
     public static boolean unikEpost(JTextField textToCheck) {
-        boolean epostHittad = false;
+        boolean unikEpost = false;
         String epost = textToCheck.getText();
 
         for (Kund enKund : kunder) {
             if (enKund.getEpost().equals(epost)) {
-                epostHittad = true;
+                unikEpost = true;
                 break;
             }
         }
-        return epostHittad;
+        return unikEpost;
     }
 
 }
