@@ -11,7 +11,15 @@ import javax.swing.JTextField;
 
 public class KundRegister {
 
-    static ArrayList<Kund> kunder = new ArrayList();
+    private static ArrayList<Kund> kunder = new ArrayList();
+    
+    public KundRegister(){
+        laddaInFil();
+    }
+    
+    public static ArrayList<Kund> getKunder(){
+        return kunder;
+    }
 
     public static void laddaInFil() {
         kunder = null;
@@ -39,7 +47,6 @@ public class KundRegister {
 
     public static void addNyKundIRegister(Kund enKund) {
         kunder.add(enKund);
-        sparaFil();
     }
 
     public static void taBortKundUrRegister(String epost) {
@@ -52,18 +59,17 @@ public class KundRegister {
         }
     }
 
-    public static boolean hittaEpost(JTextField textToCheck, Kund kund) {
-        boolean epostHittad = false;
+    public static Kund hittaKundFranEpost(JTextField textToCheck) {
+        Kund hittadKund = null;
         String epost = textToCheck.getText();
 
         for (Kund enKund : kunder) {
             if (enKund.getEpost().equals(epost)) {
-                epostHittad = true;
-                kund = enKund;
+                hittadKund = enKund;
                 break;
             }
         }
-        return epostHittad;
+        return hittadKund;
     }
 
 }

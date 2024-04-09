@@ -210,6 +210,7 @@ public Kund SkapaNyKund() {
         String adress = textToString(jTextAdress);
         String telefon = textToString(jTextTelefon);
         String epost = textToString(jTextEpost);
+        Kund nyKund = null;
 
         String felMeddelande = "";
 
@@ -231,11 +232,11 @@ public Kund SkapaNyKund() {
         if (Validering.isEpost(jTextEpost) == false) {
             felMeddelande += "Ange en giltig epostadress. ";
         }
-        if (Validering.unikEpost(jTextEpost) == false){
+        if (Validering.unikEpost(jTextEpost) == true){
             felMeddelande += "Eposten är upptagen. ";
         }
         
-        Kund nyKund = null;
+//        Kund nyKund = null;
         
         if (felMeddelande.equals("")) {
             nyKund = new Kund(namn, adress, telefon, epost);
