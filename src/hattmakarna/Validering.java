@@ -1,6 +1,7 @@
 
 package hattmakarna;
 
+import static hattmakarna.KundRegister.kunder;
 import java.text.ParseException;
 import javax.swing.JTextField;
 import java.text.SimpleDateFormat;
@@ -121,6 +122,19 @@ public class Validering {
         Matcher matcher = pattern.matcher(mobil);
         
         return matcher.matches();
+    }
+    
+    public static boolean unikEpost(JTextField textToCheck) {
+        boolean epostHittad = false;
+        String epost = textToCheck.getText();
+
+        for (Kund enKund : kunder) {
+            if (enKund.getEpost().equals(epost)) {
+                epostHittad = true;
+                break;
+            }
+        }
+        return epostHittad;
     }
 
 }

@@ -231,6 +231,9 @@ public Kund SkapaNyKund() {
         if (Validering.isEpost(jTextEpost) == false) {
             felMeddelande += "Ange en giltig epostadress. ";
         }
+        if (Validering.unikEpost(jTextEpost) == false){
+            felMeddelande += "Eposten är upptagen. ";
+        }
         
         Kund nyKund = null;
         
