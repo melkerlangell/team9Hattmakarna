@@ -14,8 +14,9 @@ public class ProduktHanterare {
     }
 
     // Method to add a hatt to the list
-    public void addHatt(HattMall hattObjekt) {
+    public static void laggTillHattMall(HattMall hattObjekt) {
         produktLista.add(hattObjekt);
+        FilHanterare.sparaProduktFil(produktLista);
     }
     
     public void TaBortHatt(HattMall enHatt){

@@ -32,9 +32,7 @@ public class SkapaForfragan extends javax.swing.JFrame {
         
         for(HattMall enHatt : fardigaHattar){
             hattCBX.addItem(enHatt.getBenamning());
-            accessoarCBX.addItem(enHatt.getAccessoar());
         }
-        hattCBX.addItem("Annat");
         
         ArrayList<String> storlekar = Storlek.getStorlekar();
         for(String enStorlek : storlekar){
@@ -49,6 +47,11 @@ public class SkapaForfragan extends javax.swing.JFrame {
         ArrayList<Material> material = Material.getAllaMaterial();
         for(Material ettMaterial : material){
             materialCBX.addItem(ettMaterial.getBenamning());
+        }
+        
+        ArrayList<Accessoar> accessoarer = Accessoar.getAllaAccessoar();
+        for(Accessoar enAccessoar : accessoarer){
+            accessoarCBX.addItem(enAccessoar.getBenamning());
         }
     }
     

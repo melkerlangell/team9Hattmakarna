@@ -15,30 +15,20 @@ public class SkapaHatt extends javax.swing.JFrame {
     /**
      * Creates new form SkapaHatt
      */
-    
-     private ArrayList<HattMall> produktLista;
             
     public SkapaHatt() {
         initComponents();
         FyllComboBoxes();
-        produktLista = ProduktHanterare.getProduktLista();
     }
     
     
     private void FyllComboBoxes(){
-        hattCBX.removeAllItems();
         storlekCBX.removeAllItems();
         fargCBX.removeAllItems();
         materialCBX.removeAllItems();
         accessoarCBX.removeAllItems();
         
         ArrayList<HattMall> fardigaHattar = ProduktHanterare.getProduktLista();
-        
-        for(HattMall enHatt : fardigaHattar){
-            hattCBX.addItem(enHatt.getBenamning());
-            accessoarCBX.addItem(enHatt.getAccessoar());
-        }
-        hattCBX.addItem("Annat");
         
         ArrayList<String> storlekar = Storlek.getStorlekar();
         for(String enStorlek : storlekar){
@@ -48,6 +38,11 @@ public class SkapaHatt extends javax.swing.JFrame {
         ArrayList<String> farger = Farg.getFarger();
         for(String farg : farger){
             fargCBX.addItem(farg);
+        }
+        
+        ArrayList<Accessoar> accessoarer = Accessoar.getAllaAccessoar();
+        for(Accessoar accessoar : accessoarer){
+            accessoarCBX.addItem(accessoar.getBenamning());
         }
         
         ArrayList<Material> material = Material.getAllaMaterial();
@@ -72,11 +67,12 @@ public class SkapaHatt extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         SkapaNyHatt = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        hattCBX = new javax.swing.JComboBox<>();
         storlekCBX = new javax.swing.JComboBox<>();
         fargCBX = new javax.swing.JComboBox<>();
         accessoarCBX = new javax.swing.JComboBox<>();
         materialCBX = new javax.swing.JComboBox<>();
+        benamningTXT = new javax.swing.JTextField();
+        tillbakaBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,8 +95,6 @@ public class SkapaHatt extends javax.swing.JFrame {
 
         jLabel7.setText("Material :");
 
-        hattCBX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         storlekCBX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         fargCBX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -109,6 +103,13 @@ public class SkapaHatt extends javax.swing.JFrame {
 
         materialCBX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        tillbakaBTN.setText("Gå tillbaka");
+        tillbakaBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tillbakaBTNActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,6 +117,9 @@ public class SkapaHatt extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tillbakaBTN)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(SkapaNyHatt)
@@ -133,11 +137,11 @@ public class SkapaHatt extends javax.swing.JFrame {
                                         .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(hattCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(storlekCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(fargCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(accessoarCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(materialCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(materialCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(benamningTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(222, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -145,10 +149,10 @@ public class SkapaHatt extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addGap(52, 52, 52)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(hattCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(benamningTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -161,12 +165,15 @@ public class SkapaHatt extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(accessoarCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SkapaNyHatt)
                     .addComponent(jLabel7)
                     .addComponent(materialCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35))
+                .addGap(3, 3, 3)
+                .addComponent(SkapaNyHatt)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tillbakaBTN)
+                .addContainerGap())
         );
 
         pack();
@@ -175,24 +182,29 @@ public class SkapaHatt extends javax.swing.JFrame {
 
     private void SkapaNyHattActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SkapaNyHattActionPerformed
         // TODO add your handling code here:
-        String benamning = hattCBX.getSelectedItem().toString();
+        if(benamningTXT.getText().equals("")){
+            return;
+        }
+        String benamning = benamningTXT.getText();
         String storlek = storlekCBX.getSelectedItem().toString();
         String farg = fargCBX.getSelectedItem().toString();
         String accessoar = accessoarCBX.getSelectedItem().toString();
         String material = materialCBX.getSelectedItem().toString();
-        // Get text from the text field
     
     // Create a new HattMall object
         HattMall enHatt = new HattMall(benamning, storlek, farg, accessoar, material);
     
-       
-        produktLista.add(enHatt);  
+        ProduktHanterare.laggTillHattMall(enHatt);
         JOptionPane.showMessageDialog(null, "En ny hatt har sparats!");
-          
-      
         
-        
+        this.dispose();
+        new HanteraProdukter().setVisible(true);
     }//GEN-LAST:event_SkapaNyHattActionPerformed
+
+    private void tillbakaBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tillbakaBTNActionPerformed
+        this.dispose();
+        new HanteraProdukter().setVisible(true);
+    }//GEN-LAST:event_tillbakaBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,8 +244,8 @@ public class SkapaHatt extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton SkapaNyHatt;
     private javax.swing.JComboBox<String> accessoarCBX;
+    private javax.swing.JTextField benamningTXT;
     private javax.swing.JComboBox<String> fargCBX;
-    private javax.swing.JComboBox<String> hattCBX;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -242,5 +254,6 @@ public class SkapaHatt extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JComboBox<String> materialCBX;
     private javax.swing.JComboBox<String> storlekCBX;
+    private javax.swing.JButton tillbakaBTN;
     // End of variables declaration//GEN-END:variables
 }

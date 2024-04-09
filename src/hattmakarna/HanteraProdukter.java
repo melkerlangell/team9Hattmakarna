@@ -65,6 +65,7 @@ public class HanteraProdukter extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setEnabled(false);
         setPreferredSize(new java.awt.Dimension(800, 500));
+        setSize(new java.awt.Dimension(0, 0));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel1.setText("Ändra hattinfo");
@@ -235,7 +236,7 @@ public class HanteraProdukter extends javax.swing.JFrame {
                 .addComponent(RaderaKnapp)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SkapaKnapp)
-                .addGap(244, 244, 244))
+                .addGap(109, 109, 109))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
