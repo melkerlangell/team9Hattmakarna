@@ -38,5 +38,19 @@ public class Förfrågning implements Serializable {
         return enKund.getId();
 
     }
+    
+    public void setId ( int id) {
+        this.id = id;
+    }
+    
+    public void setDate (String datum){
+        this.datum = datum;
+    }
+    
+    public void setKundId (Kund kundId) {
+        this.enKund = kundId;
+    }
+    
+    
 
 }
