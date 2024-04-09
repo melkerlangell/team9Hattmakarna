@@ -26,7 +26,6 @@ public class ProduktHanterare {
                 break;
             }
         }
-
     }
     
     public static void uppdateraHattmall(HattMall enHatt){
@@ -34,9 +33,7 @@ public class ProduktHanterare {
             if(produktLista.get(i).getID().equals(enHatt.getID())){
                 produktLista.set(i, enHatt);
                 FilHanterare.sparaProduktFil(produktLista);
-                for(HattMall enHattMall : produktLista){
-                    System.out.println(enHattMall.getBenamning());
-                }
+                break;
             }
         }
     }

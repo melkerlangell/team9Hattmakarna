@@ -279,24 +279,27 @@ public class HanteraProdukter extends javax.swing.JFrame {
     }//GEN-LAST:event_VisaKnappActionPerformed
 
     private void UppdateraKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UppdateraKnappActionPerformed
-        // TODO add your handling code here:
-    int selectedIndex = hattCBX.getSelectedIndex();
+        //fixa detta, tillfälligt stopp om namnet är tomt
+        if(benamningTxt.getText().equals("")){
+            return;
+        }
+        
+        int selectedIndex = hattCBX.getSelectedIndex();
 
-    // Ensure a valid selection
-    if (selectedIndex != -1) {
-        // Retrieve the selected HattMall object from the produktLista
-        HattMall selectedHatt = produktLista.get(selectedIndex);
-        
-        // Update the attributes of the selected HattMall object with the values from the JTextFields
-        selectedHatt.setBenamning(benamningTxt.getText());
-        selectedHatt.setStorlek(storlekCBX.getSelectedItem().toString());
-        selectedHatt.setFarg(fargCBX.getSelectedItem().toString());
-        selectedHatt.setAccessoar(accessoarCBX.getSelectedItem().toString());
-        selectedHatt.setMaterial(materialCBX.getSelectedItem().toString());
-        
-        ProduktHanterare.uppdateraHattmall(selectedHatt);   
-    }
-        
+        // Ensure a valid selection
+        if (selectedIndex != -1) {
+            // Retrieve the selected HattMall object from the produktLista
+            HattMall selectedHatt = produktLista.get(selectedIndex);
+
+            // Update the attributes of the selected HattMall object with the values from the JTextFields
+            selectedHatt.setBenamning(benamningTxt.getText());
+            selectedHatt.setStorlek(storlekCBX.getSelectedItem().toString());
+            selectedHatt.setFarg(fargCBX.getSelectedItem().toString());
+            selectedHatt.setAccessoar(accessoarCBX.getSelectedItem().toString());
+            selectedHatt.setMaterial(materialCBX.getSelectedItem().toString());
+
+            ProduktHanterare.uppdateraHattmall(selectedHatt);   
+        }     
     }//GEN-LAST:event_UppdateraKnappActionPerformed
 
     private void RaderaKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaderaKnappActionPerformed
