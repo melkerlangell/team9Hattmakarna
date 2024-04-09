@@ -14,13 +14,15 @@ public class HattMall {
     private String farg;
     private String accessoar;
     private String material;
+    private int id;
 
-    public HattMall(String benamning, String storlek,String farg, String accessoar, String material ){
+    public HattMall(String benamning, String storlek,String farg, String accessoar, String material, int id ){
         this.benamning = benamning;
         this.storlek = storlek;
         this.farg = farg;
         this.accessoar = accessoar;
         this.material = material;
+        this.id = id;
         
     }
     
@@ -64,6 +66,13 @@ public class HattMall {
         this.material = material;
     }
     
+     public int getID(){
+         return id;
+     }
+     public void setID(int id){
+         this.id = id;
+     }
+     
     public String getInformation() {
         return benamning + ", " + storlek + ", " + farg + ", " + accessoar + ", " + material;
     }

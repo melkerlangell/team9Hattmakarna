@@ -53,6 +53,7 @@ public class HanteraProdukter extends javax.swing.JFrame {
         goBack = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         RaderaKnapp = new javax.swing.JButton();
+        SkapaKnapp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setEnabled(false);
@@ -148,6 +149,13 @@ public class HanteraProdukter extends javax.swing.JFrame {
             }
         });
 
+        SkapaKnapp.setText("Skapa hatt");
+        SkapaKnapp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SkapaKnappActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -190,7 +198,8 @@ public class HanteraProdukter extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(37, 37, 37)))
-                    .addComponent(RaderaKnapp))
+                    .addComponent(RaderaKnapp)
+                    .addComponent(SkapaKnapp))
                 .addGap(62, 62, 62))
         );
         layout.setVerticalGroup(
@@ -228,7 +237,9 @@ public class HanteraProdukter extends javax.swing.JFrame {
                     .addComponent(UppdateraKnapp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(RaderaKnapp)
-                .addGap(279, 279, 279))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(SkapaKnapp)
+                .addGap(244, 244, 244))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -311,10 +322,15 @@ public class HanteraProdukter extends javax.swing.JFrame {
         
     }//GEN-LAST:event_RaderaKnappActionPerformed
 
+    private void SkapaKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SkapaKnappActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkapaKnappActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton RaderaKnapp;
+    private javax.swing.JButton SkapaKnapp;
     private javax.swing.JButton UppdateraKnapp;
     private javax.swing.JButton VisaKnapp;
     private javax.swing.JButton goBack;
