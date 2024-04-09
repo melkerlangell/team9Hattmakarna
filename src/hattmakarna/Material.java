@@ -40,8 +40,9 @@ public class Material {
     public static void laggTillMaterial(){
         new Material("Läder", 60.0);
         new Material("Bomull", 20.0);
-        new Material("Jeans", 40.0);
+        new Material("Denim", 40.0);
         new Material("Sammet", 100.0);
         new Material("Polyester", 15.00);
+        new Material("Siden", 200.00);
     }
 }

@@ -9,36 +9,8 @@ public class ProduktHanterare {
 
     // Constructor to initialize the ArrayList
     public ProduktHanterare() {
-        produktLista = new ArrayList<>();
-        
+        produktLista = new ArrayList<>();        
         produktLista = FilHanterare.laddaInProduktFil();
-        
-        System.out.println(produktLista.size());
-        
-        for(HattMall enHatt : produktLista){
-            System.out.println(enHatt.getBenamning());
-        }
-        
-        /*
-        HattMall hatt1 = new HattMall("Keps", "M", "Blå", "Ingen", "Läder");
-        HattMall hatt2 = new HattMall("Höghatt", "S","Grå","Fjäder","Bomull");
-        HattMall hatt3 = new HattMall("låghatt","L","Lila","Snöre","Sammet");
-        HattMall hatt4 = new HattMall("Slokhatt","XS","Rosa","Rosett","Polyester");
-        HattMall hatt5 = new HattMall("Cowboyhatt","XL","Brun","Metall","Läder");
-        addHatt(hatt1);
-        addHatt(hatt2);
-        addHatt(hatt3);
-        addHatt(hatt4);
-        addHatt(hatt5);*/
-        
-        
-        /*
-        HattMall updatedHatt = new HattMall("Keps", "L", "Röd", "Band", "Silke");
-
-        // Update the element at index 1 in the ArrayList
-        produktLista.set(1, updatedHatt);
-        System.out.println("Uppdaterad produktlista:"+updatedHatt.getInformation());*/
-        
     }
 
     // Method to add a hatt to the list
