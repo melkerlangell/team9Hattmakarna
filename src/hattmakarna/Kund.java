@@ -12,9 +12,9 @@ public class Kund implements Serializable {
 
     public Kund(String namn, String adress,String telefon,String epost) {
      this.namn = namn;
-     this.namn = adress;
-     this.namn = telefon;
-     this.namn = epost;
+     this.adress = adress;
+     this.telefon = telefon;
+     this.epost = epost;
      this.id = UUID.randomUUID().toString();
     }
     public String getNamn(){
