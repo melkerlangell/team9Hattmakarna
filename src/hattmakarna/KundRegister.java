@@ -42,7 +42,7 @@ public class KundRegister {
         sparaFil();
     }
 
-    public static void taBort(String epost) {
+    public static void taBortKundUrRegister(String epost) {
         for (Kund enKund : kunder) {
             if (enKund.getEpost().equalsIgnoreCase(epost)) {
 
