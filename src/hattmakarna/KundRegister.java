@@ -13,7 +13,7 @@ public class KundRegister {
 
     static ArrayList<Kund> kunder = new ArrayList();
 
-    public void laddaInFil() {
+    public static void laddaInFil() {
         kunder = null;
         try (FileInputStream fis = new FileInputStream("KundRegister.dat"); ObjectInputStream ois = new ObjectInputStream(fis)) {
 
