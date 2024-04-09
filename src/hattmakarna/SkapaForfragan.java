@@ -95,7 +95,7 @@ public class SkapaForfragan extends javax.swing.JFrame {
             material = materialCBX.getSelectedItem().toString();
         } 
         
-        Hatt nyHatt = new Hatt(benamning,storlek, farg, accessoar, material, 4, "");
+        Hatt nyHatt = new Hatt(benamning,storlek, farg, accessoar, material, "");
         return nyHatt;
     }
 
