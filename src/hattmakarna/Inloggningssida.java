@@ -77,6 +77,7 @@ public class Inloggningssida extends javax.swing.JFrame {
         jLabel1.setText("Välkommen till Otto & Judith");
 
         startKnapp.setBackground(new java.awt.Color(0, 102, 102));
+        startKnapp.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         startKnapp.setForeground(new java.awt.Color(255, 255, 255));
         startKnapp.setText("Börja här");
         startKnapp.addActionListener(new java.awt.event.ActionListener() {
