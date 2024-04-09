@@ -49,6 +49,10 @@ public class HattMall implements Serializable {
         return farg;
     }
     
+    public String getID(){
+        return id;
+    }
+    
      public void setFarg(String farg) {
         this.farg = farg;
     }

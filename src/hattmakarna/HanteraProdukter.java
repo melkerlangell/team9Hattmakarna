@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class HanteraProdukter extends javax.swing.JFrame {
 
     private ArrayList<HattMall> produktLista;
+    private HattMall hattAttAndra;
 
     /**
      * Creates new form HanteraProdukter
@@ -293,6 +294,7 @@ public class HanteraProdukter extends javax.swing.JFrame {
         selectedHatt.setAccessoar(accessoarCBX.getSelectedItem().toString());
         selectedHatt.setMaterial(materialCBX.getSelectedItem().toString());
         
+        ProduktHanterare.uppdateraHattmall(selectedHatt);   
     }
         
     }//GEN-LAST:event_UppdateraKnappActionPerformed
