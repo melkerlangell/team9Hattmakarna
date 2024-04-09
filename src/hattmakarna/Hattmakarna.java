@@ -23,6 +23,8 @@ public class Hattmakarna extends JFrame {
             ProduktHanterare PH = new ProduktHanterare();
             FörfrågningsRegister register = new FörfrågningsRegister();
             
+            //FilHanterare.sparaProduktFil(ProduktHanterare.getProduktLista());
+            
             //Bör flyttas till något sorts register
             new Storlek();
             new Farg();

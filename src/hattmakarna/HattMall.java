@@ -4,25 +4,28 @@
  */
 package hattmakarna;
 
+import java.io.Serializable;
+import java.util.UUID;
+
 /**
  *
  * @author noaha
  */
-public class HattMall {
+public class HattMall implements Serializable {
     private String benamning;
     private String storlek;
     private String farg;
     private String accessoar;
     private String material;
-    private int id;
+    private String id;
 
-    public HattMall(String benamning, String storlek,String farg, String accessoar, String material, int id ){
+    public HattMall(String benamning, String storlek,String farg, String accessoar, String material){
         this.benamning = benamning;
         this.storlek = storlek;
         this.farg = farg;
         this.accessoar = accessoar;
         this.material = material;
-        this.id = id;
+        this.id = this.id = UUID.randomUUID().toString();
         
     }
     
@@ -65,14 +68,7 @@ public class HattMall {
      public void setMaterial(String material) {
         this.material = material;
     }
-    
-     public int getID(){
-         return id;
-     }
-     public void setID(int id){
-         this.id = id;
-     }
-     
+   
     public String getInformation() {
         return benamning + ", " + storlek + ", " + farg + ", " + accessoar + ", " + material;
     }

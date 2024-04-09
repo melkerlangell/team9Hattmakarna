@@ -11,6 +11,15 @@ public class ProduktHanterare {
     public ProduktHanterare() {
         produktLista = new ArrayList<>();
         
+        produktLista = FilHanterare.laddaInProduktFil();
+        
+        System.out.println(produktLista.size());
+        
+        for(HattMall enHatt : produktLista){
+            System.out.println(enHatt.getBenamning());
+        }
+        
+        /*
         HattMall hatt1 = new HattMall("Keps", "M", "Blå", "Ingen", "Läder");
         HattMall hatt2 = new HattMall("Höghatt", "S","Grå","Fjäder","Bomull");
         HattMall hatt3 = new HattMall("låghatt","L","Lila","Snöre","Sammet");
@@ -20,7 +29,7 @@ public class ProduktHanterare {
         addHatt(hatt2);
         addHatt(hatt3);
         addHatt(hatt4);
-        addHatt(hatt5);
+        addHatt(hatt5);*/
         
         
         /*
