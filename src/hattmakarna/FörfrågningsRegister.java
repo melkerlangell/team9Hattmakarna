@@ -13,7 +13,7 @@ import java.io.ObjectInputStream;
 
 public class FörfrågningsRegister {
 
-    ArrayList<Förfrågning> förfrågningar = new ArrayList();
+    private static ArrayList<Förfrågning> förfrågningar = new ArrayList();
 
     public void sparaFil() {
         
@@ -29,7 +29,7 @@ public class FörfrågningsRegister {
         }
     }
     
-    public void laddaInFil(){
+    public static void laddaInFil(){
         förfrågningar = null;
         try (FileInputStream fis = new FileInputStream("ForfrogningsRegister.dat");
              ObjectInputStream ois = new ObjectInputStream(fis)) {

@@ -159,6 +159,7 @@ public class Inloggningssida extends javax.swing.JFrame {
             public void run() {
                 new Inloggningssida().setVisible(true);
                 KundRegister.laddaInFil();
+                FörfrågningsRegister.laddaInFil();
             }
         });
     }
