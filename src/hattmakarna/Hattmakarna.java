@@ -28,7 +28,8 @@ public class Hattmakarna extends JFrame {
             //Bör flyttas till något sorts register
             new Storlek();
             new Farg();
-            new Material();        
+            new Material();
+            new Accessoar();
     }
     //KoalaKevin
     //Koala

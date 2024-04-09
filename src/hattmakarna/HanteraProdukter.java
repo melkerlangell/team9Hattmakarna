@@ -23,6 +23,12 @@ public class HanteraProdukter extends javax.swing.JFrame {
         initComponents();
         setEnabled(true);
         produktLista = ProduktHanterare.getProduktLista();
+        laddaHattCbx();
+        laddaStorlekCbx();
+        laddaFargCbx();
+        laddaMaterialCbx();
+        laddaAccessoarCbx();
+        
     }
 
     /**
@@ -40,11 +46,6 @@ public class HanteraProdukter extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
         UppdateraKnapp = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         VisaKnapp = new javax.swing.JButton();
@@ -54,6 +55,11 @@ public class HanteraProdukter extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         RaderaKnapp = new javax.swing.JButton();
         SkapaKnapp = new javax.swing.JButton();
+        storlekCBX = new javax.swing.JComboBox<>();
+        fargCBX = new javax.swing.JComboBox<>();
+        accessoarCBX = new javax.swing.JComboBox<>();
+        materialCBX = new javax.swing.JComboBox<>();
+        benamningTxt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setEnabled(false);
@@ -71,12 +77,6 @@ public class HanteraProdukter extends javax.swing.JFrame {
         jLabel5.setText("Accessoar");
 
         jLabel6.setText("Material");
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         UppdateraKnapp.setBackground(new java.awt.Color(0, 102, 102));
         UppdateraKnapp.setForeground(new java.awt.Color(255, 255, 255));
@@ -98,7 +98,6 @@ public class HanteraProdukter extends javax.swing.JFrame {
             }
         });
 
-        hattCBX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "hatt 1", "hatt 2", "hatt 3", "hatt 4", "hatt 5" }));
         hattCBX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hattCBXActionPerformed(evt);
@@ -165,32 +164,28 @@ public class HanteraProdukter extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(25, 25, 25)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(21, 21, 21))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(hattCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(22, 22, 22)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(24, 24, 24)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(storlekCBX, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(hattCBX, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(fargCBX, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(accessoarCBX, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(materialCBX, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(benamningTxt))
+                            .addGap(22, 22, 22))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addComponent(VisaKnapp, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
@@ -211,26 +206,26 @@ public class HanteraProdukter extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(hattCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(benamningTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(storlekCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fargCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(accessoarCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(materialCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VisaKnapp)
@@ -255,10 +250,6 @@ public class HanteraProdukter extends javax.swing.JFrame {
         new Personalmeny().setVisible(true);
     }//GEN-LAST:event_goBackActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void hattCBXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hattCBXActionPerformed
        // Antag att produktLista är din ArrayList och hattCBX är din combobox
 // bara benämning, ej id!
@@ -278,11 +269,11 @@ public class HanteraProdukter extends javax.swing.JFrame {
         HattMall selectedHatt = produktLista.get(selectedIndex);
         
         // Set the values from the selected HattMall object to the JTextFields
-        jTextField1.setText(selectedHatt.getBenamning());
-        jTextField2.setText(selectedHatt.getStorlek());
-        jTextField3.setText(selectedHatt.getFarg());
-        jTextField4.setText(selectedHatt.getAccessoar());
-        jTextField5.setText(selectedHatt.getMaterial());
+        benamningTxt.setText(selectedHatt.getBenamning());
+        storlekCBX.setSelectedItem(selectedHatt.getStorlek());
+        fargCBX.setSelectedItem(selectedHatt.getFarg());
+        accessoarCBX.setSelectedItem(selectedHatt.getAccessoar());
+        materialCBX.setSelectedItem(selectedHatt.getMaterial());
         }
     }//GEN-LAST:event_VisaKnappActionPerformed
 
@@ -296,11 +287,11 @@ public class HanteraProdukter extends javax.swing.JFrame {
         HattMall selectedHatt = produktLista.get(selectedIndex);
         
         // Update the attributes of the selected HattMall object with the values from the JTextFields
-        selectedHatt.setBenamning(jTextField1.getText());
-        selectedHatt.setStorlek(jTextField2.getText());
-        selectedHatt.setFarg(jTextField3.getText());
-        selectedHatt.setAccessoar(jTextField4.getText());
-        selectedHatt.setMaterial(jTextField5.getText());
+        selectedHatt.setBenamning(benamningTxt.getText());
+        selectedHatt.setStorlek(storlekCBX.getSelectedItem().toString());
+        selectedHatt.setFarg(fargCBX.getSelectedItem().toString());
+        selectedHatt.setAccessoar(accessoarCBX.getSelectedItem().toString());
+        selectedHatt.setMaterial(materialCBX.getSelectedItem().toString());
         
     }
         
@@ -329,13 +320,46 @@ public class HanteraProdukter extends javax.swing.JFrame {
         
     }//GEN-LAST:event_SkapaKnappActionPerformed
 
+    private void laddaHattCbx() {
+        for(HattMall enHatt : ProduktHanterare.getProduktLista()) {
+            hattCBX.addItem(enHatt.getBenamning());
+        }
+    }
+    
+    
+    
+    private void laddaStorlekCbx() {
+        for(String enStorlek : Storlek.getStorlekar()) {
+            storlekCBX.addItem(enStorlek);
+        }
+    }
+    
+    private void laddaFargCbx() {
+        for(String enFarg : Farg.getFarger()) {
+            fargCBX.addItem(enFarg);
+        }
+    }
+    
+    private void laddaAccessoarCbx() {
+        for(Accessoar enAccessoar : Accessoar.getAllaAccessoar()) {
+            accessoarCBX.addItem(enAccessoar.getBenamning());
+        }
+    }
 
+    private void laddaMaterialCbx() {
+        for(Material ettMat : Material.getAllaMaterial()) {
+            materialCBX.addItem(ettMat.getBenamning());
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton RaderaKnapp;
     private javax.swing.JButton SkapaKnapp;
     private javax.swing.JButton UppdateraKnapp;
     private javax.swing.JButton VisaKnapp;
+    private javax.swing.JComboBox<String> accessoarCBX;
+    private javax.swing.JTextField benamningTxt;
+    private javax.swing.JComboBox<String> fargCBX;
     private javax.swing.JButton goBack;
     private javax.swing.JComboBox<String> hattCBX;
     private javax.swing.JLabel jLabel1;
@@ -347,11 +371,8 @@ public class HanteraProdukter extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JComboBox<String> materialCBX;
+    private javax.swing.JComboBox<String> storlekCBX;
     // End of variables declaration//GEN-END:variables
 
     private static class arrayListComboBox {

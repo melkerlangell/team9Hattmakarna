@@ -44,5 +44,7 @@ public class Material {
         new Material("Sammet", 100.0);
         new Material("Polyester", 15.00);
         new Material("Siden", 200.00);
+        new Material("Trä", 34.00);
+        new Material("Annat", 0.00);
     }
 }
