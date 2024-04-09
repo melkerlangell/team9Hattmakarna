@@ -4,7 +4,6 @@ Id: 1 Datum: 2000-01-01 Id: 1 Datum: 2000-01-01 Id: 1 Datum: 2000-01-01 KundID: 
 Id: 2 Datum: 1999-01-01 KundID: 1 
 Id: 1 Datum: 2000-01-01 KundID: d87411f1-7b49-48d9-bec4-b9205cbce224 
 Id: 2 Datum: 1999-01-01 KundID: d423cc28-b0ad-49a2-b8b6-08357c51e7cb 
-<<<<<<< Updated upstream
 <<<<<<< HEAD
 Id: 1 Datum: 2000-01-01 KundID: f9d5992b-37b4-441f-aeae-3796d1e83403 
 Id: 2 Datum: 1999-01-01 KundID: c71dc569-3624-414a-a02f-6278e82417db 
@@ -16,35 +15,3 @@ Id: 2 Datum: 1999-01-01 KundID: 89594db2-331f-4a24-8ebf-981d86f7aab0
 Id: 1 Datum: 2000-01-01 KundID: 9318995f-0cca-40ea-b86d-2afc5ccdfeaa 
 Id: 2 Datum: 1999-01-01 KundID: 628a551c-a0e9-4d10-b97b-eb6539dec5d0 
 >>>>>>> 327c7debdd4946ee12cfd9e549c81929144db0bc
-=======
-Id: 1 Datum: 2000-01-01 KundID: bcf28123-3f95-4186-aa9e-1dbd3e8d1c3e 
-Id: 2 Datum: 1999-01-01 KundID: f3eaa56e-4661-49a2-982c-c72c34c34c3e 
-Id: 1 Datum: 2000-01-01 KundID: a1cc01f8-0192-47cb-9520-a5386b1be8a2 
-Id: 2 Datum: 1999-01-01 KundID: 9aa746f0-0abd-4be0-b166-339cc16d0631 
-Id: 1 Datum: 2000-01-01 KundID: d3a30924-5dc5-4419-baea-b0bff4d1b458 
-Id: 2 Datum: 1999-01-01 KundID: 873d090f-b5ae-4f98-bf6c-f70dc5c354b9 
-Id: 1 Datum: 2000-01-01 KundID: fe356801-a051-4353-8e63-8dc18bffed19 
-Id: 2 Datum: 1999-01-01 KundID: 02a7f169-e1a0-422d-afed-1d1597027564 
-Id: 1 Datum: 2000-01-01 KundID: 79d34220-7116-47bc-b6ce-9869a399e130 
-Id: 2 Datum: 1999-01-01 KundID: 992a4e90-1f20-44d2-b27f-d75ba57a09a7 
-Id: 1 Datum: 2000-01-01 KundID: 8669b37f-3cb1-4adf-a546-76fa776aec4d 
-Id: 2 Datum: 1999-01-01 KundID: 2a190388-2907-4ec5-baae-5c593c16c7a3 
-Id: 1 Datum: 2000-01-01 KundID: 5ee88633-c952-41ad-a11f-9306b49b65d7 
-Id: 2 Datum: 1999-01-01 KundID: f81e0d41-9a4c-4c20-a00b-5bf5f6d27cbb 
-Id: 1 Datum: 2000-01-01 KundID: a57031d2-189f-47ed-8f54-6187ea36a878 
-Id: 2 Datum: 1999-01-01 KundID: 63438f38-1e56-43f4-a455-73fb1a0c0c78 
-Id: 1 Datum: 2000-01-01 KundID: fc51b89f-6222-43c2-9fc1-5f50ef89f870 
-Id: 2 Datum: 1999-01-01 KundID: 2b3031e3-a1c8-45ba-a3c7-4c71fb7d8944 
-Id: 1 Datum: 2000-01-01 KundID: 02ad8a1d-e1d3-4ba4-a708-c836013ff99b 
-Id: 2 Datum: 1999-01-01 KundID: 6a8529a2-b9f1-4116-a419-348bfd3bc56a 
-Id: 1 Datum: 2000-01-01 KundID: 916309a0-75e8-4468-b28d-b9dff64c77e9 
-Id: 2 Datum: 1999-01-01 KundID: 059944d8-af67-4182-a96f-7f4cf24bd111 
-Id: 1 Datum: 2000-01-01 KundID: aa8d4e0f-630e-44a4-9e7b-ef5a070997b4 
-Id: 2 Datum: 1999-01-01 KundID: 2b2c42c5-89d4-4cc0-8628-4c35bb745514 
-Id: 1 Datum: 2000-01-01 KundID: fd9a2fcf-50ac-47b8-90f8-b6d05503ef1c 
-Id: 2 Datum: 1999-01-01 KundID: eefa65e2-476c-4f77-aa36-309ec37def8e 
-Id: 1 Datum: 2000-01-01 KundID: 6dcd176e-7162-423c-abca-70dbf925c64b 
-Id: 2 Datum: 1999-01-01 KundID: 6fdccf46-3072-468c-a6ab-01aa35826e04 
-Id: 1 Datum: 2000-01-01 KundID: 419e393f-1f96-4202-b940-9610c91de146 
-Id: 2 Datum: 1999-01-01 KundID: 8b1ccb0c-5c81-454c-ad00-4a9235ae17d3 
->>>>>>> Stashed changes
