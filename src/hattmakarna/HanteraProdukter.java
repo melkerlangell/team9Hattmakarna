@@ -7,6 +7,7 @@ package hattmakarna;
 import static hattmakarna.ProduktHanterare.getProduktLista;
 import javax.swing.JComboBox;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -68,7 +69,7 @@ public class HanteraProdukter extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(0, 0));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        jLabel1.setText("Ändra hattinfo");
+        jLabel1.setText("Ändra hattens egenskaper");
 
         jLabel2.setText("Benämning");
 
@@ -167,7 +168,7 @@ public class HanteraProdukter extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,9 +193,6 @@ public class HanteraProdukter extends javax.swing.JFrame {
                             .addComponent(benamningTxt))
                         .addGap(84, 84, 84))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(99, 99, 99))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(VisaKnapp, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,14 +202,17 @@ public class HanteraProdukter extends javax.swing.JFrame {
                                 .addComponent(RaderaKnapp)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(SkapaKnapp)))
-                        .addGap(65, 65, 65))))
+                        .addGap(65, 65, 65))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(31, 31, 31))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
+                .addComponent(jLabel1)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(hattCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -306,7 +307,9 @@ public class HanteraProdukter extends javax.swing.JFrame {
             selectedHatt.setAccessoar(accessoarCBX.getSelectedItem().toString());
             selectedHatt.setMaterial(materialCBX.getSelectedItem().toString());
 
-            ProduktHanterare.uppdateraHattmall(selectedHatt);   
+            ProduktHanterare.uppdateraHattmall(selectedHatt);
+            
+            JOptionPane.showMessageDialog(null,"Hattens egenskaper har uppdaterats.");
         }     
     }//GEN-LAST:event_UppdateraKnappActionPerformed
 
