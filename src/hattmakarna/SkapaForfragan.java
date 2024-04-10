@@ -86,12 +86,12 @@ public class SkapaForfragan extends javax.swing.JFrame {
         String benamning = hattCBX.getSelectedItem().toString();
         String storlek = storlekCBX.getSelectedItem().toString();
         
-        String farg = "";
+        String farg = fargCBX.getSelectedItem().toString();
         
         String accessoar = accessoarCBX.getSelectedItem().toString();
         
         String material = "";
-        if(storlekCBX.getSelectedItem().toString().equals("SKRIV HÄR")){
+        if(materialCBX.getSelectedItem().toString().equals("SKRIV HÄR")){
             //Skriv kod här
         }
         else{
