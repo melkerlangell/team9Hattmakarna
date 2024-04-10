@@ -3,33 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< Updated upstream
-            <file>file:/C:/Users/noaha/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/HattMall.java</file>
-            <file>file:/C:/Users/noaha/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/hatt.png</file>
-            <file>file:/C:/Users/noaha/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Personalmeny.java</file>
-            <file>file:/C:/Users/noaha/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Inloggningssida.java</file>
-            <file>file:/C:/Users/noaha/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/otto%20och%20judith%20logo%20transparent.png</file>
-            <file>file:/C:/Users/noaha/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/kugghjul.png</file>
-            <file>file:/C:/Users/noaha/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/request.png</file>
-            <file>file:/C:/Users/noaha/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/pinpng.com-dark-souls-icon-png-6838435%20(1).png</file>
-            <file>file:/C:/Users/noaha/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Farg.java</file>
-            <file>file:/C:/Users/noaha/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/ProduktHanterare.java</file>
-            <file>file:/C:/Users/noaha/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/HanteraProdukter.java</file>
-            <file>file:/C:/Users/noaha/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Hatt.java</file>
-            <file>file:/C:/Users/noaha/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/otto%20och%20judith%20logo%20transparent%20ny.png</file>
-=======
-            <file>file:/C:/Users/rebec/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Storlek.java</file>
-            <file>file:/C:/Users/rebec/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/ProduktHanterare.java</file>
-            <file>file:/C:/Users/rebec/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Hattmakarna.java</file>
-            <file>file:/C:/Users/rebec/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/SkapaForfragan.java</file>
-            <file>file:/C:/Users/rebec/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Farg.java</file>
-            <file>file:/C:/Users/rebec/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/HanteraProdukter.java</file>
-            <file>file:/C:/Users/rebec/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Validering.java</file>
-            <file>file:/C:/Users/rebec/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Kund.java</file>
-            <file>file:/C:/Users/rebec/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Personalmeny.java</file>
-            <file>file:/C:/Users/rebec/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/KundFormular.java</file>
-            <file>file:/C:/Users/rebec/OneDrive/Dokument/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Material.java</file>
->>>>>>> Stashed changes
+            <file>file:/C:/Users/emil-/Documents/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Inloggningssida.java</file>
+            <file>file:/C:/Users/emil-/Documents/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Kund.java</file>
+            <file>file:/C:/Users/emil-/Documents/NetBeansProjects/team9Hattmakarna/src/hattmakarna/LaggTillKund.java</file>
+            <file>file:/C:/Users/emil-/Documents/NetBeansProjects/team9Hattmakarna/src/hattmakarna/KundRegister.java</file>
+            <file>file:/C:/Users/emil-/Documents/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Validering.java</file>
+            <file>file:/C:/Users/emil-/Documents/NetBeansProjects/team9Hattmakarna/src/hattmakarna/KundFormular.java</file>
+            <file>file:/C:/Users/emil-/Documents/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Hattmakarna.java</file>
+            <file>file:/C:/Users/emil-/Documents/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Förfrågning.java</file>
+            <file>file:/C:/Users/emil-/Documents/NetBeansProjects/team9Hattmakarna/src/hattmakarna/Material.java</file>
         </group>
     </open-files>
 </project-private>

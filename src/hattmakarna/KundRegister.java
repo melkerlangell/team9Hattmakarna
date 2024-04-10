@@ -26,7 +26,7 @@ public class KundRegister {
         try (FileInputStream fis = new FileInputStream("KundRegister.dat"); ObjectInputStream ois = new ObjectInputStream(fis)) {
 
             kunder = (ArrayList<Kund>) ois.readObject();
-            System.out.println("Objekt inlästa från filen.");
+            System.out.println("Kunder inlästa från fil.");
 
         } catch (IOException | ClassNotFoundException e) {
             System.out.println(e);
@@ -38,7 +38,7 @@ public class KundRegister {
         try (FileOutputStream fos = new FileOutputStream("KundRegister.dat"); ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 
             oos.writeObject(kunder);
-            System.out.println("Objekt sparade till filen.");
+            System.out.println("Kunder sparade till fil.");
 
         } catch (IOException e) {
             System.out.println(e);
@@ -47,6 +47,7 @@ public class KundRegister {
 
     public static void addNyKundIRegister(Kund enKund) {
         kunder.add(enKund);
+        sparaFil();
     }
 
     public static void taBortKundUrRegister(String epost) {
