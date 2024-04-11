@@ -40,18 +40,9 @@ public class FilHanterare {
             System.out.println("Produker inlästa från filen.");
         }catch (IOException | ClassNotFoundException e) {
             System.out.println(e);
+            System.out.println("HERE");
         }
         return enHattMallLista;
-    }
-    
-    //Eftersom vi kör serialized objects, så fort det blir en ändring i klassen går sparfilen out of style
-    //NOT GOOD. Men det är som det är! Här är en funktion för att resetta den till det som finns i vår excel
-    public static void resettaSparadeProdukter(){
-        ArrayList<HattMall> mallLista = new ArrayList<HattMall>();
-        mallLista.add(new HattMall("Höghatt", "S", "Svart", "Fjäder", "Siden"));
-        mallLista.add(new HattMall("Keps", "M", "Blå", "Ingen", "Denim"));
-        mallLista.add(new HattMall("Plommonstop", "L", "Lila", "Knapp", "Bomull"));
-        sparaProduktFil(mallLista);
     }
 }  
 

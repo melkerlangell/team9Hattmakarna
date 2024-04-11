@@ -158,8 +158,8 @@ public class Inloggningssida extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Inloggningssida().setVisible(true);
-                //KundRegister.laddaInFil();
-                //FörfrågningsRegister.laddaInFil();
+                KundRegister.laddaInFil();
+                FörfrågningsRegister.laddaInFil();
             }
         });
     }
