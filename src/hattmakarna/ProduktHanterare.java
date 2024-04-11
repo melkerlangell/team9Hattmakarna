@@ -14,9 +14,8 @@ public class ProduktHanterare {
     }
 
     // Method to add a hatt to the list
-    public static void laggTillHattMall(HattMall hattObjekt) {
+    public void addHatt(HattMall hattObjekt) {
         produktLista.add(hattObjekt);
-        FilHanterare.sparaProduktFil(produktLista);
     }
     
     public void TaBortHatt(HattMall enHatt){
@@ -27,6 +26,7 @@ public class ProduktHanterare {
                 break;
             }
         }
+
     }
     
     public static void uppdateraHattmall(HattMall enHatt){
@@ -34,7 +34,9 @@ public class ProduktHanterare {
             if(produktLista.get(i).getID().equals(enHatt.getID())){
                 produktLista.set(i, enHatt);
                 FilHanterare.sparaProduktFil(produktLista);
-                break;
+                for(HattMall enHattMall : produktLista){
+                    System.out.println(enHattMall.getBenamning());
+                }
             }
         }
     }

@@ -11,22 +11,14 @@ import javax.swing.JTextField;
 
 public class KundRegister {
 
-    private static ArrayList<Kund> kunder = new ArrayList();
-    
-    public KundRegister(){
-        laddaInFil();
-    }
-    
-    public static ArrayList<Kund> getKunder(){
-        return kunder;
-    }
+    static ArrayList<Kund> kunder = new ArrayList();
 
     public static void laddaInFil() {
         kunder = null;
         try (FileInputStream fis = new FileInputStream("KundRegister.dat"); ObjectInputStream ois = new ObjectInputStream(fis)) {
 
             kunder = (ArrayList<Kund>) ois.readObject();
-            System.out.println("Kunder inlästa från fil.");
+            System.out.println("Objekt inlästa från filen.");
 
         } catch (IOException | ClassNotFoundException e) {
             System.out.println(e);
@@ -38,7 +30,7 @@ public class KundRegister {
         try (FileOutputStream fos = new FileOutputStream("KundRegister.dat"); ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 
             oos.writeObject(kunder);
-            System.out.println("Kunder sparade till fil.");
+            System.out.println("Objekt sparade till filen.");
 
         } catch (IOException e) {
             System.out.println(e);
@@ -60,17 +52,18 @@ public class KundRegister {
         }
     }
 
-    public static Kund hittaKundFranEpost(JTextField textToCheck) {
-        Kund hittadKund = null;
+    public static boolean hittaEpost(JTextField textToCheck, Kund kund) {
+        boolean epostHittad = false;
         String epost = textToCheck.getText();
 
         for (Kund enKund : kunder) {
             if (enKund.getEpost().equals(epost)) {
-                hittadKund = enKund;
+                epostHittad = true;
+                kund = enKund;
                 break;
             }
         }
-        return hittadKund;
+        return epostHittad;
     }
 
 }

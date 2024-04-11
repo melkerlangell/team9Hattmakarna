@@ -14,18 +14,21 @@ public class Förfrågning implements Serializable {
 
     private int id;
     private String datum;
-    private Hatt hatt;
-    private Kund kund;
+    //private Hatt enHatt
+    private Kund enKund;
 
-    public Förfrågning(int id, String datum, Hatt hatt, Kund kund) {
+    public Förfrågning(int id, String datum) {
         this.id = id;
         this.datum = datum;
-        this.hatt = hatt;
-        this.kund = kund;    
+
     }
-    
+
+    public void laggInKund(){
+        enKund = new Kund("Lasse", "Storgatan 1", "073-1112233", "lasse@mail.com");
+    }
+
     public Kund getKund () {
-        return kund; 
+        return kund;
     }
     public int getId() {
         return id;
@@ -36,24 +39,22 @@ public class Förfrågning implements Serializable {
     }
 
     public String getKundId() {
-        return kund.getId();
+        return enKund.getId();
+
     }
-    
+
     public void setId ( int id) {
         this.id = id;
     }
-    
+
     public void setDate (String datum){
         this.datum = datum;
     }
-    
-    //Borde inte göras här
-    //Och kund-id och kund är inte samma sak!
+
     public void setKundId (Kund kundId) {
-        this.kund = kundId;
+        this.enKund = kundId;
     }
-    
-    public String getInformation(){
-        return id + ": " + hatt.getFarg() + " " + hatt.getBenamning() + " för " + kund.getNamn() + ", datum lagt: " + datum;
-    }
+
+
+
 }
