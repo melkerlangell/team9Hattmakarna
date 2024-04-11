@@ -91,7 +91,7 @@ public class FörfrågningsRegister {
         }
     }
     
-    private static void skrivUtRegister(){
+    public static void skrivUtRegister(){
         for(Förfrågning enForfragan : förfrågningar){
             System.out.println(enForfragan.getInformation());
         }
