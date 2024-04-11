@@ -40,6 +40,7 @@ public class FilHanterare {
             System.out.println("Produker inlästa från filen.");
         }catch (IOException | ClassNotFoundException e) {
             System.out.println(e);
+            System.out.println("HERE");
         }
         return enHattMallLista;
     }
