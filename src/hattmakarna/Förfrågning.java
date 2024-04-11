@@ -28,7 +28,7 @@ public class Förfrågning implements Serializable {
     }
 
     public Kund getKund () {
-        return kund;
+        return enKund;
     }
     public int getId() {
         return id;
