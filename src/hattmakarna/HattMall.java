@@ -25,8 +25,7 @@ public class HattMall implements Serializable {
         this.farg = farg;
         this.accessoar = accessoar;
         this.material = material;
-        this.id = this.id = UUID.randomUUID().toString();
-        
+        this.id = this.id = UUID.randomUUID().toString();    
     }
     
     public String getBenamning(){
@@ -41,7 +40,7 @@ public class HattMall implements Serializable {
         return storlek;
     }
     
-     public void setStorlek(String storlek) {
+    public void setStorlek(String storlek) {
         this.storlek = storlek;
     }
     

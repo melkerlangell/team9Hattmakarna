@@ -33,9 +33,7 @@ public class SkapaForfragan extends javax.swing.JFrame {
         
         for(HattMall enHatt : fardigaHattar){
             hattCBX.addItem(enHatt.getBenamning());
-            accessoarCBX.addItem(enHatt.getAccessoar());
         }
-        hattCBX.addItem("Annat");
         
         ArrayList<String> storlekar = Storlek.getStorlekar();
         for(String enStorlek : storlekar){
@@ -50,6 +48,11 @@ public class SkapaForfragan extends javax.swing.JFrame {
         ArrayList<Material> material = Material.getAllaMaterial();
         for(Material ettMaterial : material){
             materialCBX.addItem(ettMaterial.getBenamning());
+        }
+        
+        ArrayList<Accessoar> accessoarer = Accessoar.getAllaAccessoar();
+        for(Accessoar enAccessoar : accessoarer){
+            accessoarCBX.addItem(enAccessoar.getBenamning());
         }
     }
     
@@ -84,12 +87,12 @@ public class SkapaForfragan extends javax.swing.JFrame {
         String benamning = hattCBX.getSelectedItem().toString();
         String storlek = storlekCBX.getSelectedItem().toString();
         
-        String farg = "";
+        String farg = fargCBX.getSelectedItem().toString();
         
         String accessoar = accessoarCBX.getSelectedItem().toString();
         
         String material = "";
-        if(storlekCBX.getSelectedItem().toString().equals("SKRIV HÄR")){
+        if(materialCBX.getSelectedItem().toString().equals("SKRIV HÄR")){
             //Skriv kod här
         }
         else{
@@ -241,6 +244,7 @@ public class SkapaForfragan extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(87, 87, 87))
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                         .addGap(48, 48, 48)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(hattCBX, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -260,10 +264,26 @@ public class SkapaForfragan extends javax.swing.JFrame {
                                 .addGap(22, 22, 22)
                                 .addComponent(fargLBL)))
                         .addGap(19, 19, 19))
+=======
+                        .addGap(101, 101, 101)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(materialCBX, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(materialLBL)))
+                        .addGap(47, 47, 47)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(accessoarCBX, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(accessoarLBL)))
+                        .addContainerGap())
+>>>>>>> e26e02bccd0ccb54853148d780a5f641dbeaf2a1
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+<<<<<<< HEAD
                                 .addComponent(kommentarLBL)
                                 .addGap(137, 137, 137))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -300,6 +320,43 @@ public class SkapaForfragan extends javax.swing.JFrame {
                                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))))))
+=======
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(83, 83, 83)
+                                        .addComponent(kommentarLBL)
+                                        .addGap(88, 88, 88))
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(49, 49, 49))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(87, 87, 87))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(nextBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(48, 48, 48)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(hattCBX, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addComponent(hattLBL)))
+                                .addGap(40, 40, 40)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(storlekLBL))
+                                    .addComponent(storlekCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(fargCBX, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(22, 22, 22)
+                                        .addComponent(fargLBL)))))
+                        .addGap(19, 19, 19))))
+>>>>>>> e26e02bccd0ccb54853148d780a5f641dbeaf2a1
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,6 +391,7 @@ public class SkapaForfragan extends javax.swing.JFrame {
                 .addComponent(kommentarLBL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -347,6 +405,11 @@ public class SkapaForfragan extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(54, 54, 54))
+=======
+                .addGap(96, 96, 96)
+                .addComponent(nextBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
+>>>>>>> e26e02bccd0ccb54853148d780a5f641dbeaf2a1
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 

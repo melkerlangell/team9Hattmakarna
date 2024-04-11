@@ -6,6 +6,8 @@ package hattmakarna;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import com.toedter.calendar.JDateChooser;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -22,7 +24,6 @@ public class KundFormular extends javax.swing.JFrame {
      */
     public KundFormular(Hatt enHatt) {
         hattAttBestalla = enHatt;
-        
         initComponents();
     }
 
@@ -40,7 +41,6 @@ public class KundFormular extends javax.swing.JFrame {
         jTextTelefon = new javax.swing.JTextField();
         jTextAdress = new javax.swing.JTextField();
         jTextEpost = new javax.swing.JTextField();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -51,11 +51,12 @@ public class KundFormular extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         goBack = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        dateChooser = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        jLabel1.setText("Ange din personliga information");
+        jLabel1.setText("Ange personliga uppgifter");
 
         jLabel2.setText("Namn");
 
@@ -69,7 +70,7 @@ public class KundFormular extends javax.swing.JFrame {
 
         btnLaggTillKund.setBackground(new java.awt.Color(0, 102, 102));
         btnLaggTillKund.setForeground(new java.awt.Color(255, 255, 255));
-        btnLaggTillKund.setText("Lägg till kund");
+        btnLaggTillKund.setText("Lägg till förfrågan");
         btnLaggTillKund.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLaggTillKundActionPerformed(evt);
@@ -120,6 +121,8 @@ public class KundFormular extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        dateChooser.setEnabled(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -128,38 +131,41 @@ public class KundFormular extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addGap(173, 173, 173)
+                        .addComponent(jLabel5)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(19, 19, 19))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1)
-                                .addGap(48, 48, 48))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnLaggTillKund, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(167, 167, 167))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(165, 165, 165))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel2)
-                                .addGap(168, 168, 168))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addComponent(jLabel5)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGap(168, 168, 168))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnLaggTillKund, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel1)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addComponent(jLabel4)
+                                            .addGap(119, 119, 119))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(jTextEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jTextTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jTextAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jTextNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel6)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGap(6, 6, 6)
+                                                    .addComponent(dateChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(jButton1))))
+                                .addGap(48, 48, 48))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -186,9 +192,9 @@ public class KundFormular extends javax.swing.JFrame {
                 .addComponent(jTextAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(dateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(btnLaggTillKund, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -203,7 +209,6 @@ public class KundFormular extends javax.swing.JFrame {
     private String textToString (JTextField textToCheck)
     {
         String info = textToCheck.getText();
-        
         return info;
     }
     
@@ -239,7 +244,7 @@ public class KundFormular extends javax.swing.JFrame {
         
         if (felMeddelande.equals("")) {
             nyKund = new Kund(namn, adress, telefon, epost);
-            JOptionPane.showMessageDialog(null, namn+" har registrerats i kundregistret.");
+            //JOptionPane.showMessageDialog(null, namn+" har registrerats i kundregistret.");
         } else {
             JOptionPane.showMessageDialog(null, "Dessa fel inträffade: " + felMeddelande);
         }
@@ -255,21 +260,31 @@ public class KundFormular extends javax.swing.JFrame {
 
     private void btnLaggTillKundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillKundActionPerformed
         DateFormat datumFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String datum = datumFormat.format(jDateChooser1.getDate());
-        //Kommer bli problem, vad händer om det blir fel i kunden? Returns null
+        //String datum = datumFormat.format(dateChooser.getDate());
+        
+        //Det är något fel med datechoosern, vet inte hur man fixar än
+        //Detta skickar iväg dagens datum, en quick fix
+        String datum = datumFormat.format(new Date());  
+        
         Kund nyKund = SkapaNyKund();        
-        //FörfrågningsRegister.LaggTillForfragan(datum, nyKund, hattAttBestalla);
+
+        
+        if(nyKund != null){
+            FörfrågningsRegister.laggTillForfragan(datum, nyKund, hattAttBestalla);
+            JOptionPane.showMessageDialog(null, "Du har lagt en ny förfrågan.");
+        }
     }//GEN-LAST:event_btnLaggTillKundActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Kund enKund = new Kund("", "", "", "");
-        if(Validering.isEpost(jTextEpost)){
-        if(KundRegister.hittaEpost(jTextEpost, enKund)){
-            jTextNamn.setText(enKund.getNamn());
-            jTextTelefon.setText(enKund.getTelefon());
-            jTextAdress.setText(enKund.getAdress());
-            }}
-        else{
+        Kund enKund = null;
+        if (Validering.isEpost(jTextEpost)) {
+            enKund = KundRegister.hittaKundFranEpost(jTextEpost);
+            if(enKund != null){
+                jTextNamn.setText(enKund.getNamn());
+                jTextTelefon.setText(enKund.getTelefon());
+                jTextAdress.setText(enKund.getAdress());
+            }
+        } else {
             JOptionPane.showMessageDialog(null, "Kunden finns inte i systemet, var god skriv in uppgifter manuellt.");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -278,9 +293,9 @@ public class KundFormular extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLaggTillKund;
+    private com.toedter.calendar.JDateChooser dateChooser;
     private javax.swing.JButton goBack;
     private javax.swing.JButton jButton1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

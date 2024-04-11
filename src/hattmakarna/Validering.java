@@ -1,7 +1,7 @@
 
 package hattmakarna;
 
-import static hattmakarna.KundRegister.kunder;
+
 import java.text.ParseException;
 import javax.swing.JTextField;
 import java.text.SimpleDateFormat;
@@ -128,7 +128,8 @@ public class Validering {
         boolean unikEpost = false;
         String epost = textToCheck.getText();
 
-        for (Kund enKund : kunder) {
+       
+        for (Kund enKund : KundRegister.getKunder()) {
             if (enKund.getEpost().equals(epost)) {
                 unikEpost = true;
                 break;
