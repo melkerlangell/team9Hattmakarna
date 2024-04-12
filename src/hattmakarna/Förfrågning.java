@@ -20,11 +20,15 @@ public class Förfrågning implements Serializable {
     public Förfrågning(int id, String datum) {
         this.id = id;
         this.datum = datum;
-        
+
     }
 
     public void laggInKund(){
         enKund = new Kund("Lasse", "Storgatan 1", "073-1112233", "lasse@mail.com");
+    }
+
+    public Kund getKund () {
+        return enKund;
     }
     public int getId() {
         return id;
@@ -38,19 +42,19 @@ public class Förfrågning implements Serializable {
         return enKund.getId();
 
     }
-    
+
     public void setId ( int id) {
         this.id = id;
     }
-    
+
     public void setDate (String datum){
         this.datum = datum;
     }
-    
+
     public void setKundId (Kund kundId) {
         this.enKund = kundId;
     }
-    
-    
+
+
 
 }
