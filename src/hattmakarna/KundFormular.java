@@ -68,7 +68,7 @@ public class KundFormular extends javax.swing.JFrame {
 
         btnLaggTillKund.setBackground(new java.awt.Color(0, 102, 102));
         btnLaggTillKund.setForeground(new java.awt.Color(255, 255, 255));
-        btnLaggTillKund.setText("Lägg till kund");
+        btnLaggTillKund.setText("Lägg förfrågan");
         btnLaggTillKund.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLaggTillKundActionPerformed(evt);
@@ -235,7 +235,7 @@ public class KundFormular extends javax.swing.JFrame {
         
         if (felMeddelande.equals("")) {
             nyKund = new Kund(namn, adress, telefon, epost);
-            JOptionPane.showMessageDialog(null, namn+" har registrerats i kundregistret.");
+            JOptionPane.showMessageDialog(null,"Ny förfrågan är har lagts.");
         } else {
             JOptionPane.showMessageDialog(null, "Dessa fel inträffade: " + felMeddelande);
         }
