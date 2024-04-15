@@ -18,7 +18,6 @@ public class SkapaForfragan extends javax.swing.JFrame {
     
     private boolean isWindowLoaded = false;
     private PrisBeraknare prisBeraknare;
-    private double antalMaterialMeter;
     
     /**
      * Creates new form SkapaForfragan
@@ -148,9 +147,10 @@ public class SkapaForfragan extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         antalTimmarTXTFLD = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        antalMeterTXT = new javax.swing.JTextField();
+        expressCheck = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 500));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel1.setText("Skapa förfrågan");
@@ -260,6 +260,8 @@ public class SkapaForfragan extends javax.swing.JFrame {
 
         jLabel4.setText("Ange beräknad tid/h:");
 
+        expressCheck.setText("Är express");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -271,11 +273,13 @@ public class SkapaForfragan extends javax.swing.JFrame {
                         .addGap(49, 49, 49)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(hattCBX, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(15, 15, 15)
-                                        .addComponent(hattLBL)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(materialLBL)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(hattCBX, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(15, 15, 15)
+                                            .addComponent(hattLBL))))
                                 .addGap(40, 40, 40)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -290,23 +294,25 @@ public class SkapaForfragan extends javax.swing.JFrame {
                                         .addComponent(fargLBL)))
                                 .addGap(32, 32, 32))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(materialCBX, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(15, 15, 15)
-                                                .addComponent(materialLBL)))
-                                        .addGap(47, 47, 47)
+                                        .addGap(28, 28, 28)
+                                        .addComponent(materialCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(20, 20, 20)
+                                        .addComponent(antalMeterTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(accessoarCBX, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(6, 6, 6)
                                                 .addComponent(accessoarLBL))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(17, 17, 17)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(79, 79, 79)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(jLabel1)
+                                                .addGap(17, 17, 17))
+                                            .addComponent(expressCheck, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -357,15 +363,14 @@ public class SkapaForfragan extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(fargCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(materialLBL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(materialCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(accessoarLBL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(accessoarCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(accessoarLBL)
+                    .addComponent(materialLBL))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(accessoarCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(materialCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(antalMeterTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(kommentarLBL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -374,8 +379,13 @@ public class SkapaForfragan extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(antalTimmarTXTFLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGap(36, 36, 36)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(expressCheck)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nextBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -417,7 +427,7 @@ public class SkapaForfragan extends javax.swing.JFrame {
         }
         
         String valtItem = (String) materialCBX.getSelectedItem();
-
+        /*
         if (valtItem != null) { // Extra kontroll om inget är valt
             String input = JOptionPane.showInputDialog(this, "Ange antal meter för: " + valtItem);
             if(Validering.isDecimalTal(input)){                    
@@ -426,7 +436,7 @@ public class SkapaForfragan extends javax.swing.JFrame {
             else{
                 antalMaterialMeter = 0;
             }
-        }
+        }*/
     }//GEN-LAST:event_materialCBXActionPerformed
 
     private void accessoarCBXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accessoarCBXActionPerformed
@@ -447,16 +457,32 @@ public class SkapaForfragan extends javax.swing.JFrame {
         Hatt hattAttBerakna = SkapaNyHatt();
         
         if(Validering.isHeltal(antalTimmarTXTFLD) == false || antalTimmarTXTFLD.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Vänligen fyll i antal timmar för att beräkna pris.");
+            return;
+        }
+                   
+        int antalTimmar = Integer.parseInt(antalTimmarTXTFLD.getText());
+        
+        if(antalTimmar <= 0){
+            JOptionPane.showMessageDialog(null, "Timmar måste vara över 0 för att kunna beräknas.");
             return;
         }
         
-        if(antalMaterialMeter <= 0){
+        if(Validering.isDecimalTal(antalMeterTXT) == false || antalMeterTXT.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Vänligen fyll i ett antal meter för att beräkna pris.");
             return;
-        }   
+        }
         
-        int antalTimmar = Integer.parseInt(antalTimmarTXTFLD.getText());
+        double antalMeter = Double.parseDouble(antalMeterTXT.getText());
         
-        double pris = prisBeraknare.raknaUtPris(hattAttBerakna.getMaterial(), antalMaterialMeter, hattAttBerakna.getAccessoar(), antalTimmar, false);
+        if(antalMeter <= 0){
+            JOptionPane.showMessageDialog(null, "Antal meter måste vara över 0 för att kunna beräknas.");
+            return;
+        }
+        
+        boolean arExpress = expressCheck.isSelected();
+        
+        double pris = prisBeraknare.raknaUtPris(hattAttBerakna.getMaterial(), antalMeter, hattAttBerakna.getAccessoar(), antalTimmar, arExpress);
         totalKostnadTXT.setText(Double.toString(pris));
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -465,7 +491,9 @@ public class SkapaForfragan extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> accessoarCBX;
     private javax.swing.JLabel accessoarLBL;
+    private javax.swing.JTextField antalMeterTXT;
     private javax.swing.JTextField antalTimmarTXTFLD;
+    private javax.swing.JCheckBox expressCheck;
     private javax.swing.JComboBox<String> fargCBX;
     private javax.swing.JLabel fargLBL;
     private javax.swing.JButton goBack;
