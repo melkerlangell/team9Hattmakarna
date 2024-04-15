@@ -45,7 +45,7 @@ public class FörfrågningsRegister {
             System.out.println(e);
         }
     }
-    public void test(){
+    public static void test(){
         System.out.println("hej!");
         for (Förfrågning enFörfrågning: förfrågningar){
             System.out.println(enFörfrågning.getDate());

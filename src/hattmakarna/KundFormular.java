@@ -134,16 +134,6 @@ public class KundFormular extends javax.swing.JFrame {
                                 .addComponent(jLabel1)
                                 .addGap(19, 19, 19))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1)
-                                .addGap(48, 48, 48))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(btnLaggTillKund, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -154,7 +144,17 @@ public class KundFormular extends javax.swing.JFrame {
                                 .addGap(165, 165, 165))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel2)
-                                .addGap(168, 168, 168))))
+                                .addGap(168, 168, 168))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jTextEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton1)
+                                .addGap(48, 48, 48))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(173, 173, 173)
                         .addComponent(jLabel5)
@@ -257,7 +257,7 @@ public class KundFormular extends javax.swing.JFrame {
         
         LocalDate dagensDatum = LocalDate.now();
         String datum = dagensDatum.toString();
-        //jTextDatum.setText(datum); - kan vi använda sen, men vi behöver en label
+        //jLabelDatum.setText(datum); - denna kan användas för att visa datumet i förmuläret om vi känner för det 
         Kund nyKund = SkapaNyKund();        
         //FörfrågningsRegister.LaggTillForfragan(datum, nyKund, hattAttBestalla);
     }//GEN-LAST:event_btnLaggTillKundActionPerformed
