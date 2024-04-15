@@ -8,6 +8,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import java.time.LocalDate;
 
 /**
  *
@@ -250,9 +251,13 @@ public class KundFormular extends javax.swing.JFrame {
     }//GEN-LAST:event_goBackActionPerformed
 
     private void btnLaggTillKundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillKundActionPerformed
-        DateFormat datumFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String datum = datumFormat.format(jDateChooser1.getDate());
+//        DateFormat datumFormat = new SimpleDateFormat("yyyy-MM-dd");
+//        String datum = datumFormat.format(jDateChooser1.getDate());
         //Kommer bli problem, vad händer om det blir fel i kunden? Returns null
+        
+        LocalDate dagensDatum = LocalDate.now();
+        String datum = dagensDatum.toString();
+        //jTextDatum.setText(datum); - kan vi använda sen, men vi behöver en label
         Kund nyKund = SkapaNyKund();        
         //FörfrågningsRegister.LaggTillForfragan(datum, nyKund, hattAttBestalla);
     }//GEN-LAST:event_btnLaggTillKundActionPerformed
