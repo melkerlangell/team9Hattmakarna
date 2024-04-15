@@ -66,6 +66,25 @@ public class Validering {
         return decimalTal;
     }
     
+        public static boolean isDecimalTal(String stringToCheck) {
+        
+        boolean decimalTal = false;
+        
+        try{
+            String talet = stringToCheck;
+            double decimalTalet = Double.parseDouble(talet);
+            if(decimalTalet > 0) {
+                decimalTal = true;
+            }
+        }
+        catch(NumberFormatException e) {
+            decimalTal = false;
+            }
+        
+        
+        return decimalTal;
+    }
+    
     public static boolean maxTvaDecimal(JTextField textToCheck) {
         boolean isMaxTva = false;
         try {
