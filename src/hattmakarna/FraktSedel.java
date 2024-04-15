@@ -32,6 +32,45 @@ public class FraktSedel {
         fraktsedel += "Kundens adress: " + kundAdress + "\n";
         fraktsedel += "Fraktkostnad: " + fraktKostnad + "\n";
         return fraktsedel;
+    } 
+       public String getFraktId() {
+        return fraktId;
     }
+
+    public void setFraktId(String fraktId) {
+        this.fraktId = fraktId;
+    }
+
+    public String getAvsändare() {
+        return avsändare;
+    }
+
+    public void setAvsändare(String avsändare) {
+        this.avsändare = avsändare;
+    }
+
+    public String getKundNamn() {
+        return kundNamn;
+    }
+
+    public void setKundNamn(String kundNamn) {
+        this.kundNamn = kundNamn;
+    }
+
+    public String getKundAdress() {
+        return kundAdress;
+    }
+
+    public void setKundAdress(String kundAdress) {
+        this.kundAdress = kundAdress;
+    }
+
+    public double getFraktKostnad() {
+        return fraktKostnad;
+    }
+
+    public void setFraktKostnad(double fraktKostnad) {
+        this.fraktKostnad = fraktKostnad;
       }
+}
     
