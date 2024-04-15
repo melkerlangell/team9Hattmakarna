@@ -1,0 +1,57 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package hattmakarna;
+
+
+import javax.mail.*;
+import javax.mail.internet.*;
+import java.util.*;
+
+/**
+ *
+ * @author adams
+ */
+public class EpostHanterare {
+
+    public static void skickaEpost(String till, String ämne, String meddelande) {
+        // Konfigurera e-postinställningar
+        String värd = "smtp.gmail.com";
+        String användarnamn = "ottohattmakaresson@gmail.com";
+        String lösenord = "hatten123";
+
+        // Skapa egenskaper
+        Properties egenskaper = new Properties();
+        egenskaper.put("mail.smtp.auth", "true");
+        egenskaper.put("mail.smtp.starttls.enable", "true");
+        egenskaper.put("mail.smtp.host", värd);
+        egenskaper.put("mail.smtp.port", "587");
+
+        // Skapa ett autentiseringsobjekt
+        Authenticator autentisering = new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(användarnamn, lösenord);
+            }
+        };
+
+        // Skapa en session
+        Session session = Session.getInstance(egenskaper, autentisering);
+
+        try {
+            // Skapa ett nytt meddelande
+            Message meddeland1 = new MimeMessage(session);
+            meddeland1.setFrom(new InternetAddress(användarnamn));
+            meddeland1.setRecipients(Message.RecipientType.TO, InternetAddress.parse(till));
+            meddeland1.setSubject(ämne);
+            meddeland1.setText(meddelande);
+
+            // Skicka e-postmeddelandet
+            Transport.send(meddeland1);
+            System.out.println("E-post skickad framgångsrikt.");
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+}
