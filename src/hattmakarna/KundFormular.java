@@ -204,6 +204,18 @@ public class KundFormular extends javax.swing.JFrame {
         return info;
     }
     
+    private String hattInfo(){
+        String benamning = hattAttBestalla.getBenamning();
+        String materail = hattAttBestalla.getMaterial();
+        String storlek = hattAttBestalla.getStorlek();
+        String farg = hattAttBestalla.getFarg();
+        String accessoar = hattAttBestalla.getAccessoar();
+        String together = benamning+" " +" "+ materail+" " +" "+ storlek+" "+" "+ farg +" "+ " "+ accessoar;
+        return together;
+        
+        
+    }
+    
     public Kund SkapaNyKund() {
 
         String namn = textToString(jTextNamn);
@@ -260,6 +272,7 @@ public class KundFormular extends javax.swing.JFrame {
         //jLabelDatum.setText(datum); - denna kan användas för att visa datumet i förmuläret om vi känner för det 
         Kund nyKund = SkapaNyKund();        
         FörfrågningsRegister.laggTillForfragan(datum, nyKund, hattAttBestalla);
+        EpostHanterare.skickaEpost(nyKund.getEpost(), "Din beställning", hattInfo());
     }//GEN-LAST:event_btnLaggTillKundActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

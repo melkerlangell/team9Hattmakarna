@@ -45,25 +45,7 @@ public class FörfrågningsRegister {
     }
 
     public static void test() {
-//        System.out.println("hej!");
-//        for (Förfrågning enFörfrågning: förfrågningar){
-//            System.out.println(enFörfrågning.getDate());
-//            System.out.println(enFörfrågning.getId());
-//            System.out.println("hej?");
-//            System.out.println(enFörfrågning.getKund().getNamn());
-//        }
-//        System.out.println("hej!");
-//        for (Förfrågning enFörfrågning : förfrågningar) {
-//            System.out.println(enFörfrågning.getDate());
-//            System.out.println(enFörfrågning.getId());
-//            System.out.println("hej?");
-//            Kund kund = enFörfrågning.getKund();
-//            if (kund != null) {
-//                System.out.println(kund.getNamn());
-//            } else {
-//                System.out.println("Kund is null");
-//            }
-//        
+                
         {
             System.out.println("---------");
             for (Förfrågning enFörfrågning : förfrågningar) {

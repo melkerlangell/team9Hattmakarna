@@ -11,6 +11,7 @@ import java.io.Serializable;
  */
 public class Förfrågning implements Serializable {
     private static final long serialVersionUID = 4975052993073197909L;
+    //fulfix för att tvinga fram kompatibilitet med registerfilen
 
 
     private int id;
