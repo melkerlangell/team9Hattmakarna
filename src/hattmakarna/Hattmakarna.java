@@ -22,6 +22,8 @@ public class Hattmakarna extends JFrame {
         
             ProduktHanterare PH = new ProduktHanterare();
             FörfrågningsRegister register = new FörfrågningsRegister();
+            KundRegister.laddaInFil();
+            FörfrågningsRegister.laddaInFil();
             
             //FilHanterare.sparaProduktFil(ProduktHanterare.getProduktLista());
             
