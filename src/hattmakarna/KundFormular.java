@@ -209,11 +209,11 @@ public class KundFormular extends javax.swing.JFrame {
         String accessoar = hattAttBestalla.getAccessoar();
         String meddelande = "Här är en bekräftelse på din hattbeställning." + "\n"
                 + "Hatt: " + benamning + ".\n"
-                + "Material " + materail + ".\n"
+                + "Material: " + materail + ".\n"
                 + "Storlek: " + storlek + ".\n"
                 + "Färg: " + farg + ".\n "
-                + "Assecoar: " + accessoar + ".\n"
-                + "Takc för din beställning!";
+                + "Accessoar: " + accessoar + ".\n"
+                + "Tack för din beställning!";
         return meddelande;
 
     }
@@ -248,7 +248,7 @@ public class KundFormular extends javax.swing.JFrame {
 
         if (felMeddelande.equals("")) {
             nyKund = new Kund(namn, adress, telefon, epost);
-            JOptionPane.showMessageDialog(null, "Ny förfrågan är har lagts.");
+            JOptionPane.showMessageDialog(null, "Ny förfrågan är har registrerats och kund har blivit informerad..");
         } else {
             JOptionPane.showMessageDialog(null, "Dessa fel inträffade: " + felMeddelande);
         }

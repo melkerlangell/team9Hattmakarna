@@ -30,6 +30,10 @@ public class FörfrågningsRegister {
             System.out.println(e);
         }
     }
+    
+    public static ArrayList<Förfrågning> getForfragningar(){
+        return förfrågningar;
+    } 
 
     public static void laddaInFil() {
         förfrågningar = null;
@@ -67,6 +71,18 @@ public class FörfrågningsRegister {
             }
            System.out.println("---------"); 
         }
+    }
+    
+    public static  ArrayList<String> getComboBoxData() {
+    ArrayList<String> comboBoxData = new ArrayList<>();
+    for (Förfrågning enFörfrågning : förfrågningar) {
+        Kund kund = enFörfrågning.getKund();
+        Hatt hatt = enFörfrågning.getHatt();
+        if (kund != null && hatt != null) {
+            comboBoxData.add(kund.getNamn() + " - " + hatt.getBenamning());
+        }
+    }
+    return comboBoxData;
     }
 
     public void läggTill() {
