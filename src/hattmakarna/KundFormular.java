@@ -248,7 +248,7 @@ public class KundFormular extends javax.swing.JFrame {
 
         if (felMeddelande.equals("")) {
             nyKund = new Kund(namn, adress, telefon, epost);
-            JOptionPane.showMessageDialog(null, "Ny förfrågan är har registrerats och kund har blivit informerad..");
+            JOptionPane.showMessageDialog(null, "Ny förfrågan är har registrerats och kund har blivit informerad.");
         } else {
             JOptionPane.showMessageDialog(null, "Dessa fel inträffade: " + felMeddelande);
         }
@@ -278,7 +278,7 @@ public class KundFormular extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Kund enKund = new Kund("", "", "", "");
         if (Validering.isEpost(jTextEpost)) {
-            if (KundRegister.hittaEpost2(jTextEpost.getText())) {
+            if (KundRegister.hittaEpost(jTextEpost, enKund)) {
                 jTextNamn.setText(enKund.getNamn());
                 jTextTelefon.setText(enKund.getTelefon());
                 jTextAdress.setText(enKund.getAdress());
