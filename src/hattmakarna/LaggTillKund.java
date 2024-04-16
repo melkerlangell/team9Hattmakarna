@@ -244,7 +244,7 @@ public Kund SkapaNyKund() {
         } else {
             JOptionPane.showMessageDialog(null, "Dessa fel inträffade: " + felMeddelande);
         }
-        
+        System.out.println(nyKund);
         return nyKund;
     }
 
