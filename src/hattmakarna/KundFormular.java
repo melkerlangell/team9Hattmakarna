@@ -17,13 +17,13 @@ import java.time.LocalDate;
 public class KundFormular extends javax.swing.JFrame {
 
     private Hatt hattAttBestalla;
-    
+
     /**
      * Creates new form KundFormular
      */
     public KundFormular(Hatt enHatt) {
         hattAttBestalla = enHatt;
-        
+
         initComponents();
     }
 
@@ -195,27 +195,29 @@ public class KundFormular extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
-    private String textToString (JTextField textToCheck)
-    {
+    private String textToString(JTextField textToCheck) {
         String info = textToCheck.getText();
-        
+
         return info;
     }
-    
-    private String hattInfo(){
+
+    private String hattInfo() {
         String benamning = hattAttBestalla.getBenamning();
         String materail = hattAttBestalla.getMaterial();
         String storlek = hattAttBestalla.getStorlek();
         String farg = hattAttBestalla.getFarg();
         String accessoar = hattAttBestalla.getAccessoar();
-        String together = benamning+" " +" "+ materail+" " +" "+ storlek+" "+" "+ farg +" "+ " "+ accessoar;
-        return together;
-        
-        
+        String meddelande = "Här är en bekräftelse på din hattbeställning." + "\n"
+                + "Hatt: " + benamning + ".\n"
+                + "Material " + materail + ".\n"
+                + "Storlek: " + storlek + ".\n"
+                + "Färg: " + farg + ".\n "
+                + "Assecoar: " + accessoar + ".\n"
+                + "Takc för din beställning!";
+        return meddelande;
+
     }
-    
+
     public Kund SkapaNyKund() {
 
         String namn = textToString(jTextNamn);
@@ -243,19 +245,17 @@ public class KundFormular extends javax.swing.JFrame {
         if (Validering.isEpost(jTextEpost) == false) {
             felMeddelande += "Ange en giltig epostadress. ";
         }
-        
-        
-        
+
         if (felMeddelande.equals("")) {
             nyKund = new Kund(namn, adress, telefon, epost);
-            JOptionPane.showMessageDialog(null,"Ny förfrågan är har lagts.");
+            JOptionPane.showMessageDialog(null, "Ny förfrågan är har lagts.");
         } else {
             JOptionPane.showMessageDialog(null, "Dessa fel inträffade: " + felMeddelande);
         }
-        
+
         return nyKund;
     }
-    
+
     private void goBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackActionPerformed
         // TODO add your handling code here:
         this.dispose();
@@ -266,29 +266,28 @@ public class KundFormular extends javax.swing.JFrame {
 //        DateFormat datumFormat = new SimpleDateFormat("yyyy-MM-dd");
 //        String datum = datumFormat.format(jDateChooser1.getDate());
         //Kommer bli problem, vad händer om det blir fel i kunden? Returns null
-        
+
         LocalDate dagensDatum = LocalDate.now();
         String datum = dagensDatum.toString();
         //jLabelDatum.setText(datum); - denna kan användas för att visa datumet i förmuläret om vi känner för det 
-        Kund nyKund = SkapaNyKund();        
+        Kund nyKund = SkapaNyKund();
         FörfrågningsRegister.laggTillForfragan(datum, nyKund, hattAttBestalla);
         EpostHanterare.skickaEpost(nyKund.getEpost(), "Din beställning", hattInfo());
     }//GEN-LAST:event_btnLaggTillKundActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Kund enKund = new Kund("", "", "", "");
-        if(Validering.isEpost(jTextEpost)){
-        if(KundRegister.hittaEpost(jTextEpost, enKund)){
-            jTextNamn.setText(enKund.getNamn());
-            jTextTelefon.setText(enKund.getTelefon());
-            jTextAdress.setText(enKund.getAdress());
-            }}
-        else{
+        if (Validering.isEpost(jTextEpost)) {
+            if (KundRegister.hittaEpost(jTextEpost, enKund)) {
+                jTextNamn.setText(enKund.getNamn());
+                jTextTelefon.setText(enKund.getTelefon());
+                jTextAdress.setText(enKund.getAdress());
+            }
+        } else {
             JOptionPane.showMessageDialog(null, "Kunden finns inte i systemet, var god skriv in uppgifter manuellt.");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLaggTillKund;
