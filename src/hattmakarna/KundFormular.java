@@ -210,7 +210,7 @@ public class KundFormular extends javax.swing.JFrame {
         String adress = textToString(jTextAdress);
         String telefon = textToString(jTextTelefon);
         String epost = textToString(jTextEpost);
-
+        Kund nyKund = null;
         String felMeddelande = "";
 
         if (namn.isEmpty()) {
@@ -232,7 +232,7 @@ public class KundFormular extends javax.swing.JFrame {
             felMeddelande += "Ange en giltig epostadress. ";
         }
         
-        Kund nyKund = null;
+        
         
         if (felMeddelande.equals("")) {
             nyKund = new Kund(namn, adress, telefon, epost);
@@ -259,7 +259,7 @@ public class KundFormular extends javax.swing.JFrame {
         String datum = dagensDatum.toString();
         //jLabelDatum.setText(datum); - denna kan användas för att visa datumet i förmuläret om vi känner för det 
         Kund nyKund = SkapaNyKund();        
-        //FörfrågningsRegister.LaggTillForfragan(datum, nyKund, hattAttBestalla);
+        FörfrågningsRegister.laggTillForfragan(datum, nyKund, hattAttBestalla);
     }//GEN-LAST:event_btnLaggTillKundActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

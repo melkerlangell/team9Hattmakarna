@@ -14,7 +14,6 @@ public class Förfrågning implements Serializable {
 
     private int id;
     private String datum;
-    //private Hatt enHatt
     private Kund enKund;
 
     public Förfrågning(int id, String datum, Kund enKund) {
