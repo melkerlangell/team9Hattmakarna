@@ -1,12 +1,14 @@
 
- import org.appache.pdfbox.pdmodel.PDDocument;
- import org.appache.pdfbox.printing.PDFPageable;
+
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
+import org.apache.pdfbox.pdmodel.PDDocument;
+ import org.apache.pdfbox.printing.PDFPageable;
  import java.io.File;
  import java.io.IOException;
  import javax.print.PrintService;
  import javax.print.PrintServiceLookup;
- import javax.print.attribute.standard.PrinterException;
- import javax.print.attribute.standard.PrinterJob;
+import org.apache.pdfbox.pdmodel.PDDocument;
  
 public class SkrivaUtPDF {
     
@@ -14,7 +16,7 @@ public class SkrivaUtPDF {
         try{
             PDDocument document = PDDocument.load(new File(filePath));
             PrinterJob printerJob = PrinterJob.getPrinterJob();
-            printerJob.setPagable(new PDFPagable(document));
+            printerJob.setPageable(new PDFPageable(document));
             PrintService defaultPrintService = PrintServiceLookup.lookupDefaultPrintService();
             if(defaultPrintService !=null){
                 printerJob.setPrintService(defaultPrintService);
@@ -24,9 +26,10 @@ public class SkrivaUtPDF {
                 System.out.println("Ingen standard skrivare tillgänglig");
             }
             document.close();
+        }
             catch(IOException | PrinterException e){
                     e.printStackTrace();
                     }
         }
     }
-}
+
