@@ -18,7 +18,7 @@ public class KundRegister {
         try (FileInputStream fis = new FileInputStream("KundRegister.dat"); ObjectInputStream ois = new ObjectInputStream(fis)) {
 
             kunder = (ArrayList<Kund>) ois.readObject();
-            System.out.println("Objekt inlästa från filen.");
+            System.out.println("Kunder inlästa från filen.");
 
         } catch (IOException | ClassNotFoundException e) {
             System.out.println(e);
@@ -64,6 +64,27 @@ public class KundRegister {
             }
         }
         return epostHittad;
+    }
+    
+    public static Kund hittaEpost2(String epost){
+        Kund nyKund = null;
+        for (Kund enKund :kunder) {
+        if (enKund.getEpost().equals(epost)) {
+            nyKund = enKund;
+            break;
+        }
+    }
+    return nyKund;
+    }
+    
+    public static void test() {
+        if (kunder != null)
+        for (Kund enKund : kunder) {
+            if (enKund != null)
+            System.out.println(enKund.getNamn()+" "+enKund.getEpost());
+        } else {
+            System.out.println("kuken");
+        }
     }
 
 }
