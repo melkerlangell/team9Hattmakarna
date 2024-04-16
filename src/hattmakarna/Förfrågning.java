@@ -14,12 +14,13 @@ public class Förfrågning implements Serializable {
 
     private int id;
     private String datum;
-    //private Hatt enHatt
     private Kund enKund;
 
     public Förfrågning(int id, String datum) {
         this.id = id;
         this.datum = datum;
+        this.enKund = enKund;
+        this.enHatt = enHatt;
 
     }
 

@@ -16,10 +16,11 @@ public class FörfrågningsRegister {
 
     private static ArrayList<Förfrågning> förfrågningar = new ArrayList();
 
-    public void sparaFil() {
-        
-        try (FileOutputStream fos = new FileOutputStream("ForfrogningsRegister.dat");
-             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+    private static int antalFörfrågningar = 0;
+
+    public static void sparaFil() {
+
+        try (FileOutputStream fos = new FileOutputStream("ForfrogningsRegister.dat"); ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 
             // Skriv ArrayList till filen
             oos.writeObject(förfrågningar);
@@ -29,41 +30,61 @@ public class FörfrågningsRegister {
             System.out.println(e);
         }
     }
-    
-    public static void laddaInFil(){
+
+    public static void laddaInFil() {
         förfrågningar = null;
-        try (FileInputStream fis = new FileInputStream("ForfrogningsRegister.dat");
-             ObjectInputStream ois = new ObjectInputStream(fis)) {
+        try (FileInputStream fis = new FileInputStream("ForfrogningsRegister.dat"); ObjectInputStream ois = new ObjectInputStream(fis)) {
 
             // Läs ArrayList från filen
             förfrågningar = (ArrayList<Förfrågning>) ois.readObject();
             System.out.println("Objekt inlästa från filen.");
 
-            
-
-        }catch (IOException | ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             System.out.println(e);
         }
     }
-    public static void test(){
+
+    public static void test() {
+//        System.out.println("hej!");
+//        for (Förfrågning enFörfrågning: förfrågningar){
+//            System.out.println(enFörfrågning.getDate());
+//            System.out.println(enFörfrågning.getId());
+//            System.out.println("hej?");
+//            System.out.println(enFörfrågning.getKund().getNamn());
+//        }
         System.out.println("hej!");
-        for (Förfrågning enFörfrågning: förfrågningar){
+        for (Förfrågning enFörfrågning : förfrågningar) {
             System.out.println(enFörfrågning.getDate());
             System.out.println(enFörfrågning.getId());
             System.out.println("hej?");
-            System.out.println(enFörfrågning.getKundId());
+            Kund kund = enFörfrågning.getKund();
+            if (kund != null) {
+                System.out.println(kund.getNamn());
+            } else {
+                System.out.println("Kund is null");
+            }
         }
     }
 
     public void läggTill() {
-        //Ett sätt att automatisera idet kanske skulle vara bra
-        Förfrågning F1 = new Förfrågning(1, "2000-01-01");
-        F1.laggInKund();
+//        //Ett sätt att automatisera idet kanske skulle vara bra
+//        Förfrågning F1 = new Förfrågning(1, "2000-01-01");
+//        F1.laggInKund();
+//
+//        förfrågningar.add(F1);
+//        Förfrågning F2 = new Förfrågning(2, "1999-01-01");
+//        F2.laggInKund();
+//        förfrågningar.add(F2);
+    }
 
-        förfrågningar.add(F1);
-        Förfrågning F2 = new Förfrågning(2, "1999-01-01");
-        F2.laggInKund();
-        förfrågningar.add(F2);
+    public static void laggTillForfragan(String datum, Kund enKund, Hatt enHatt) {
+
+        int tempID = antalFörfrågningar;
+        antalFörfrågningar++;
+
+        Förfrågning nyForfragan = new Förfrågning(tempID, datum, enKund, enHatt);
+        förfrågningar.add(nyForfragan);
+        sparaFil();
     }
 
     public void taBort(int id) {
@@ -72,12 +93,9 @@ public class FörfrågningsRegister {
 
                 förfrågningar.remove(enFörfrågning);
                 break;
+
             }
         }
     }
-    
-    
-                
-   }
-    
 
+}

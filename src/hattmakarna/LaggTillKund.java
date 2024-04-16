@@ -210,7 +210,8 @@ public Kund SkapaNyKund() {
         String adress = textToString(jTextAdress);
         String telefon = textToString(jTextTelefon);
         String epost = textToString(jTextEpost);
-
+        Kund nyKund = null;
+        
         String felMeddelande = "";
 
         if (namn.isEmpty()) {
@@ -231,11 +232,11 @@ public Kund SkapaNyKund() {
         if (Validering.isEpost(jTextEpost) == false) {
             felMeddelande += "Ange en giltig epostadress. ";
         }
-        if (Validering.unikEpost(jTextEpost) == false){
+        if (Validering.unikEpost(jTextEpost) == true){
             felMeddelande += "Eposten är upptagen. ";
         }
         
-        Kund nyKund = null;
+        
         
         if (felMeddelande.equals("")) {
             nyKund = new Kund(namn, adress, telefon, epost);
@@ -243,7 +244,7 @@ public Kund SkapaNyKund() {
         } else {
             JOptionPane.showMessageDialog(null, "Dessa fel inträffade: " + felMeddelande);
         }
-        
+        System.out.println(nyKund);
         return nyKund;
     }
 
