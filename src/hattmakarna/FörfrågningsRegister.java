@@ -15,8 +15,10 @@ import java.util.Scanner;
 public class FörfrågningsRegister {
 
     private static ArrayList<Förfrågning> förfrågningar = new ArrayList();
+    
+        private static int antalFörfrågningar = 0;
 
-    public void sparaFil() {
+    public static void sparaFil() {
         
         try (FileOutputStream fos = new FileOutputStream("ForfrogningsRegister.dat");
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
@@ -51,19 +53,29 @@ public class FörfrågningsRegister {
             System.out.println(enFörfrågning.getDate());
             System.out.println(enFörfrågning.getId());
             System.out.println("hej?");
-            System.out.println(enFörfrågning.getKundId());
+            System.out.println(enFörfrågning.getKund());
         }
     }
 
     public void läggTill() {
-        //Ett sätt att automatisera idet kanske skulle vara bra
-        Förfrågning F1 = new Förfrågning(1, "2000-01-01");
-        F1.laggInKund();
-
-        förfrågningar.add(F1);
-        Förfrågning F2 = new Förfrågning(2, "1999-01-01");
-        F2.laggInKund();
-        förfrågningar.add(F2);
+//        //Ett sätt att automatisera idet kanske skulle vara bra
+//        Förfrågning F1 = new Förfrågning(1, "2000-01-01");
+//        F1.laggInKund();
+//
+//        förfrågningar.add(F1);
+//        Förfrågning F2 = new Förfrågning(2, "1999-01-01");
+//        F2.laggInKund();
+//        förfrågningar.add(F2);
+    }
+    
+    public static void laggTillForfragan(String datum, Kund enKund, Hatt enHatt) {
+        
+        int tempID = antalFörfrågningar;
+        antalFörfrågningar++;
+        
+        Förfrågning nyForfragan = new Förfrågning(tempID, datum, enKund, enHatt);
+        förfrågningar.add(nyForfragan);
+        sparaFil();
     }
 
     public void taBort(int id) {
@@ -72,9 +84,9 @@ public class FörfrågningsRegister {
 
                 förfrågningar.remove(enFörfrågning);
                 break;
-            }
-        }
-    }
+            
+        
+    }}}
     
     
                 
