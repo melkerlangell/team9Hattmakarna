@@ -118,6 +118,11 @@ public class HanteraForfragningar extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(0, 102, 102));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Ladda ner PDF");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -207,6 +212,11 @@ public class HanteraForfragningar extends javax.swing.JFrame {
     private void jButtonOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOrderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonOrderActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        OmvandlaPDF.skrivUt();
+    }//GEN-LAST:event_jButton3ActionPerformed
     
     
 
