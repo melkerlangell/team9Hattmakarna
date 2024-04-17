@@ -24,7 +24,7 @@ public class FörfrågningsRegister {
 
             // Skriv ArrayList till filen
             oos.writeObject(förfrågningar);
-            System.out.println("Förfrågningar sparade till filen.");
+            System.out.println("Objekt sparade till filen.");
 
         } catch (IOException e) {
             System.out.println(e);
@@ -41,14 +41,15 @@ public class FörfrågningsRegister {
 
             // Läs ArrayList från filen
             förfrågningar = (ArrayList<Förfrågning>) ois.readObject();
-            System.out.println("Förfrågninar inlästa från filen.");
+            System.out.println("Objekt inlästa från filen.");
 
         } catch (IOException | ClassNotFoundException e) {
             System.out.println(e);
         }
     }
 
-    public static void test() {          
+    public static void test() {
+                
         {
             System.out.println("---------");
             for (Förfrågning enFörfrågning : förfrågningar) {
@@ -72,51 +73,16 @@ public class FörfrågningsRegister {
         }
     }
     
-    public static ArrayList<String> getComboBoxData() {
-        System.out.println("HERE");
-        ArrayList<String> comboBoxData = new ArrayList<>();
-        for (Förfrågning enForfragning : förfrågningar) {
-            String datum = enForfragning.getDate();
-            Kund kund = enForfragning.getKund();
-            Hatt hatt = enForfragning.getHatt();
-            if (kund != null && hatt != null) {
-                comboBoxData.add(datum + ": " + kund.getNamn() + ", " + hatt.getBenamning());
-            }
+    public static  ArrayList<String> getComboBoxData() {
+    ArrayList<String> comboBoxData = new ArrayList<>();
+    for (Förfrågning enFörfrågning : förfrågningar) {
+        Kund kund = enFörfrågning.getKund();
+        Hatt hatt = enFörfrågning.getHatt();
+        if (kund != null && hatt != null) {
+            comboBoxData.add(kund.getNamn() + " - " + hatt.getBenamning());
         }
-        
-        if(förfrågningar.size() <= 0){
-            comboBoxData.add("Det saknas förfrågningar.");
-        }
-        
-        return comboBoxData;
     }
-    
-    //Inte hållbart, man borde skicka in idet istället
-    public static String getForfragningsInfo(int forfragningsIndex){
-        if(förfrågningar.size() <= 0){
-            return "";
-        }
-        
-        String information = "";
-        
-        Förfrågning forfragan = förfrågningar.get(forfragningsIndex);
-        Kund kund = forfragan.getKund();
-        Hatt hatt = forfragan.getHatt();
-        
-        information += "Datum lagd: " + forfragan.getDate() + "\n";
-        information += "-----Om kunden-----" + "\n";
-        information += "Namn: " + kund.getNamn() + "\n";
-        information += "Adress: " + kund.getAdress() + "\n";
-        information += "Telefon: " + kund.getTelefon() + "\n";
-        information += "Epost: " + kund.getEpost() + "\n";
-        information += "-----Om hatten-----" + "\n";
-        information += "Mall: " + hatt.getBenamning() + "\n";
-        information += "Storlek: " + hatt.getStorlek() + "\n";
-        information += "Färg: " + hatt.getFarg() + "\n";
-        information += "Material: " + hatt.getMaterial() + "\n";
-        information += "Accessoar: " + hatt.getAccessoar() + "\n";   
-        
-        return information;
+    return comboBoxData;
     }
 
     public void läggTill() {
@@ -131,23 +97,24 @@ public class FörfrågningsRegister {
     }
 
     public static void laggTillForfragan(String datum, Kund enKund, Hatt enHatt) {
-        Förfrågning nyForfragan = new Förfrågning(datum, enKund, enHatt);
+
+        int tempID = antalFörfrågningar;
+        antalFörfrågningar++;
+
+        Förfrågning nyForfragan = new Förfrågning(tempID, datum);
         förfrågningar.add(nyForfragan);
         sparaFil();
     }
 
-    public void taBort(String id) {
+    public void taBort(int id) {
         for (Förfrågning enFörfrågning : förfrågningar) {
             if (enFörfrågning.getId() == id) {
+
                 förfrågningar.remove(enFörfrågning);
                 break;
 
             }
         }
     }
-    
-    public static void resettaForfragningar(){
-        förfrågningar.clear();
-        sparaFil();
-    }
+
 }

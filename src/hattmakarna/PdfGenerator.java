@@ -23,17 +23,38 @@ public class PdfGenerator {
                 contentStream.setFont(new PDType1Font(Standard14Fonts.FontName.COURIER), 15);
                 contentStream.newLineAtOffset(100, 700);
                 contentStream.showText("Fraktsedel:");
+                contentStream.endText();
+                contentStream.beginText();
                 contentStream.newLine();
+                contentStream.setFont(new PDType1Font(Standard14Fonts.FontName.COURIER), 15);
+                contentStream.newLineAtOffset(100, 650);
                 contentStream.showText("Frakt ID: " + fraktsedel.getFraktId());
+                contentStream.endText();
+                contentStream.beginText();
                 contentStream.newLine();
+                contentStream.setFont(new PDType1Font(Standard14Fonts.FontName.COURIER), 15);
+                contentStream.newLineAtOffset(100, 600);
                 contentStream.showText("Avsändare: " + fraktsedel.getAvsändare());
+                contentStream.endText();
+                contentStream.beginText();
                 contentStream.newLine();
+                contentStream.setFont(new PDType1Font(Standard14Fonts.FontName.COURIER), 15);
+                contentStream.newLineAtOffset(100, 550);
                 contentStream.showText("Kundens namn: " + fraktsedel.getKundNamn());
+                contentStream.endText();
+                contentStream.beginText();
                 contentStream.newLine();
+                contentStream.setFont(new PDType1Font(Standard14Fonts.FontName.COURIER), 15);
+                contentStream.newLineAtOffset(100, 500);
                 contentStream.showText("Kundens adress: " + fraktsedel.getKundAdress());
+                contentStream.endText();
+                contentStream.beginText();
                 contentStream.newLine();
+                contentStream.setFont(new PDType1Font(Standard14Fonts.FontName.COURIER), 15);
+                contentStream.newLineAtOffset(100, 450);
                 contentStream.showText("Fraktkostnad: " + fraktsedel.getFraktKostnad() + " SEK");
                 contentStream.endText();
+                contentStream.close();
                 
             }
 
