@@ -276,13 +276,11 @@ public class KundFormular extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLaggTillKundActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Kund enKund = new Kund("", "", "", "");
-        if (Validering.isEpost(jTextEpost)) {
-            if (KundRegister.hittaEpost(jTextEpost, enKund)) {
-                jTextNamn.setText(enKund.getNamn());
-                jTextTelefon.setText(enKund.getTelefon());
-                jTextAdress.setText(enKund.getAdress());
-            }
+        Kund enKund = KundRegister.hittaKundFranEpost(jTextEpost.getText());
+        if (enKund != null) {
+            jTextNamn.setText(enKund.getNamn());
+            jTextTelefon.setText(enKund.getTelefon());
+            jTextAdress.setText(enKund.getAdress());
         } else {
             JOptionPane.showMessageDialog(null, "Kunden finns inte i systemet, var god skriv in uppgifter manuellt.");
         }

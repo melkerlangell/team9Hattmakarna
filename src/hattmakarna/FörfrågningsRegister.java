@@ -115,6 +115,14 @@ public class FörfrågningsRegister {
         
         return information;
     }
+    
+    public static Förfrågning getForfragning(int index){
+        return förfrågningar.get(index);
+    }
+    
+    public static int getAntalForfragningar(){
+        return förfrågningar.size();
+    }
 
     public void läggTill() {
 //        //Ett sätt att automatisera idet kanske skulle vara bra
@@ -134,12 +142,21 @@ public class FörfrågningsRegister {
     }
 
     public void taBort(String id) {
+        if(förfrågningar.size() <= 0){
+            return;
+        }
+        
         for (Förfrågning enFörfrågning : förfrågningar) {
             if (enFörfrågning.getId() == id) {
                 förfrågningar.remove(enFörfrågning);
                 break;
             }
         }
+    }
+    
+    public static void taBort(int index){
+        förfrågningar.remove(index);
+        sparaFil();
     }
     
     public static void resettaForfragninar(){
