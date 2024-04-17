@@ -10,6 +10,8 @@ import java.io.Serializable;
  * @author adams
  */
 public class Förfrågning implements Serializable {
+    private static final long serialVersionUID = 4975052993073197909L;
+    //fulfix för att tvinga fram kompatibilitet med registerfilen
 
 
     private int id;
@@ -17,7 +19,7 @@ public class Förfrågning implements Serializable {
     private Kund enKund;
     private Hatt enHatt;
 
-    public Förfrågning(int id, String datum) {
+    public Förfrågning(int id, String datum, Kund enKund, Hatt enHatt) {
         this.id = id;
         this.datum = datum;
         this.enKund = enKund;
@@ -34,6 +36,10 @@ public class Förfrågning implements Serializable {
     }
     public int getId() {
         return id;
+    }
+    
+    public Hatt getHatt(){
+    return enHatt;
     }
 
     public String getDate() {

@@ -17,7 +17,7 @@ import java.util.*;
 public class EpostHanterare {
 
     public static void skickaEpost(String till, String ämne, String meddelande) {
-        System.out.println("1");
+        
         // Konfigurera e-postinställningar
         String värd = "smtp.gmail.com";
         String användarnamn = "ottohattmakaresson@gmail.com";
@@ -30,14 +30,14 @@ public class EpostHanterare {
         egenskaper.put("mail.smtp.host", värd);
         egenskaper.put("mail.smtp.port", "587");
         egenskaper.put("mail.smtp.ssl.protocols", "TLSv1.2");
-System.out.println("2");
+
         // Skapa ett autentiseringsobjekt
         Authenticator autentisering = new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(användarnamn, lösenord);
             }
         };
-        System.out.println("3");
+        
 
         // Skapa en session
         Session session = Session.getInstance(egenskaper, autentisering);
@@ -49,10 +49,10 @@ System.out.println("2");
             meddeland1.setRecipients(Message.RecipientType.TO, InternetAddress.parse(till));
             meddeland1.setSubject(ämne);
             meddeland1.setText(meddelande);
-            System.out.println("4");
+            
             // Skicka e-postmeddelandet
             Transport.send(meddeland1);
-            System.out.println("5");
+  
             System.out.println("E-post skickad framgångsrikt.");
         } catch (MessagingException e) {
             throw new RuntimeException(e);

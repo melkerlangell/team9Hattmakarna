@@ -30,6 +30,10 @@ public class FörfrågningsRegister {
             System.out.println(e);
         }
     }
+    
+    public static ArrayList<Förfrågning> getForfragningar(){
+        return förfrågningar;
+    } 
 
     public static void laddaInFil() {
         förfrågningar = null;
@@ -45,25 +49,40 @@ public class FörfrågningsRegister {
     }
 
     public static void test() {
-//        System.out.println("hej!");
-//        for (Förfrågning enFörfrågning: förfrågningar){
-//            System.out.println(enFörfrågning.getDate());
-//            System.out.println(enFörfrågning.getId());
-//            System.out.println("hej?");
-//            System.out.println(enFörfrågning.getKund().getNamn());
-//        }
-        System.out.println("hej!");
-        for (Förfrågning enFörfrågning : förfrågningar) {
-            System.out.println(enFörfrågning.getDate());
-            System.out.println(enFörfrågning.getId());
-            System.out.println("hej?");
-            Kund kund = enFörfrågning.getKund();
-            if (kund != null) {
-                System.out.println(kund.getNamn());
-            } else {
-                System.out.println("Kund is null");
+                
+        {
+            System.out.println("---------");
+            for (Förfrågning enFörfrågning : förfrågningar) {
+                System.out.println(enFörfrågning.getDate());
+                Kund kund = enFörfrågning.getKund();
+                Hatt hatt = enFörfrågning.getHatt();
+                if (kund != null) {
+                    System.out.println("Namn: " + kund.getNamn());
+                    System.out.println("Mail: " + kund.getEpost());
+                    if (hatt != null) {
+                        System.out.println("Typ: " + hatt.getBenamning());
+                        System.out.println("Material: " + hatt.getMaterial());
+                    } else {
+                        System.out.println("Kunden har ingen hatt.");
+                    }
+                } else {
+                    System.out.println("Kund is null");
+                }
             }
+           System.out.println("---------"); 
         }
+    }
+    
+    public static  ArrayList<String> getComboBoxData() {
+    ArrayList<String> comboBoxData = new ArrayList<>();
+    for (Förfrågning enFörfrågning : förfrågningar) {
+        Kund kund = enFörfrågning.getKund();
+        Hatt hatt = enFörfrågning.getHatt();
+        if (kund != null && hatt != null) {
+            comboBoxData.add(kund.getNamn() + " - " + hatt.getBenamning());
+        }
+    }
+    return comboBoxData;
     }
 
     public void läggTill() {
