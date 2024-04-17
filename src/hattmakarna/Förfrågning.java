@@ -4,6 +4,7 @@
  */
 package hattmakarna;
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  *
@@ -14,13 +15,13 @@ public class Förfrågning implements Serializable {
     //fulfix för att tvinga fram kompatibilitet med registerfilen
 
 
-    private int id;
+    private String id;
     private String datum;
     private Kund enKund;
     private Hatt enHatt;
 
-    public Förfrågning(int id, String datum) {
-        this.id = id;
+    public Förfrågning(String datum, Kund enKund, Hatt enHatt) {
+        this.id = UUID.randomUUID().toString();
         this.datum = datum;
         this.enKund = enKund;
         this.enHatt = enHatt;
@@ -34,7 +35,7 @@ public class Förfrågning implements Serializable {
     public Kund getKund () {
         return enKund;
     }
-    public int getId() {
+    public String getId() {
         return id;
     }
     
@@ -51,7 +52,7 @@ public class Förfrågning implements Serializable {
 
     }
 
-    public void setId ( int id) {
+    public void setId (String id) {
         this.id = id;
     }
 
@@ -62,7 +63,4 @@ public class Förfrågning implements Serializable {
     public void setKundId (Kund kundId) {
         this.enKund = kundId;
     }
-
-
-
 }
