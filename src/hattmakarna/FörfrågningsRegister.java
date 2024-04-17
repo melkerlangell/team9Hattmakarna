@@ -101,7 +101,7 @@ public class FörfrågningsRegister {
         int tempID = antalFörfrågningar;
         antalFörfrågningar++;
 
-        Förfrågning nyForfragan = new Förfrågning(tempID, datum, enKund, enHatt);
+        Förfrågning nyForfragan = new Förfrågning(tempID, datum);
         förfrågningar.add(nyForfragan);
         sparaFil();
     }
