@@ -10,7 +10,7 @@ package hattmakarna;
  */
 public class OmvandlaPDF {
     
-     public static void main(String[] args) {
+     public static void skrivUt() {
         // Skapa en förfrågan
         Förfrågning förfrågning = new Förfrågning(1, "2024-04-15");
         förfrågning.laggInKund();  // Lägger till en kund till förfrågan
