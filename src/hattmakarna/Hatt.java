@@ -12,6 +12,7 @@ import java.io.Serializable;
 public class Hatt extends HattMall implements Serializable {
     private String beskrivning;
     private boolean arExpress;
+    private boolean arSpecial;
     private double expressTillagg;
     private int antalTimmarAttSkapa;
     
@@ -22,6 +23,10 @@ public class Hatt extends HattMall implements Serializable {
     
     public boolean getOmExpress(){
         return arExpress;
+    }
+    
+    public boolean getOmSpecial(){
+        return arSpecial;
     }
     
     public double getExpressTillagg(){
