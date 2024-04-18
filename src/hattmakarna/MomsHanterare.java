@@ -10,10 +10,10 @@ package hattmakarna;
  */
 public class MomsHanterare {
     
-    private double utgaendeMoms12Procent;
+    private static double utgaendeMoms12Procent;
     
-    private double ingaendeMoms25Procent;
-    private double utgaendeMoms25Procent;
+    private static double ingaendeMoms25Procent;
+    private static double utgaendeMoms25Procent;
     
     public void adderaTillMoms12Procent(double summa){
         utgaendeMoms12Procent += summa;
@@ -28,19 +28,23 @@ public class MomsHanterare {
         }
     }
     
-    public double getIngaendeMoms25Procent(){
+    public static double getIngaendeMoms25Procent(){
         return ingaendeMoms25Procent;
     }
     
-    public double getUtgaendeMoms12Procent(){
+    public static double getUtgaendeMoms12Procent(){
         return utgaendeMoms12Procent;
     }
     
-    public double getUtgaendeMoms25Procent(){
+    public static double getUtgaendeMoms25Procent(){
         return utgaendeMoms25Procent;
     }
     
-    public double getMomsForRedovisning(){
+    public static double getTotalaUtgaendeMoms(){
+        return utgaendeMoms12Procent + utgaendeMoms25Procent;
+    }
+    
+    public static double getMomsForRedovisning(){
         double ingaendeMoms = ingaendeMoms25Procent;
         double utgaendeMoms = utgaendeMoms12Procent + utgaendeMoms25Procent;
         
@@ -49,7 +53,7 @@ public class MomsHanterare {
         return moms;
     }
     
-    public void resetMoms(){
+    public static void resetMoms(){
         utgaendeMoms12Procent = 0;
         
         ingaendeMoms25Procent = 0;

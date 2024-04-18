@@ -34,9 +34,9 @@ public class Personalmeny extends javax.swing.JFrame {
         goBack = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        btnMoms = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
 
         hanteraProdukter.setBackground(new java.awt.Color(0, 102, 102));
@@ -116,6 +116,15 @@ public class Personalmeny extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel1.setText("Välj vad du vill göra");
 
+        btnMoms.setBackground(new java.awt.Color(0, 102, 102));
+        btnMoms.setForeground(new java.awt.Color(255, 255, 255));
+        btnMoms.setText("Moms-sammanställning");
+        btnMoms.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMomsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -131,7 +140,8 @@ public class Personalmeny extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(hanteraKunder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(hanteraForfragan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(hanteraProdukter, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(hanteraProdukter, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnMoms, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(29, 29, 29)))
                 .addGap(57, 57, 57))
         );
@@ -149,6 +159,8 @@ public class Personalmeny extends javax.swing.JFrame {
                 .addComponent(hanteraProdukter, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(hanteraKunder, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnMoms, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -188,9 +200,15 @@ public class Personalmeny extends javax.swing.JFrame {
         new Inloggningssida().setVisible(true);
     }//GEN-LAST:event_goBackActionPerformed
 
+    private void btnMomsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMomsActionPerformed
+        this.dispose();
+        new MomsSammanstallare().setVisible(true);
+    }//GEN-LAST:event_btnMomsActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnMoms;
     private javax.swing.JButton goBack;
     private javax.swing.JButton hanteraForfragan;
     private javax.swing.JButton hanteraKunder;
