@@ -85,6 +85,10 @@ public class KundRegister {
     return nyKund;
     }
     
+    public ArrayList<Kund> getKundRegister () {
+        return kunder; 
+    }
+    
     public static void test() {
         if (kunder != null)
         {
