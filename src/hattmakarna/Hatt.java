@@ -11,9 +11,24 @@ import java.io.Serializable;
  */
 public class Hatt extends HattMall implements Serializable {
     private String beskrivning;
+    private boolean arExpress;
+    private double expressTillagg;
+    private int antalTimmarAttSkapa;
     
     public Hatt(String benamning, String storlek, String farg, String accessoar, String material, String beskrivning){
         super(benamning, storlek, farg, accessoar, material);
         this.beskrivning = beskrivning;
-    }  
+    }
+    
+    public boolean getOmExpress(){
+        return arExpress;
+    }
+    
+    public double getExpressTillagg(){
+        return expressTillagg;
+    }
+    
+    public int getAntalTimmar(){
+        return antalTimmarAttSkapa;
+    }
 }
