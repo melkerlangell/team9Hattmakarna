@@ -10,13 +10,13 @@ package hattmakarna;
  */
 public class OmvandlaPDF {
     
-     public static void skrivUt() {
+     public static void skrivUt(Förfrågning enForfragan) {
         // Skapa en förfrågan
-        Förfrågning förfrågning = new Förfrågning(1, "2024-04-15");
-        förfrågning.laggInKund();  // Lägger till en kund till förfrågan
+        //Förfrågning förfrågning = new Förfrågning(1, "2024-04-15");
+        //förfrågning.laggInKund();  // Lägger till en kund till förfrågan
 
         // Skapa en fraktsedel baserad på förfrågan
-        FraktSedel fraktsedel = new FraktSedel(förfrågning);
+        FraktSedel fraktsedel = new FraktSedel(enForfragan);
 
         // Sökväg där PDF-filen ska sparas
         String filePath = "fraktsedel.pdf";

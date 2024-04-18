@@ -239,8 +239,23 @@ public class HanteraForfragningar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonOrderActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        //OmvandlaPDF.skrivUt();
+        int index = cmbboxForfragningar.getSelectedIndex();
+
+        if (FörfrågningsRegister.getAntalForfragningar() <= 0) {
+            System.out.println("Det finns inga förfrågningar att skicka.");
+            return;
+        }
+
+        Förfrågning enForfragan = FörfrågningsRegister.getForfragning(index);
+       
+       
+        //String forfInfo = FörfrågningsRegister.getForfragningsInfo(index);
+
+        
+
+        
+        
+        OmvandlaPDF.skrivUt(enForfragan);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void cmbboxForfragningarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbboxForfragningarItemStateChanged
