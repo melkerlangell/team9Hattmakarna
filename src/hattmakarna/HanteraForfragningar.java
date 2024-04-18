@@ -124,7 +124,11 @@ public class HanteraForfragningar extends javax.swing.JFrame {
             }
         });
 
+        jButtonOrder.setBackground(new java.awt.Color(0, 102, 102));
+        jButtonOrder.setForeground(new java.awt.Color(255, 255, 255));
         jButtonOrder.setText("Skicka order");
+        jButtonOrder.setMaximumSize(new java.awt.Dimension(72, 23));
+        jButtonOrder.setMinimumSize(new java.awt.Dimension(72, 23));
         jButtonOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonOrderActionPerformed(evt);
@@ -133,7 +137,7 @@ public class HanteraForfragningar extends javax.swing.JFrame {
 
         btnLaddaNer.setBackground(new java.awt.Color(0, 102, 102));
         btnLaddaNer.setForeground(new java.awt.Color(255, 255, 255));
-        btnLaddaNer.setText("Ladda ner PDF");
+        btnLaddaNer.setText("Spara PDF");
         btnLaddaNer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -169,9 +173,9 @@ public class HanteraForfragningar extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(cmbboxForfragningar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonOrder))
+                                .addComponent(jButtonOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(62, 62, 62))
+                .addGap(36, 36, 36))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +187,7 @@ public class HanteraForfragningar extends javax.swing.JFrame {
                 .addGap(80, 80, 80)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbboxForfragningar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonOrder))
+                    .addComponent(jButtonOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
