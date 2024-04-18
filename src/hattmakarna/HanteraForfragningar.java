@@ -5,6 +5,7 @@
 package hattmakarna;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,15 +20,15 @@ public class HanteraForfragningar extends javax.swing.JFrame {
         initComponents();
         uppdateraCombobox();
     }
-    
-    private void emptyCbox(){
+
+    private void emptyCbox() {
         cmbboxForfragningar.removeAllItems();
     }
-    
-    private void uppdateraCombobox(){
+
+    private void uppdateraCombobox() {
         emptyCbox();
         ArrayList<String> comboBoxData = FörfrågningsRegister.getComboBoxData();
-        
+
         for (String item : comboBoxData) {
             cmbboxForfragningar.addItem(item);
         }
@@ -67,6 +68,11 @@ public class HanteraForfragningar extends javax.swing.JFrame {
         btnTaBort.setBackground(new java.awt.Color(0, 102, 102));
         btnTaBort.setForeground(new java.awt.Color(255, 255, 255));
         btnTaBort.setText("Ta bort");
+        btnTaBort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTaBortActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -193,8 +199,7 @@ public class HanteraForfragningar extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-   
-    
+
     private void goBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackActionPerformed
         // TODO add your handling code here:
         this.dispose();
@@ -206,7 +211,7 @@ public class HanteraForfragningar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void forfTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forfTestActionPerformed
-    FörfrågningsRegister.test();        // TODO add your handling code here:
+        FörfrågningsRegister.test();        // TODO add your handling code here:
     }//GEN-LAST:event_forfTestActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -215,22 +220,22 @@ public class HanteraForfragningar extends javax.swing.JFrame {
 
     private void jButtonOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOrderActionPerformed
         int index = cmbboxForfragningar.getSelectedIndex();
-        
-        if(FörfrågningsRegister.getAntalForfragningar() <= 0){
+
+        if (FörfrågningsRegister.getAntalForfragningar() <= 0) {
             System.out.println("Det finns inga förfrågningar att skicka.");
             return;
         }
 
         Förfrågning enForfragan = FörfrågningsRegister.getForfragning(index);
         String epost = enForfragan.getKund().getEpost();
-        String meddelande = "Din order har nu skickats! \n"; 
+        String meddelande = "Din order har nu skickats! \n";
         meddelande += FörfrågningsRegister.getForfragningsInfo(index);
-        
+
         EpostHanterare.skickaEpost(epost, "Hatt skickad!", meddelande);
-        
+
         FörfrågningsRegister.taBort(index);
         uppdateraCombobox();
-        
+
     }//GEN-LAST:event_jButtonOrderActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -240,16 +245,30 @@ public class HanteraForfragningar extends javax.swing.JFrame {
 
     private void cmbboxForfragningarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbboxForfragningarItemStateChanged
         int index = cmbboxForfragningar.getSelectedIndex();
-        
-        if(index < 0){
+
+        if (index < 0) {
             return;
         }
-        
+
         String information = FörfrågningsRegister.getForfragningsInfo(index);
         txtAreaInformation.setText(information);
     }//GEN-LAST:event_cmbboxForfragningarItemStateChanged
-    
-    
+
+    private void btnTaBortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaBortActionPerformed
+        int index = cmbboxForfragningar.getSelectedIndex();
+
+        if (FörfrågningsRegister.getAntalForfragningar() <= 0) {
+            System.out.println("Förfrågningsregistret är tomt.");
+            return;
+        }
+
+        Förfrågning enForfragan = FörfrågningsRegister.getForfragning(index);
+
+        FörfrågningsRegister.taBort(index);
+        JOptionPane.showMessageDialog(null, "Förfrågan borttagen.");
+        uppdateraCombobox();
+
+    }//GEN-LAST:event_btnTaBortActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
