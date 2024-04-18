@@ -24,7 +24,7 @@ public class Hattmakarna extends JFrame {
             FörfrågningsRegister register = new FörfrågningsRegister();
             KundRegister.laddaInFil();
             FörfrågningsRegister.laddaInFil();
-            
+           
             //FilHanterare.sparaProduktFil(ProduktHanterare.getProduktLista());
             
             //Bör flyttas till något sorts register

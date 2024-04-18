@@ -16,15 +16,13 @@ public class FörfrågningsRegister {
 
     private static ArrayList<Förfrågning> förfrågningar = new ArrayList();
 
-    private static int antalFörfrågningar = 0;
-
     public static void sparaFil() {
 
         try (FileOutputStream fos = new FileOutputStream("ForfrogningsRegister.dat"); ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 
             // Skriv ArrayList till filen
             oos.writeObject(förfrågningar);
-            System.out.println("Objekt sparade till filen.");
+            System.out.println("Förfrågningar sparade till filen.");
 
         } catch (IOException e) {
             System.out.println(e);
@@ -73,16 +71,57 @@ public class FörfrågningsRegister {
         }
     }
     
-    public static  ArrayList<String> getComboBoxData() {
-    ArrayList<String> comboBoxData = new ArrayList<>();
-    for (Förfrågning enFörfrågning : förfrågningar) {
-        Kund kund = enFörfrågning.getKund();
-        Hatt hatt = enFörfrågning.getHatt();
-        if (kund != null && hatt != null) {
-            comboBoxData.add(kund.getNamn() + " - " + hatt.getBenamning());
+    public static  ArrayList<String> getComboBoxData() {                
+        ArrayList<String> comboBoxData = new ArrayList<>();
+        
+        if(förfrågningar.size() <= 0){
+            comboBoxData.add("Det saknas förfrågningar.");
         }
+
+        for (Förfrågning enFörfrågning : förfrågningar) {
+            Kund kund = enFörfrågning.getKund();
+            Hatt hatt = enFörfrågning.getHatt();
+            if (kund != null && hatt != null) {
+                comboBoxData.add(enFörfrågning.getDate() + ": " + kund.getNamn() + ", " + hatt.getBenamning());
+            }
+        }
+        return comboBoxData;
     }
-    return comboBoxData;
+    
+       //Inte hållbart, man borde skicka in idet istället
+    public static String getForfragningsInfo(int forfragningsIndex){
+        if(förfrågningar.size() <= 0){
+            return "";
+        }
+        
+        String information = "";
+        
+        Förfrågning forfragan = förfrågningar.get(forfragningsIndex);
+        Kund kund = forfragan.getKund();
+        Hatt hatt = forfragan.getHatt();
+        
+        information += "Datum lagd: " + forfragan.getDate() + "\n";
+        information += "-----Om kunden-----" + "\n";
+        information += "Namn: " + kund.getNamn() + "\n";
+        information += "Adress: " + kund.getAdress() + "\n";
+        information += "Telefon: " + kund.getTelefon() + "\n";
+        information += "Epost: " + kund.getEpost() + "\n";
+        information += "-----Om hatten-----" + "\n";
+        information += "Mall: " + hatt.getBenamning() + "\n";
+        information += "Storlek: " + hatt.getStorlek() + "\n";
+        information += "Färg: " + hatt.getFarg() + "\n";
+        information += "Material: " + hatt.getMaterial() + "\n";
+        information += "Accessoar: " + hatt.getAccessoar() + "\n";   
+        
+        return information;
+    }
+    
+    public static Förfrågning getForfragning(int index){
+        return förfrågningar.get(index);
+    }
+    
+    public static int getAntalForfragningar(){
+        return förfrågningar.size();
     }
 
     public void läggTill() {
@@ -97,24 +136,31 @@ public class FörfrågningsRegister {
     }
 
     public static void laggTillForfragan(String datum, Kund enKund, Hatt enHatt) {
-
-        int tempID = antalFörfrågningar;
-        antalFörfrågningar++;
-
-        Förfrågning nyForfragan = new Förfrågning(tempID, datum, enKund, enHatt);
+        Förfrågning nyForfragan = new Förfrågning(datum, enKund, enHatt);
         förfrågningar.add(nyForfragan);
         sparaFil();
     }
 
-    public void taBort(int id) {
+    public void taBort(String id) {
+        if(förfrågningar.size() <= 0){
+            return;
+        }
+        
         for (Förfrågning enFörfrågning : förfrågningar) {
             if (enFörfrågning.getId() == id) {
-
                 förfrågningar.remove(enFörfrågning);
                 break;
-
             }
         }
     }
-
+    
+    public static void taBort(int index){
+        förfrågningar.remove(index);
+        sparaFil();
+    }
+    
+    public static void resettaForfragninar(){
+        förfrågningar.clear();
+        sparaFil();
+    }
 }

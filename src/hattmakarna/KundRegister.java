@@ -47,23 +47,31 @@ public class KundRegister {
             if (enKund.getEpost().equalsIgnoreCase(epost)) {
 
                 kunder.remove(enKund);
+                sparaFil();
                 break;
             }
         }
     }
+    
+    public static void taBortKundUrRegister(int index){
+        kunder.remove(index);
+        sparaFil();
+    }
 
-    public static boolean hittaEpost(JTextField textToCheck, Kund kund) {
-        boolean epostHittad = false;
-        String epost = textToCheck.getText();
+    public static Kund hittaKundFranEpost(String epost) {
+        Kund hittadKund = null;
 
         for (Kund enKund : kunder) {
+            if(enKund == null){
+                continue;
+            }
+            
             if (enKund.getEpost().equals(epost)) {
-                epostHittad = true;
-                kund = enKund;
+                hittadKund = enKund;
                 break;
             }
         }
-        return epostHittad;
+        return hittadKund;
     }
     
     public static Kund hittaEpost2(String epost){
@@ -77,14 +85,19 @@ public class KundRegister {
     return nyKund;
     }
     
+    public ArrayList<Kund> getKundRegister () {
+        return kunder; 
+    }
+    
     public static void test() {
         if (kunder != null)
+        {
         for (Kund enKund : kunder) {
-            if (enKund != null)
+            if (enKund != null){
             System.out.println(enKund.getNamn()+" "+enKund.getEpost());
         } else {
             System.out.println("kuken");
         }
-    }
+    }}
 
-}
+}}
