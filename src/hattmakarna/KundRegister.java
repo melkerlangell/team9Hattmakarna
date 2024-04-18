@@ -57,6 +57,19 @@ public class KundRegister {
         kunder.remove(index);
         sparaFil();
     }
+    
+    private static void uppdateraKundRegister(Kund enKund) {
+        for(int i = 0; i < kunder.size(); i++) {
+            if(kunder.get(i).getEpost().equals(enKund.getEpost())) {
+                kunder.set(i, enKund);
+                sparaFil();
+                break;
+                for(Kund enKund1 : kunder) {
+                    System.out.println(enKund1.getNamn());
+                }
+            }
+        }
+    }
 
     public static Kund hittaKundFranEpost(String epost) {
         Kund hittadKund = null;
@@ -85,7 +98,7 @@ public class KundRegister {
     return nyKund;
     }
     
-    public ArrayList<Kund> getKundRegister () {
+    public static ArrayList<Kund> getKundRegister () {
         return kunder; 
     }
     
