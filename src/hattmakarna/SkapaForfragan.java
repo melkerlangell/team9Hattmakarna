@@ -109,7 +109,9 @@ public class SkapaForfragan extends javax.swing.JFrame {
         }
         else{
             material = materialCBX.getSelectedItem().toString();
-        } 
+        }
+        
+        //Man måste fylla i fler grejer
         
         Hatt nyHatt = new Hatt(benamning,storlek, farg, accessoar, material, "");
         return nyHatt;
