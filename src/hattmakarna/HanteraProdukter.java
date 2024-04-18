@@ -257,6 +257,7 @@ public class HanteraProdukter extends javax.swing.JFrame {
 //for (int i = 0; i < produktLista.size(); i++) {
  //   hattCBX.addItem(produktLista.get(i).getBenamning());
 //}
+test();
 
     }//GEN-LAST:event_hattCBXActionPerformed
 
@@ -277,7 +278,22 @@ public class HanteraProdukter extends javax.swing.JFrame {
         materialCBX.setSelectedItem(selectedHatt.getMaterial());
         }
     }//GEN-LAST:event_VisaKnappActionPerformed
-
+private void test(){
+    int selectedIndex = hattCBX.getSelectedIndex();
+    
+    // Ensure a valid selection
+        if (selectedIndex != -1) {
+        // Retrieve the selected HattMall object from the produktLista
+        HattMall selectedHatt = produktLista.get(selectedIndex);
+        
+        // Set the values from the selected HattMall object to the JTextFields
+        benamningTxt.setText(selectedHatt.getBenamning());
+        storlekCBX.setSelectedItem(selectedHatt.getStorlek());
+        fargCBX.setSelectedItem(selectedHatt.getFarg());
+        accessoarCBX.setSelectedItem(selectedHatt.getAccessoar());
+        materialCBX.setSelectedItem(selectedHatt.getMaterial());
+        }
+}
     private void UppdateraKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UppdateraKnappActionPerformed
         // TODO add your handling code here:
     int selectedIndex = hattCBX.getSelectedIndex();
