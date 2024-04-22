@@ -16,12 +16,10 @@ public class SkapaHatt extends javax.swing.JFrame {
     /**
      * Creates new form SkapaHatt
      */
-    private ArrayList<HattMall> produktLista;
-
     public SkapaHatt() {
         initComponents();
         FyllComboBoxes();
-        produktLista = ProduktHanterare.getProduktLista();
+
     }
 
     private void FyllComboBoxes() {
@@ -187,15 +185,13 @@ public class SkapaHatt extends javax.swing.JFrame {
 
         // Create a new HattMall object
         HattMall enHatt = new HattMall(benamning, storlek, farg, accessoar, material);
-        
-        if(benamning.isEmpty()){
-            JOptionPane.showMessageDialog(null, "Ange bemämning!");
-        }
-        else{
-             produktLista.add(enHatt);
-        JOptionPane.showMessageDialog(null, "En ny hatt har sparats!");
-        }
 
+        if (benamning.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ange bemämning!");
+        } else {
+            ProduktHanterare.addHatt(enHatt);
+            JOptionPane.showMessageDialog(null, "En ny hatt har sparats!");
+        }
 
 
     }//GEN-LAST:event_SkapaNyHattActionPerformed

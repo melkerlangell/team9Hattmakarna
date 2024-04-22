@@ -14,7 +14,7 @@ public class ProduktHanterare {
     }
 
     // Method to add a hatt to the list
-    public void addHatt(HattMall hattObjekt) {
+    public static void addHatt(HattMall hattObjekt) {
         produktLista.add(hattObjekt);
         FilHanterare.sparaProduktFil(produktLista);
     }
