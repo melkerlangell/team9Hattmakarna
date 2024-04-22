@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hattmakarna;
+
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -15,43 +16,38 @@ public class SkapaHatt extends javax.swing.JFrame {
     /**
      * Creates new form SkapaHatt
      */
-    
-     private ArrayList<HattMall> produktLista;
-            
+    private ArrayList<HattMall> produktLista;
+
     public SkapaHatt() {
         initComponents();
         FyllComboBoxes();
         produktLista = ProduktHanterare.getProduktLista();
     }
-    
-    
-    private void FyllComboBoxes(){
-        hattCBX.removeAllItems();
+
+    private void FyllComboBoxes() {
+
         storlekCBX.removeAllItems();
         fargCBX.removeAllItems();
         materialCBX.removeAllItems();
         accessoarCBX.removeAllItems();
-        
+
         ArrayList<HattMall> fardigaHattar = ProduktHanterare.getProduktLista();
-        
-        for(HattMall enHatt : fardigaHattar){
-            hattCBX.addItem(enHatt.getBenamning());
+        for (HattMall enHatt : fardigaHattar) {
             accessoarCBX.addItem(enHatt.getAccessoar());
         }
-        hattCBX.addItem("Annat");
-        
+
         ArrayList<String> storlekar = Storlek.getStorlekar();
-        for(String enStorlek : storlekar){
+        for (String enStorlek : storlekar) {
             storlekCBX.addItem(enStorlek);
         }
-        
+
         ArrayList<String> farger = Farg.getFarger();
-        for(String farg : farger){
+        for (String farg : farger) {
             fargCBX.addItem(farg);
         }
-        
+
         ArrayList<Material> material = Material.getAllaMaterial();
-        for(Material ettMaterial : material){
+        for (Material ettMaterial : material) {
             materialCBX.addItem(ettMaterial.getBenamning());
         }
     }
@@ -65,6 +61,7 @@ public class SkapaHatt extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -72,11 +69,13 @@ public class SkapaHatt extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         SkapaNyHatt = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        hattCBX = new javax.swing.JComboBox<>();
         storlekCBX = new javax.swing.JComboBox<>();
         fargCBX = new javax.swing.JComboBox<>();
         accessoarCBX = new javax.swing.JComboBox<>();
         materialCBX = new javax.swing.JComboBox<>();
+        txtbenamning = new javax.swing.JTextField();
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,13 +98,16 @@ public class SkapaHatt extends javax.swing.JFrame {
 
         jLabel7.setText("Material :");
 
-        hattCBX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         storlekCBX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         fargCBX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         accessoarCBX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        accessoarCBX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accessoarCBXActionPerformed(evt);
+            }
+        });
 
         materialCBX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -133,11 +135,11 @@ public class SkapaHatt extends javax.swing.JFrame {
                                         .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(hattCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(storlekCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(fargCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(accessoarCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(materialCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(materialCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtbenamning, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(222, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -148,7 +150,7 @@ public class SkapaHatt extends javax.swing.JFrame {
                 .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(hattCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtbenamning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -175,24 +177,32 @@ public class SkapaHatt extends javax.swing.JFrame {
 
     private void SkapaNyHattActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SkapaNyHattActionPerformed
         // TODO add your handling code here:
-        String benamning = hattCBX.getSelectedItem().toString();
+        //String benamning = hattCBX.getSelectedItem().toString();
+        String benamning = txtbenamning.getText();
         String storlek = storlekCBX.getSelectedItem().toString();
         String farg = fargCBX.getSelectedItem().toString();
         String accessoar = accessoarCBX.getSelectedItem().toString();
         String material = materialCBX.getSelectedItem().toString();
         // Get text from the text field
-    
-    // Create a new HattMall object
+
+        // Create a new HattMall object
         HattMall enHatt = new HattMall(benamning, storlek, farg, accessoar, material);
-    
-       
-        produktLista.add(enHatt);  
+        
+        if(benamning.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Ange bemämning!");
+        }
+        else{
+             produktLista.add(enHatt);
         JOptionPane.showMessageDialog(null, "En ny hatt har sparats!");
-          
-      
-        
-        
+        }
+
+
+
     }//GEN-LAST:event_SkapaNyHattActionPerformed
+
+    private void accessoarCBXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accessoarCBXActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_accessoarCBXActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,14 +243,15 @@ public class SkapaHatt extends javax.swing.JFrame {
     private javax.swing.JButton SkapaNyHatt;
     private javax.swing.JComboBox<String> accessoarCBX;
     private javax.swing.JComboBox<String> fargCBX;
-    private javax.swing.JComboBox<String> hattCBX;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JComboBox<String> materialCBX;
     private javax.swing.JComboBox<String> storlekCBX;
+    private javax.swing.JTextField txtbenamning;
     // End of variables declaration//GEN-END:variables
 }
