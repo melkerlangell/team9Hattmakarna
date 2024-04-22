@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author Melker & Rebecka
  */
 public class HanteraForfragningar extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form HanteraForfragningar
      */
@@ -231,6 +231,9 @@ public class HanteraForfragningar extends javax.swing.JFrame {
         }
 
         Förfrågning enForfragan = FörfrågningsRegister.getForfragning(index);
+        
+        MomsHanterare.skickaMoms(enForfragan.getHatt());
+        
         String epost = enForfragan.getKund().getEpost();
         String meddelande = "Din order har nu skickats! \n";
         meddelande += FörfrågningsRegister.getForfragningsInfo(index);

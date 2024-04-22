@@ -9,21 +9,13 @@ package hattmakarna;
  * @author rebec
  */
 public class PrisBeraknare {
-    private MomsHanterare momsHanterare;
     
     //Man skulle vilja kunna sätta dessa någonstans i programmet kanske?
-    private double prisPerTimme;
-    private double expressKostnad;
-    private double vinstMarginal = 1;
-    
-    private double timMoms = 0.12;
-    private double materialMoms = 0.25;
-    private double accessoarMoms = 0.25;
-    private double expressMoms = 0.25;
+    private static double prisPerTimme;
+    private static double expressKostnad;
+    private static double vinstMarginal = 1;
     
     public PrisBeraknare(){
-        momsHanterare = new MomsHanterare();
-        
         prisPerTimme = 400.0;
         expressKostnad = 1.20;
     }
@@ -33,7 +25,7 @@ public class PrisBeraknare {
         this.expressKostnad = expressKostnad;
     }
     
-    public double raknaUtPris(Hatt enHatt){
+    public static double raknaUtPris(Hatt enHatt){
         double pris = 0.00;
         
         //Räknar ut priser per meter av materialet
@@ -68,32 +60,11 @@ public class PrisBeraknare {
         return pris;
     }
     
-    public void skickaMoms(Hatt enHatt){
-        Material ettMaterial = null;
-        for(Material mat : Material.getAllaMaterial()){
-            if(mat.getBenamning().equals(enHatt.getMaterial())){
-                ettMaterial = mat;
-                break;
-            }
-        }
-        if(ettMaterial != null){
-            double prisPerMeter = ettMaterial.getPrisPerMeter();
-            
-            double materialPris = prisPerMeter * enHatt.getAntalMeter();
-            momsHanterare.adderaTillMoms25Procent(false, materialPris * materialMoms);
-        }
-        
-        for(Accessoar enAccessoar : Accessoar.getAllaAccessoar()){
-            if(enAccessoar.getBenamning().equals(enHatt.getAccessoar())){
-                momsHanterare.adderaTillMoms25Procent(false, enAccessoar.getPris() * accessoarMoms);
-            }
-        }
-        
-        double pris = raknaUtPris(enHatt);
-        if(enHatt.getOmExpress()){
-            momsHanterare.adderaTillMoms25Procent(false, (pris * (1 - expressKostnad)) * expressMoms);
-        }
-        
-        momsHanterare.adderaTillMoms12Procent((enHatt.getAntalTimmar() * prisPerTimme) * timMoms);
+    public double getPrisPerTimme(){
+        return prisPerTimme;
+    }
+    
+    public double getExpressKostnad(){
+        return expressKostnad;
     }
 }
