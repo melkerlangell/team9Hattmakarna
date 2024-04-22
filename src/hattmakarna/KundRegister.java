@@ -15,13 +15,16 @@ public class KundRegister {
 
     public static void laddaInFil() {
         kunder = null;
+        
         try (FileInputStream fis = new FileInputStream("KundRegister.dat"); ObjectInputStream ois = new ObjectInputStream(fis)) {
 
             kunder = (ArrayList<Kund>) ois.readObject();
             System.out.println("Kunder inlästa från filen.");
 
         } catch (IOException | ClassNotFoundException e) {
-            System.out.println(e);
+            System.out.println("Fel vid laddning av fil " +e);
+            if (kunder == null) {
+            kunder = new ArrayList<>(); }
         }
     }
 
@@ -36,6 +39,15 @@ public class KundRegister {
             System.out.println(e);
         }
     }
+    
+    private void writeObject(ObjectOutputStream out) throws IOException {
+    out.defaultWriteObject(); // Skriver nuvarande objektfält
+}
+    
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+    in.defaultReadObject(); // Läser nuvarande objektfält
+    // Hantera gamla fält eller göra anpassningar för nya fält här
+}
 
     public static void addNyKundIRegister(Kund enKund) {
         kunder.add(enKund);

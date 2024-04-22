@@ -230,7 +230,7 @@ public class AndraKundInfo extends javax.swing.JFrame {
         int selectedIndex = kundCBX.getSelectedIndex();
         
         
-        if(selectedIndex != -1) {
+        if(selectedIndex >= 0 && selectedIndex < kundLista.size()) {
             Kund selectedKund = kundLista.get(selectedIndex);
             
             selectedKund.setNamn(namnTxt.getText());
@@ -239,6 +239,8 @@ public class AndraKundInfo extends javax.swing.JFrame {
             selectedKund.setEpost(epostTxt.getText());
             
             KundRegister.uppdateraKundRegister(selectedKund);
+        } else {
+            System.out.println("Ogiltigt index.");
         }
         
         
@@ -272,14 +274,16 @@ public class AndraKundInfo extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     public void laddaKunder() {
-        kundCBX.removeAllItems();
-        ArrayList<Kund> kundLista = KundRegister.getKundRegister();
+        kundLista = KundRegister.getKundRegister();
         if(kundLista ==  null) {
             System.out.println("Inga kunder hittades.");
             kundLista = new ArrayList<>();
+            
         } else {
             System.out.println("Antal kunder laddade: " + kundLista.size());
+            System.out.println("kundLista storlek: " + (kundLista != null ? kundLista.size() : "null"));
         }
+        kundCBX.removeAllItems();
         for(Kund enKund : kundLista) {
             kundCBX.addItem(enKund.getEpost());
         }

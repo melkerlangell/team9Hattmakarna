@@ -207,6 +207,7 @@ public class KundFormular extends javax.swing.JFrame {
         String storlek = hattAttBestalla.getStorlek();
         String farg = hattAttBestalla.getFarg();
         String accessoar = hattAttBestalla.getAccessoar();
+        String beskrivning = hattAttBestalla.getBeskrivning();
         String meddelande = "Här är en bekräftelse på din hattbeställning." + "\n"
                 + "---------------------------------------------"+"\n"
                 + "Hatt: " + benamning + ".\n"
@@ -214,6 +215,7 @@ public class KundFormular extends javax.swing.JFrame {
                 + "Storlek: " + storlek + ".\n"
                 + "Färg: " + farg + ".\n"
                 + "Accessoar: " + accessoar + ".\n"
+                + "Special: " + beskrivning + ".\n"
                 + "Tack för din beställning!";
         return meddelande;
 
@@ -272,6 +274,12 @@ public class KundFormular extends javax.swing.JFrame {
         String datum = dagensDatum.toString();
         //jLabelDatum.setText(datum); - denna kan användas för att visa datumet i förmuläret om vi känner för det 
         Kund nyKund = SkapaNyKund();
+        
+        if(nyKund == null){
+            JOptionPane.showMessageDialog(null, "Det blev tyvärr fel. Prova igen.");
+            return;
+        }
+        
         FörfrågningsRegister.laggTillForfragan(datum, nyKund, hattAttBestalla);
         EpostHanterare.skickaEpost(nyKund.getEpost(), "Din beställning", hattInfo());
     }//GEN-LAST:event_btnLaggTillKundActionPerformed

@@ -111,7 +111,8 @@ public class FörfrågningsRegister {
         information += "Storlek: " + hatt.getStorlek() + "\n";
         information += "Färg: " + hatt.getFarg() + "\n";
         information += "Material: " + hatt.getMaterial() + "\n";
-        information += "Accessoar: " + hatt.getAccessoar() + "\n";   
+        information += "Accessoar: " + hatt.getAccessoar() + "\n";
+        information += "Special: " + hatt.getBeskrivning() + "\n";
         
         return information;
     }

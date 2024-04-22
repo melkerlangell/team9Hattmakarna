@@ -20,10 +20,13 @@ public class Hattmakarna extends JFrame {
             JFrame startSida = new Inloggningssida();
             startSida.setVisible(true);
         
-            ProduktHanterare PH = new ProduktHanterare();
+            ProduktHanterare PH = new ProduktHanterare();   
             FörfrågningsRegister register = new FörfrågningsRegister();
+            new MomsHanterare();
             KundRegister.laddaInFil();
+            
             FörfrågningsRegister.laddaInFil();
+            
            
             //FilHanterare.sparaProduktFil(ProduktHanterare.getProduktLista());
             

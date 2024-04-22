@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Kund implements Serializable {
 
+    private static final long serialVersionUID = 1843565969513825091L;
     private String namn;
     private String adress;
     private String telefon;
@@ -15,7 +16,7 @@ public class Kund implements Serializable {
      this.adress = adress;
      this.telefon = telefon;
      this.epost = epost;
-     this.id = UUID.randomUUID().toString();
+     this.id = this.id = UUID.randomUUID().toString();
     }
     public String getNamn(){
         return namn;
