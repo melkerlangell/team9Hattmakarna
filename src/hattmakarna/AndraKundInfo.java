@@ -20,6 +20,7 @@ public class AndraKundInfo extends javax.swing.JFrame {
     public AndraKundInfo() {
         initComponents();
         laddaKunder();
+        KundRegister.laddaInFil();
     }
 
     /**
@@ -45,7 +46,7 @@ public class AndraKundInfo extends javax.swing.JFrame {
         adressTxt = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         epostTxt = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        andraKnapp = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
@@ -115,12 +116,12 @@ public class AndraKundInfo extends javax.swing.JFrame {
 
         jLabel6.setText("Epost");
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 102));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Ändra");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        andraKnapp.setBackground(new java.awt.Color(0, 102, 102));
+        andraKnapp.setForeground(new java.awt.Color(255, 255, 255));
+        andraKnapp.setText("Ändra");
+        andraKnapp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                andraKnappActionPerformed(evt);
             }
         });
 
@@ -169,7 +170,7 @@ public class AndraKundInfo extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(andraKnapp, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(69, 69, 69))
                     .addGroup(layout.createSequentialGroup()
@@ -209,7 +210,7 @@ public class AndraKundInfo extends javax.swing.JFrame {
                 .addComponent(epostTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(andraKnapp, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
@@ -222,9 +223,28 @@ public class AndraKundInfo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_namnTxtActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    
+    
+    private void andraKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_andraKnappActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        int selectedIndex = kundCBX.getSelectedIndex();
+        
+        
+        if(selectedIndex != -1) {
+            Kund selectedKund = kundLista.get(selectedIndex);
+            
+            selectedKund.setNamn(namnTxt.getText());
+            selectedKund.setTelefon(teleTxt.getText());
+            selectedKund.setAdress(adressTxt.getText());
+            selectedKund.setEpost(epostTxt.getText());
+            
+            KundRegister.uppdateraKundRegister(selectedKund);
+        }
+        
+        
+    }//GEN-LAST:event_andraKnappActionPerformed
+
+
 
     private void goBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackActionPerformed
         // TODO add your handling code here:
@@ -254,6 +274,12 @@ public class AndraKundInfo extends javax.swing.JFrame {
     public void laddaKunder() {
         kundCBX.removeAllItems();
         ArrayList<Kund> kundLista = KundRegister.getKundRegister();
+        if(kundLista ==  null) {
+            System.out.println("Inga kunder hittades.");
+            kundLista = new ArrayList<>();
+        } else {
+            System.out.println("Antal kunder laddade: " + kundLista.size());
+        }
         for(Kund enKund : kundLista) {
             kundCBX.addItem(enKund.getEpost());
         }
@@ -261,9 +287,9 @@ public class AndraKundInfo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adressTxt;
+    private javax.swing.JButton andraKnapp;
     private javax.swing.JTextField epostTxt;
     private javax.swing.JButton goBack;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
