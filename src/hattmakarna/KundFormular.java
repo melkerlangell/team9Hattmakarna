@@ -272,6 +272,12 @@ public class KundFormular extends javax.swing.JFrame {
         String datum = dagensDatum.toString();
         //jLabelDatum.setText(datum); - denna kan användas för att visa datumet i förmuläret om vi känner för det 
         Kund nyKund = SkapaNyKund();
+        
+        if(nyKund == null){
+            JOptionPane.showMessageDialog(null, "Det blev tyvärr fel. Prova igen.");
+            return;
+        }
+        
         FörfrågningsRegister.laggTillForfragan(datum, nyKund, hattAttBestalla);
         EpostHanterare.skickaEpost(nyKund.getEpost(), "Din beställning", hattInfo());
     }//GEN-LAST:event_btnLaggTillKundActionPerformed

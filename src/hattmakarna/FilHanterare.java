@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -44,12 +45,17 @@ public class FilHanterare {
         return enHattMallLista;
     }
     
-    public static void sparaMomsFil(MomsHanterare momsHanterare){
+    public static void sparaMomsFil(){ 
+        ArrayList<Double> varden = new ArrayList<Double>();
+        varden.add(MomsHanterare.getUtgaendeMoms12Procent());
+        varden.add(MomsHanterare.getUtgaendeMoms25Procent());
+        varden.add(MomsHanterare.getIngaendeMoms25Procent());
+        
         try (FileOutputStream fos = new FileOutputStream("MomsRegister.dat");
         ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 
         // Skriv ArrayList till filen
-        oos.writeObject(momsHanterare);
+        oos.writeObject(varden);
         System.out.println("Moms sparat till filen.");
 
     } catch (IOException e) {
@@ -57,18 +63,18 @@ public class FilHanterare {
         }
     }
     
-    public static MomsHanterare laddaInMomsFil(){
-        MomsHanterare enMomsHanterare = new MomsHanterare(); 
+    public static ArrayList<Double> laddaInMomsFil(){
+        ArrayList<Double> varden = new ArrayList<Double>();
         try (FileInputStream fis = new FileInputStream("MomsRegister.dat");
             ObjectInputStream ois = new ObjectInputStream(fis)) {
 
             // Läs ArrayList från filen
-            enMomsHanterare = (MomsHanterare) ois.readObject();
-            System.out.println("Produker inlästa från filen.");
+            varden = (ArrayList<Double>) ois.readObject();
+            System.out.println("Moms inläst från filen.");
         }catch (IOException | ClassNotFoundException e) {
             System.out.println(e);
         }
-        return enMomsHanterare;
+        return varden;
     }
 }  
 
