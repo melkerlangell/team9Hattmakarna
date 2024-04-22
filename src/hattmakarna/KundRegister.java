@@ -58,14 +58,14 @@ public class KundRegister {
         sparaFil();
     }
     
-    private static void uppdateraKundRegister(Kund enKund) {
+    public static void uppdateraKundRegister(Kund enKund) {
         for(int i = 0; i < kunder.size(); i++) {
             if(kunder.get(i).getEpost().equals(enKund.getEpost())) {
                 kunder.set(i, enKund);
                 sparaFil();
-                break;
-                for(Kund enKund1 : kunder) {
-                    System.out.println(enKund1.getNamn());
+                
+                for(Kund eKund : kunder) {
+                    System.out.println(eKund.getNamn());
                 }
             }
         }

@@ -31,5 +31,23 @@ public class Kund implements Serializable {
     }
     public String getId(){
         return id;
-    }   
+    }
+    
+    public void setNamn(String namn) {
+        this.namn = namn;
+    }
+    
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+    
+    public void setTelefon(String telefon) {
+        this.telefon = telefon;
+    }
+    
+    public void setEpost(String epost) {
+        this.epost = epost;
+    }
+    
+    
 }
