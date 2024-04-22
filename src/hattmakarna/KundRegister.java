@@ -36,6 +36,15 @@ public class KundRegister {
             System.out.println(e);
         }
     }
+    
+    private void writeObject(ObjectOutputStream out) throws IOException {
+    out.defaultWriteObject(); // Skriver nuvarande objektfält
+}
+    
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+    in.defaultReadObject(); // Läser nuvarande objektfält
+    // Hantera gamla fält eller göra anpassningar för nya fält här
+}
 
     public static void addNyKundIRegister(Kund enKund) {
         kunder.add(enKund);
