@@ -98,6 +98,7 @@ public class SkapaForfragan extends javax.swing.JFrame {
     private Hatt SkapaNyHatt(){
         String benamning = hattCBX.getSelectedItem().toString();
         String storlek = storlekCBX.getSelectedItem().toString();
+        String beskrivning = kommentarTXTAREA.getText();
         
         String farg = fargCBX.getSelectedItem().toString();
         
@@ -139,7 +140,7 @@ public class SkapaForfragan extends javax.swing.JFrame {
         
         //Man måste fylla i fler grejer
         
-        Hatt nyHatt = new Hatt(benamning,storlek, farg, accessoar, material, "", arExpress, antalMeter, antalTimmar);
+        Hatt nyHatt = new Hatt(benamning,storlek, farg, accessoar, material, beskrivning, arExpress, antalMeter, antalTimmar);
         return nyHatt;
     }
 

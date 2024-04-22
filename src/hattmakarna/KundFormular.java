@@ -207,6 +207,7 @@ public class KundFormular extends javax.swing.JFrame {
         String storlek = hattAttBestalla.getStorlek();
         String farg = hattAttBestalla.getFarg();
         String accessoar = hattAttBestalla.getAccessoar();
+        String beskrivning = hattAttBestalla.getBeskrivning();
         String meddelande = "Här är en bekräftelse på din hattbeställning." + "\n"
                 + "---------------------------------------------"+"\n"
                 + "Hatt: " + benamning + ".\n"
@@ -214,6 +215,7 @@ public class KundFormular extends javax.swing.JFrame {
                 + "Storlek: " + storlek + ".\n"
                 + "Färg: " + farg + ".\n"
                 + "Accessoar: " + accessoar + ".\n"
+                + "Special: " + beskrivning + ".\n"
                 + "Tack för din beställning!";
         return meddelande;
 
