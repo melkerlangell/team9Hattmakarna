@@ -33,33 +33,33 @@ public class PrisBeraknare {
         this.expressKostnad = expressKostnad;
     }
     
-    public double raknaUtPris(String ettMaterialNamn, double antalMeter, String ettAccessoarNamn, double antalTimmar, boolean arExpress){
+    public double raknaUtPris(Hatt enHatt){
         double pris = 0.00;
         
         //Räknar ut priser per meter av materialet
         Material ettMaterial = null;
         for(Material mat : Material.getAllaMaterial()){
-            if(mat.getBenamning().equals(ettMaterialNamn)){
+            if(mat.getBenamning().equals(enHatt.getMaterial())){
                 ettMaterial = mat;
                 break;
             }
         }
         if(ettMaterial != null){
             double prisPerMeter = ettMaterial.getPrisPerMeter();
-            double materialPris = prisPerMeter * antalMeter;
+            double materialPris = prisPerMeter * enHatt.getAntalMeter();
             pris += materialPris;
         }
         
         for(Accessoar enAccessoar : Accessoar.getAllaAccessoar()){
-            if(enAccessoar.getBenamning().equals(ettAccessoarNamn)){
+            if(enAccessoar.getBenamning().equals(enHatt.getAccessoar())){
                 pris += enAccessoar.getPris();
             }
         }
         
-        double arbetsPris = prisPerTimme * antalTimmar;
+        double arbetsPris = prisPerTimme * enHatt.getAntalTimmar();
         pris += arbetsPris;
         
-        if(arExpress){
+        if(enHatt.getOmExpress()){
             pris *= expressKostnad;
         }
         
@@ -68,7 +68,7 @@ public class PrisBeraknare {
         return pris;
     }
     
-    public void skickaMoms(Hatt enHatt, int antalTimmar){
+    public void skickaMoms(Hatt enHatt){
         Material ettMaterial = null;
         for(Material mat : Material.getAllaMaterial()){
             if(mat.getBenamning().equals(enHatt.getMaterial())){
@@ -79,10 +79,7 @@ public class PrisBeraknare {
         if(ettMaterial != null){
             double prisPerMeter = ettMaterial.getPrisPerMeter();
             
-            //TA BORT DENNA
-            int antalMeter = 1;
-            
-            double materialPris = prisPerMeter * antalMeter;
+            double materialPris = prisPerMeter * enHatt.getAntalMeter();
             momsHanterare.adderaTillMoms25Procent(false, materialPris * materialMoms);
         }
         
@@ -92,8 +89,9 @@ public class PrisBeraknare {
             }
         }
         
+        double pris = raknaUtPris(enHatt);
         if(enHatt.getOmExpress()){
-            momsHanterare.adderaTillMoms25Procent(false, enHatt.getExpressTillagg() * expressMoms);
+            momsHanterare.adderaTillMoms25Procent(false, (pris * (1 - expressKostnad)) * expressMoms);
         }
         
         momsHanterare.adderaTillMoms12Procent((enHatt.getAntalTimmar() * prisPerTimme) * timMoms);

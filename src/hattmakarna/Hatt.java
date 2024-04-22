@@ -13,12 +13,19 @@ public class Hatt extends HattMall implements Serializable {
     private String beskrivning;
     private boolean arExpress;
     private boolean arSpecial;
-    private double expressTillagg;
+    private double antalMeter;
     private int antalTimmarAttSkapa;
     
-    public Hatt(String benamning, String storlek, String farg, String accessoar, String material, String beskrivning){
+    public Hatt(String benamning, String storlek, String farg, String accessoar, String material, String beskrivning, boolean arExpress, double antalMeter, int antalTimmar){
         super(benamning, storlek, farg, accessoar, material);
         this.beskrivning = beskrivning;
+        this.arExpress = arExpress;
+        this.antalMeter = antalMeter;
+        antalTimmarAttSkapa = antalTimmar;
+    }
+    
+    public String getBeskrivning(){
+        return beskrivning;
     }
     
     public boolean getOmExpress(){
@@ -29,8 +36,8 @@ public class Hatt extends HattMall implements Serializable {
         return arSpecial;
     }
     
-    public double getExpressTillagg(){
-        return expressTillagg;
+    public double getAntalMeter(){
+        return antalMeter;
     }
     
     public int getAntalTimmar(){
