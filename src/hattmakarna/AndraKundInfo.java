@@ -20,7 +20,7 @@ public class AndraKundInfo extends javax.swing.JFrame {
     public AndraKundInfo() {
         initComponents();
         laddaKunder();
-        
+        KundRegister.laddaInFil();
     }
 
     /**
@@ -274,13 +274,14 @@ public class AndraKundInfo extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     public void laddaKunder() {
-        
-        ArrayList<Kund> kundLista = KundRegister.getKundRegister();
+        kundLista = KundRegister.getKundRegister();
         if(kundLista ==  null) {
             System.out.println("Inga kunder hittades.");
             kundLista = new ArrayList<>();
+            
         } else {
             System.out.println("Antal kunder laddade: " + kundLista.size());
+            System.out.println("kundLista storlek: " + (kundLista != null ? kundLista.size() : "null"));
         }
         kundCBX.removeAllItems();
         for(Kund enKund : kundLista) {

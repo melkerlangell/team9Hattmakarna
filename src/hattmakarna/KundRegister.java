@@ -15,13 +15,16 @@ public class KundRegister {
 
     public static void laddaInFil() {
         kunder = null;
+        
         try (FileInputStream fis = new FileInputStream("KundRegister.dat"); ObjectInputStream ois = new ObjectInputStream(fis)) {
 
             kunder = (ArrayList<Kund>) ois.readObject();
             System.out.println("Kunder inlästa från filen.");
 
         } catch (IOException | ClassNotFoundException e) {
-            System.out.println(e);
+            System.out.println("Fel vid laddning av fil " +e);
+            if (kunder == null) {
+            kunder = new ArrayList<>(); }
         }
     }
 
