@@ -111,9 +111,35 @@ public class SkapaForfragan extends javax.swing.JFrame {
             material = materialCBX.getSelectedItem().toString();
         }
         
+            if(Validering.isHeltal(antalTimmarTXTFLD) == false || antalTimmarTXTFLD.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Vänligen fyll i antal timmar för att beräkna pris.");
+            return null;
+        }
+                   
+        int antalTimmar = Integer.parseInt(antalTimmarTXTFLD.getText());
+        
+        if(antalTimmar <= 0){
+            JOptionPane.showMessageDialog(null, "Timmar måste vara över 0 för att kunna beräknas.");
+            return null;
+        }
+        
+        if(Validering.isDecimalTal(antalMeterTXT) == false || antalMeterTXT.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Vänligen fyll i ett antal meter för att beräkna pris.");
+            return null;
+        }
+        
+        double antalMeter = Double.parseDouble(antalMeterTXT.getText());
+        
+        if(antalMeter <= 0){
+            JOptionPane.showMessageDialog(null, "Antal meter måste vara över 0 för att kunna beräknas.");
+            return null;
+        }
+        
+        boolean arExpress = expressCheck.isSelected();
+        
         //Man måste fylla i fler grejer
         
-        Hatt nyHatt = new Hatt(benamning,storlek, farg, accessoar, material, "");
+        Hatt nyHatt = new Hatt(benamning,storlek, farg, accessoar, material, "", arExpress, antalMeter, antalTimmar);
         return nyHatt;
     }
 
@@ -420,8 +446,13 @@ public class SkapaForfragan extends javax.swing.JFrame {
 
     private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
         // TODO add your handling code here:
-        this.dispose();
         Hatt hattAttBestalla = SkapaNyHatt();
+        
+        if(hattAttBestalla == null){
+            return;
+        }
+        
+        this.dispose();
         new KundFormular(hattAttBestalla).setVisible(true);
     }//GEN-LAST:event_nextBtnActionPerformed
 
@@ -468,7 +499,7 @@ public class SkapaForfragan extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Hatt hattAttBerakna = SkapaNyHatt();
-        
+        /*
         if(Validering.isHeltal(antalTimmarTXTFLD) == false || antalTimmarTXTFLD.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Vänligen fyll i antal timmar för att beräkna pris.");
             return;
@@ -494,8 +525,13 @@ public class SkapaForfragan extends javax.swing.JFrame {
         }
         
         boolean arExpress = expressCheck.isSelected();
+        */
         
-        double pris = prisBeraknare.raknaUtPris(hattAttBerakna.getMaterial(), antalMeter, hattAttBerakna.getAccessoar(), antalTimmar, arExpress);
+        if(hattAttBerakna == null){
+            return;
+        }
+        
+        double pris = prisBeraknare.raknaUtPris(hattAttBerakna);
         totalKostnadTXT.setText(Double.toString(pris));
     }//GEN-LAST:event_jButton1ActionPerformed
 

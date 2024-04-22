@@ -10,11 +10,12 @@ package hattmakarna;
  */
 public class MomsSammanstallare extends javax.swing.JFrame {
 
+    private MomsHanterare momsHanterare;
     /**
      * Creates new form MomsSammanstallare
      */
     public MomsSammanstallare() {
-        new MomsHanterare();
+        momsHanterare = FilHanterare.laddaInMomsFil();
         initComponents();
         
         formatteraText();
@@ -22,13 +23,13 @@ public class MomsSammanstallare extends javax.swing.JFrame {
     
     private void formatteraText(){
         String text = "";
-        text += "Utgående moms 25%: " + MomsHanterare.getUtgaendeMoms25Procent() + "\n";
-        text += "Utgående moms 12%: " + MomsHanterare.getUtgaendeMoms12Procent() + "\n";
-        text += "Debiterad ingående moms: " + MomsHanterare.getIngaendeMoms25Procent() + "\n";
-        text += "Redovisningskonto: " + MomsHanterare.getMomsForRedovisning() + "\n";
+        text += "Utgående moms 25%: " + momsHanterare.getUtgaendeMoms25Procent() + "\n";
+        text += "Utgående moms 12%: " + momsHanterare.getUtgaendeMoms12Procent() + "\n";
+        text += "Debiterad ingående moms: " + momsHanterare.getIngaendeMoms25Procent() + "\n";
+        text += "Redovisningskonto: " + momsHanterare.getMomsForRedovisning() + "\n";
         text += "\n";
-        text += "Debit summa: " + MomsHanterare.getTotalaUtgaendeMoms() + "\n";
-        text += "Kredit summa: " + (MomsHanterare.getIngaendeMoms25Procent() + MomsHanterare.getMomsForRedovisning()) + "\n";
+        text += "Debit summa: " + momsHanterare.getTotalaUtgaendeMoms() + "\n";
+        text += "Kredit summa: " + (momsHanterare.getIngaendeMoms25Procent() + momsHanterare.getMomsForRedovisning()) + "\n";
         txtAreaMomsRedovisning.setText(text);
     }
 

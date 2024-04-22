@@ -40,9 +40,35 @@ public class FilHanterare {
             System.out.println("Produker inlästa från filen.");
         }catch (IOException | ClassNotFoundException e) {
             System.out.println(e);
-            System.out.println("HERE");
         }
         return enHattMallLista;
+    }
+    
+    public static void sparaMomsFil(MomsHanterare momsHanterare){
+        try (FileOutputStream fos = new FileOutputStream("MomsRegister.dat");
+        ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+
+        // Skriv ArrayList till filen
+        oos.writeObject(momsHanterare);
+        System.out.println("Moms sparat till filen.");
+
+    } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+    
+    public static MomsHanterare laddaInMomsFil(){
+        MomsHanterare enMomsHanterare = new MomsHanterare(); 
+        try (FileInputStream fis = new FileInputStream("MomsRegister.dat");
+            ObjectInputStream ois = new ObjectInputStream(fis)) {
+
+            // Läs ArrayList från filen
+            enMomsHanterare = (MomsHanterare) ois.readObject();
+            System.out.println("Produker inlästa från filen.");
+        }catch (IOException | ClassNotFoundException e) {
+            System.out.println(e);
+        }
+        return enMomsHanterare;
     }
 }  
 

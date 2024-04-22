@@ -63,7 +63,6 @@ public class KundRegister {
             if(kunder.get(i).getEpost().equals(enKund.getEpost())) {
                 kunder.set(i, enKund);
                 sparaFil();
-                break;
                 for(Kund enKund1 : kunder) {
                     System.out.println(enKund1.getNamn());
                 }

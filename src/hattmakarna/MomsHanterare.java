@@ -17,6 +17,7 @@ public class MomsHanterare {
     
     public void adderaTillMoms12Procent(double summa){
         utgaendeMoms12Procent += summa;
+        FilHanterare.sparaMomsFil(this);
     }
             
     public void adderaTillMoms25Procent(boolean ingaende, double summa){
@@ -26,6 +27,7 @@ public class MomsHanterare {
         else{
             utgaendeMoms25Procent += summa;
         }
+        FilHanterare.sparaMomsFil(this);
     }
     
     public static double getIngaendeMoms25Procent(){
@@ -53,10 +55,12 @@ public class MomsHanterare {
         return moms;
     }
     
-    public static void resetMoms(){
+    public void resetMoms(){
         utgaendeMoms12Procent = 0;
         
         ingaendeMoms25Procent = 0;
         utgaendeMoms25Procent = 0;
+        
+        FilHanterare.sparaMomsFil(this);
     }
 }
