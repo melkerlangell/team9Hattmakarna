@@ -4,6 +4,7 @@
  */
 package hattmakarna;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -228,22 +229,54 @@ public class AndraKundInfo extends javax.swing.JFrame {
     private void andraKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_andraKnappActionPerformed
         // TODO add your handling code here:
         int selectedIndex = kundCBX.getSelectedIndex();
+    if (selectedIndex >= 0 && selectedIndex < kundLista.size()) {
+        Kund selectedKund = kundLista.get(selectedIndex);
         
-        
-        if(selectedIndex >= 0 && selectedIndex < kundLista.size()) {
-            Kund selectedKund = kundLista.get(selectedIndex);
-            
-            selectedKund.setNamn(namnTxt.getText());
-            selectedKund.setTelefon(teleTxt.getText());
-            selectedKund.setAdress(adressTxt.getText());
-            selectedKund.setEpost(epostTxt.getText());
-            
-            KundRegister.uppdateraKundRegister(selectedKund);
-        } else {
-            System.out.println("Ogiltigt index.");
+        // Hämta data från textfälten
+        String namn = namnTxt.getText().trim();
+        String telefon = teleTxt.getText().trim();
+        String adress = adressTxt.getText().trim();
+        String epost = epostTxt.getText().trim();
+
+        // Samla felmeddelanden i en StringBuilder
+        StringBuilder felMeddelande = new StringBuilder();
+
+        // Validering av input
+        if (namn.isEmpty()) {
+            felMeddelande.append("Namnfältet får inte vara tomt.\n");
         }
-        
-        
+        if (telefon.isEmpty()) {
+            felMeddelande.append("Telefonfältet får inte vara tomt.\n");
+        }
+        if (adress.isEmpty()) {
+            felMeddelande.append("Adressfältet får inte vara tomt.\n");
+        }
+        if (epost.isEmpty()) {
+            felMeddelande.append("Epostfältet får inte vara tomt.\n");
+        }
+        if (!Validering.isEpost(epostTxt)) {
+            felMeddelande.append("Ogiltig e-postadress.\n");
+        }
+        if (!Validering.isSvensktMobilNummer(teleTxt)) {
+            felMeddelande.append("Ogiltigt mobilnummer. Format krävs: 07x-xxx xx xx.\n");
+        }
+
+        // Om det finns felmeddelanden, visa dem och avbryt uppdateringen
+        if (felMeddelande.length() > 0) {
+            JOptionPane.showMessageDialog(this, felMeddelande.toString(), "Valideringsfel", JOptionPane.ERROR_MESSAGE);
+        } else {
+            // Uppdatera kunden om all data är giltig
+            selectedKund.setNamn(namn);
+            selectedKund.setTelefon(telefon);
+            selectedKund.setAdress(adress);
+            selectedKund.setEpost(epost);
+
+            KundRegister.uppdateraKundRegister(selectedKund);
+            JOptionPane.showMessageDialog(this, "Kundinformationen har uppdaterats.", "Information uppdaterad", JOptionPane.INFORMATION_MESSAGE);
+        }
+    } else {
+        JOptionPane.showMessageDialog(this, "Välj en giltig kund från listan.", "Fel", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_andraKnappActionPerformed
 
 
