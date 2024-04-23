@@ -63,5 +63,39 @@ public class PdfGenerator {
             e.printStackTrace();
         }
     }
-}
+        public static void genereraOffertPDF(Offert offert, String filePath) {
+            try (PDDocument document = new PDDocument()) {
+            PDPage page = new PDPage();
+            document.addPage(page);
+
+            try (PDPageContentStream contentStream = new PDPageContentStream(document, page)) {
+                contentStream.beginText();
+                contentStream.setFont(new PDType1Font(Standard14Fonts.FontName.COURIER), 15);
+                contentStream.newLineAtOffset(100, 700);
+                contentStream.showText("Offert:");
+                contentStream.endText();
+                contentStream.beginText();
+                contentStream.newLine();
+                contentStream.setFont(new PDType1Font(Standard14Fonts.FontName.COURIER), 15);
+                contentStream.newLineAtOffset(100, 650);
+                contentStream.showText("Offert ID: " + offert.getOffertID());
+                contentStream.endText();
+                contentStream.beginText();
+                contentStream.newLine();
+                contentStream.setFont(new PDType1Font(Standard14Fonts.FontName.COURIER), 15);
+                contentStream.newLineAtOffset(100, 550);
+                contentStream.showText("Kundens namn: " + offert.getKundNamn());
+                contentStream.endText();
+                contentStream.beginText();
+                contentStream.newLine();
+                contentStream.close();
+                
+            }
+
+            document.save(filePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        }
+    }
 

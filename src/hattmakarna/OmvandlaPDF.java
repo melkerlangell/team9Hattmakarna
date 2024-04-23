@@ -27,4 +27,15 @@ public class OmvandlaPDF {
         System.out.println("PDF-filen har genererats: " + filePath);
     
 }
+     
+     
+     public static void skrivUtOffert(Förfrågning enForfragan) {
+         Offert offert = new Offert(enForfragan);
+         
+         String filePath = "offert.pdf";
+         
+         PdfGenerator.genereraOffertPDF(offert, filePath);
+         
+         System.out.println("PDF-filen har genererats: " + filePath);
+     }
 }
