@@ -4,13 +4,15 @@
  */
 package hattmakarna;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -75,6 +77,34 @@ public class FilHanterare {
             System.out.println(e);
         }
         return varden;
+    }
+    
+    public static void skapaMomsRedovisning(String ettArtal){
+        try{
+            File enFil = new File("Momsredovisning" + ettArtal + ".txt");
+            if(enFil.createNewFile()){
+            System.out.println("Fil har skapats");
+            }
+            else{
+                System.out.println("Fil existerar redan");
+            }
+        }
+        catch(IOException e){
+            System.out.println("Något gick fel i skapandet av filen");
+        }
+    }
+    
+    public static void sparaMomsRedovising(String text, String ettArtal) {     
+        try{
+            FileWriter writer = new FileWriter("Momsredovisning" + ettArtal + ".txt");
+            writer.write(text);
+            writer.close();
+            System.out.println("Momsredovisning sparat till textfil.");
+            JOptionPane.showMessageDialog(null, "Momsredovisning har sparats till txt-fil!");
+        }
+        catch(IOException e){
+            JOptionPane.showMessageDialog(null, "Något gick fel med att spara textfilen. Prova igen.");
+        }    
     }
 }  
 

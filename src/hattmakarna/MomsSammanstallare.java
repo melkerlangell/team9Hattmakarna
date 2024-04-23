@@ -21,7 +21,13 @@ public class MomsSammanstallare extends javax.swing.JFrame {
     }
     
     private void formatteraText(){
+        String text = getFormatteradText();
+        txtAreaMomsRedovisning.setText(text);
+    }
+    
+    private String getFormatteradText(){
         String text = "";
+        text += "---MOMSREDOVISNING 2024---" + "\n";
         text += "Utgående moms 25%: " + MomsHanterare.getUtgaendeMoms25Procent() + "\n";
         text += "Utgående moms 12%: " + MomsHanterare.getUtgaendeMoms12Procent() + "\n";
         text += "Debiterad ingående moms: " + MomsHanterare.getIngaendeMoms25Procent() + "\n";
@@ -29,7 +35,7 @@ public class MomsSammanstallare extends javax.swing.JFrame {
         text += "\n";
         text += "Debit summa: " + MomsHanterare.getTotalaUtgaendeMoms() + "\n";
         text += "Kredit summa: " + (MomsHanterare.getIngaendeMoms25Procent() + MomsHanterare.getMomsForRedovisning()) + "\n";
-        txtAreaMomsRedovisning.setText(text);
+        return text;
     }
 
     /**
@@ -60,7 +66,7 @@ public class MomsSammanstallare extends javax.swing.JFrame {
             }
         });
 
-        btnLaddaNer.setText("Ladda ner");
+        btnLaddaNer.setText("Spara till txt-fil");
         btnLaddaNer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLaddaNerActionPerformed(evt);
@@ -97,7 +103,8 @@ public class MomsSammanstallare extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLaddaNerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaddaNerActionPerformed
-        // TODO add your handling code here:
+        String text = getFormatteradText();
+        FilHanterare.sparaMomsRedovising(text, "2024");
     }//GEN-LAST:event_btnLaddaNerActionPerformed
 
     private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
