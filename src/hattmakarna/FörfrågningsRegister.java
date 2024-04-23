@@ -99,6 +99,8 @@ public class FörfrågningsRegister {
         Förfrågning forfragan = förfrågningar.get(forfragningsIndex);
         Kund kund = forfragan.getKund();
         Hatt hatt = forfragan.getHatt();
+        double pris = PrisBeraknare.raknaUtPris(hatt);
+        String kostnad = (Double.toString(pris));
         
         information += "Datum lagd: " + forfragan.getDate() + "\n";
         information += "-----Om kunden-----" + "\n";
@@ -113,7 +115,7 @@ public class FörfrågningsRegister {
         information += "Material: " + hatt.getMaterial() + "\n";
         information += "Accessoar: " + hatt.getAccessoar() + "\n";
         information += "Special: " + hatt.getBeskrivning() + "\n";
-        
+        information += "Pris: " + kostnad + "\n";
         return information;
     }
     
