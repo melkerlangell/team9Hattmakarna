@@ -129,6 +129,11 @@ public class AndraKundInfo extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(0, 102, 102));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Ta bort");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(0, 102, 102));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
@@ -303,8 +308,23 @@ public class AndraKundInfo extends javax.swing.JFrame {
             teleTxt.setText(selectedKund.getTelefon());
             adressTxt.setText(selectedKund.getAdress());
             epostTxt.setText(selectedKund.getEpost());
+            
+            
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        int selectedIndex = kundCBX.getSelectedIndex();
+        
+        if(selectedIndex != -1) {
+            Kund selectedKund = kundLista.get(selectedIndex);
+            KundRegister.taBortKundUrRegister(selectedKund.getEpost());
+            kundLista.remove(selectedKund);
+            kundCBX.removeItemAt(selectedIndex);
+            
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     public void laddaKunder() {
         kundLista = KundRegister.getKundRegister();
