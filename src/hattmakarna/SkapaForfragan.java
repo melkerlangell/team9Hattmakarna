@@ -43,7 +43,6 @@ public class SkapaForfragan extends javax.swing.JFrame {
         
         for(HattMall enHatt : fardigaHattar){
             hattCBX.addItem(enHatt.getBenamning());
-            accessoarCBX.addItem(enHatt.getAccessoar());
         }
         hattCBX.addItem("Annat");
         
