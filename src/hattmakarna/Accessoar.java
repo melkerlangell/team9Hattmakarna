@@ -52,6 +52,5 @@ public class Accessoar {
         new Accessoar("Fjäder", "Annat", 5.00);
         new Accessoar("Knapp", "Trä", 2.00);
         new Accessoar("Ingen", "Annat", 0.00);
-    }
-    
+    } 
 }
