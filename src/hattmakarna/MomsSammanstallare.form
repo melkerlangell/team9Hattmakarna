@@ -79,7 +79,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnLaddaNer">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ladda ner"/>
+        <Property name="text" type="java.lang.String" value="Spara till txt-fil"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLaddaNerActionPerformed"/>
