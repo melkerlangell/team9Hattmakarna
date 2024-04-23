@@ -83,6 +83,12 @@ public class PdfGenerator {
                 contentStream.beginText();
                 contentStream.newLine();
                 contentStream.setFont(new PDType1Font(Standard14Fonts.FontName.COURIER), 15);
+                contentStream.newLineAtOffset(100, 600);
+                contentStream.showText("Total kostnad: " + offert.getTotalKostnad());
+                contentStream.endText();
+                contentStream.beginText();
+                contentStream.newLine();
+                contentStream.setFont(new PDType1Font(Standard14Fonts.FontName.COURIER), 15);
                 contentStream.newLineAtOffset(100, 550);
                 contentStream.showText("Kundens namn: " + offert.getKundNamn());
                 contentStream.endText();

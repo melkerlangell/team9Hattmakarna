@@ -12,13 +12,14 @@ public class Offert {
     public String offertID;
     public String avsandare;
     public String kundNamn;
+    public double totalKostnad;
     
     
     public Offert(Förfrågning forfragan) {
         this.offertID = OffertHanterare.genereraOffertID();
         this.avsandare = "Otto Judith AB";
         this.kundNamn = forfragan.getKund().getNamn();
-        
+        this.totalKostnad = forfragan.getTotalPris();
     }
     
     public String formateraOffert() {
@@ -26,6 +27,7 @@ public class Offert {
         offert += "Offert ID: " + offertID + "\n";
         offert += "Avsändare: " + avsandare + "\n";
         offert += "Kundens namn: " + kundNamn + "\n";
+        offert += "Total kostnad: " + totalKostnad + " SEK\n";
         return offert;
     }
     
@@ -51,5 +53,9 @@ public class Offert {
     
     public void setKundNamn(String kundNamn) {
         this.kundNamn = kundNamn;
+    }
+    
+    public double getTotalKostnad() {
+        return totalKostnad;
     }
 }

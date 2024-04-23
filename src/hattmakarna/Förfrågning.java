@@ -63,4 +63,8 @@ public class Förfrågning implements Serializable {
     public void setKundId (Kund kundId) {
         this.enKund = kundId;
     }
+    
+    public double getTotalPris() {
+        return PrisBeraknare.raknaUtPris(enHatt);
+    }
 }
