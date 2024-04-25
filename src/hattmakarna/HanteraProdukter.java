@@ -142,6 +142,8 @@ public class HanteraProdukter extends javax.swing.JFrame {
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
+        RaderaKnapp.setBackground(new java.awt.Color(0, 102, 102));
+        RaderaKnapp.setForeground(new java.awt.Color(255, 255, 255));
         RaderaKnapp.setText("Radera");
         RaderaKnapp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,6 +151,8 @@ public class HanteraProdukter extends javax.swing.JFrame {
             }
         });
 
+        SkapaKnapp.setBackground(new java.awt.Color(0, 102, 102));
+        SkapaKnapp.setForeground(new java.awt.Color(255, 255, 255));
         SkapaKnapp.setText("Skapa hatt");
         SkapaKnapp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,16 +194,13 @@ public class HanteraProdukter extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(VisaKnapp, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(RaderaKnapp)
-                                .addGap(30, 30, 30)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SkapaKnapp)
-                            .addComponent(UppdateraKnapp, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(VisaKnapp, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                            .addComponent(RaderaKnapp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(UppdateraKnapp, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                            .addComponent(SkapaKnapp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(62, 62, 62))
         );
         layout.setVerticalGroup(

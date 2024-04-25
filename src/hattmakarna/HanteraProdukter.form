@@ -65,19 +65,14 @@
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="VisaKnapp" min="-2" pref="84" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="RaderaKnapp" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="VisaKnapp" pref="84" max="32767" attributes="0"/>
+                          <Component id="RaderaKnapp" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="SkapaKnapp" min="-2" max="-2" attributes="0"/>
-                          <Component id="UppdateraKnapp" min="-2" pref="103" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="UppdateraKnapp" pref="103" max="32767" attributes="0"/>
+                          <Component id="SkapaKnapp" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -284,6 +279,12 @@
     </Container>
     <Component class="javax.swing.JButton" name="RaderaKnapp">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="66" red="0" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Radera"/>
       </Properties>
       <Events>
@@ -292,6 +293,12 @@
     </Component>
     <Component class="javax.swing.JButton" name="SkapaKnapp">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="66" red="0" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Skapa hatt"/>
       </Properties>
       <Events>
