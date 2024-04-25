@@ -100,6 +100,7 @@ public class MomsSammanstallare extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLaddaNerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaddaNerActionPerformed
