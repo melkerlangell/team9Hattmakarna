@@ -49,7 +49,6 @@ public class HanteraForfragningar extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         goBack = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        forfTest = new javax.swing.JButton();
         cmbboxForfragningar = new javax.swing.JComboBox<>();
         jButtonOrder = new javax.swing.JButton();
         btnLaddaNer = new javax.swing.JButton();
@@ -111,13 +110,6 @@ public class HanteraForfragningar extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        forfTest.setText("test");
-        forfTest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                forfTestActionPerformed(evt);
-            }
-        });
-
         cmbboxForfragningar.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cmbboxForfragningarItemStateChanged(evt);
@@ -158,8 +150,7 @@ public class HanteraForfragningar extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(forfTest)
-                        .addGap(37, 37, 37)
+                        .addGap(109, 109, 109)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAndra, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,9 +172,7 @@ public class HanteraForfragningar extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(forfTest))
+                .addComponent(jLabel1)
                 .addGap(80, 80, 80)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbboxForfragningar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -213,10 +202,6 @@ public class HanteraForfragningar extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void forfTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forfTestActionPerformed
-        FörfrågningsRegister.test();        // TODO add your handling code here:
-    }//GEN-LAST:event_forfTestActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
 
@@ -298,7 +283,6 @@ public class HanteraForfragningar extends javax.swing.JFrame {
     private javax.swing.JButton btnLaddaNer;
     private javax.swing.JButton btnTaBort;
     private javax.swing.JComboBox<String> cmbboxForfragningar;
-    private static javax.swing.JButton forfTest;
     private javax.swing.JButton goBack;
     private javax.swing.JButton jButtonOrder;
     private javax.swing.JLabel jLabel1;

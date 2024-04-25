@@ -1,8 +1,8 @@
 ---MOMSREDOVISNING 2024---
-Utgående moms 25%: 902.8
-Utgående moms 12%: 1104.0
+Utgående moms 25%: 1054.05
+Utgående moms 12%: 1296.0
 Debiterad ingående moms: 0.0
-Redovisningskonto: 2006.8
+Redovisningskonto: 2350.05
 
-Debit summa: 2006.8
-Kredit summa: 2006.8
+Debit summa: 2350.05
+Kredit summa: 2350.05
