@@ -285,6 +285,8 @@ public class KundFormular extends javax.swing.JFrame {
         
         FörfrågningsRegister.laggTillForfragan(datum, nyKund, hattAttBestalla);
         EpostHanterare.skickaEpost(nyKund.getEpost(), "Din beställning", hattInfo());
+        this.dispose();
+        new Personalmeny().setVisible(true);
     }//GEN-LAST:event_btnLaggTillKundActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

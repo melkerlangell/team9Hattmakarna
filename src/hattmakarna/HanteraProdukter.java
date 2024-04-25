@@ -49,7 +49,6 @@ public class HanteraProdukter extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         UppdateraKnapp = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        VisaKnapp = new javax.swing.JButton();
         hattCBX = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         goBack = new javax.swing.JButton();
@@ -89,15 +88,6 @@ public class HanteraProdukter extends javax.swing.JFrame {
         });
 
         jLabel7.setText("Välj hatt");
-
-        VisaKnapp.setBackground(new java.awt.Color(0, 102, 102));
-        VisaKnapp.setForeground(new java.awt.Color(255, 255, 255));
-        VisaKnapp.setText("Visa");
-        VisaKnapp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VisaKnappActionPerformed(evt);
-            }
-        });
 
         hattCBX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,13 +180,8 @@ public class HanteraProdukter extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(VisaKnapp, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(RaderaKnapp)
-                                .addGap(30, 30, 30)))
+                        .addComponent(RaderaKnapp)
+                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(SkapaKnapp)
                             .addComponent(UppdateraKnapp, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -232,9 +217,7 @@ public class HanteraProdukter extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(materialCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(VisaKnapp)
-                    .addComponent(UppdateraKnapp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(UppdateraKnapp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RaderaKnapp)
@@ -264,24 +247,6 @@ public class HanteraProdukter extends javax.swing.JFrame {
 test();
 
     }//GEN-LAST:event_hattCBXActionPerformed
-
-    private void VisaKnappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisaKnappActionPerformed
-        // TODO add your handling code here:
-         int selectedIndex = hattCBX.getSelectedIndex();
-    
-    // Ensure a valid selection
-        if (selectedIndex != -1) {
-        // Retrieve the selected HattMall object from the produktLista
-        HattMall selectedHatt = produktLista.get(selectedIndex);
-        
-        // Set the values from the selected HattMall object to the JTextFields
-        benamningTxt.setText(selectedHatt.getBenamning());
-        storlekCBX.setSelectedItem(selectedHatt.getStorlek());
-        fargCBX.setSelectedItem(selectedHatt.getFarg());
-        accessoarCBX.setSelectedItem(selectedHatt.getAccessoar());
-        materialCBX.setSelectedItem(selectedHatt.getMaterial());
-        }
-    }//GEN-LAST:event_VisaKnappActionPerformed
 private void test(){
     int selectedIndex = hattCBX.getSelectedIndex();
     
@@ -378,7 +343,6 @@ private void test(){
     private javax.swing.JButton RaderaKnapp;
     private javax.swing.JButton SkapaKnapp;
     private javax.swing.JButton UppdateraKnapp;
-    private javax.swing.JButton VisaKnapp;
     private javax.swing.JComboBox<String> accessoarCBX;
     private javax.swing.JTextField benamningTxt;
     private javax.swing.JComboBox<String> fargCBX;

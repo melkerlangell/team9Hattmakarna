@@ -178,7 +178,6 @@ public class SkapaForfragan extends javax.swing.JFrame {
         antalMeterTXT = new javax.swing.JTextField();
         expressCheck = new javax.swing.JCheckBox();
         jLabel5 = new javax.swing.JLabel();
-        specialCheck = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -294,8 +293,6 @@ public class SkapaForfragan extends javax.swing.JFrame {
 
         jLabel5.setText("+ meter");
 
-        specialCheck.setText("Specialbeställning");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -315,7 +312,7 @@ public class SkapaForfragan extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(materialCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(20, 20, 20)
@@ -324,15 +321,16 @@ public class SkapaForfragan extends javax.swing.JFrame {
                                                 .addGap(9, 9, 9)
                                                 .addComponent(materialLBL)
                                                 .addGap(30, 30, 30)
-                                                .addComponent(jLabel5))
-                                            .addComponent(specialCheck, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addComponent(jLabel5)))
                                         .addGap(35, 35, 35)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(kommentarLBL)
                                             .addComponent(accessoarCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(6, 6, 6)
-                                                .addComponent(accessoarLBL))))))
+                                                .addComponent(accessoarLBL))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(81, 81, 81)
+                                        .addComponent(kommentarLBL))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(86, 86, 86)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -407,10 +405,8 @@ public class SkapaForfragan extends javax.swing.JFrame {
                         .addComponent(accessoarLBL)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(accessoarCBX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(kommentarLBL)
-                    .addComponent(specialCheck))
+                .addGap(49, 49, 49)
+                .addComponent(kommentarLBL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -559,7 +555,6 @@ public class SkapaForfragan extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> materialCBX;
     private javax.swing.JLabel materialLBL;
     private javax.swing.JButton nextBtn;
-    private javax.swing.JCheckBox specialCheck;
     private javax.swing.JComboBox<String> storlekCBX;
     private javax.swing.JLabel storlekLBL;
     private javax.swing.JTextField totalKostnadTXT;
